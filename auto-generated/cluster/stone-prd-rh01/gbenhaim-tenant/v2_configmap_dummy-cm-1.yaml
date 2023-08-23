@@ -1,5 +1,5 @@
 apiVersion: v2
 kind: ConfigMap
 metadata:
-  name: dummy-cm-1
   key: val
+  name: dummy-cm-1
