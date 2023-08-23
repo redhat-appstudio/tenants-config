@@ -25,7 +25,7 @@ jobs:
       - name: Verify if the manifests were built
         run: |
             rm -rf auto-generated
-            ./build-kustomize.sh
+            ./build-manifests.sh
             ret=0
             git diff --exit-code || ret=$?
             if [[ ret -ne 0 ]]; then
