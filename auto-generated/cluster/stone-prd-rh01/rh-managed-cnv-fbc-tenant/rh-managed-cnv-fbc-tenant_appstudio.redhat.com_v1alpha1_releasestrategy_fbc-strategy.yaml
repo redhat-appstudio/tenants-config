@@ -1,0 +1,25 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleaseStrategy
+metadata:
+  name: fbc-strategy
+  namespace: rh-managed-cnv-fbc-tenant
+spec:
+  bundle: quay.io/hacbs-release/pipeline-fbc-release:main
+  params:
+  - name: fromIndex
+    value: quay.io/scoheb/fbc-index-testing:latest
+  - name: targetIndex
+    value: quay.io/scoheb/fbc-target-index-testing:latest
+  - name: requester
+    value: shebert
+  - name: overwriteFromIndex
+    value: "true"
+  - name: binaryImage
+    value: registry.redhat.io/openshift4/ose-operator-registry:v4.12
+  - name: requestUpdateTimeout
+    value: "420"
+  - name: buildTimeoutSeconds
+    value: "480"
+  pipeline: fbc-release
+  policy: rh-fbc-policy
+  serviceAccount: release-service-account

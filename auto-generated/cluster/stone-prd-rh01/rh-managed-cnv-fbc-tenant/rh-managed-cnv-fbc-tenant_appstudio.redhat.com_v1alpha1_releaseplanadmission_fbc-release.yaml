@@ -1,0 +1,9 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: fbc-release
+  namespace: rh-managed-cnv-fbc-tenant
+spec:
+  application: cnv-fbc
+  origin: cnv-fbc-tenant
+  releaseStrategy: fbc-strategy
