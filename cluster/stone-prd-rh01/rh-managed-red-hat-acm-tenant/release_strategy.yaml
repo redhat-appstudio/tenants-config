@@ -1,0 +1,25 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleaseStrategy
+metadata:
+  name: push-to-external-registry-strategy
+  namespace: rh-managed-red-hat-acm-tenant
+spec:
+  params:
+    - name: extraConfigGitUrl
+      value: https://github.com/hacbs-release/strategy-configs.git
+    - name: extraConfigPath
+      value: red-hat-acm.yaml
+    - name: extraConfigRevision
+      value: main
+    - name: pyxisServerType
+      value: stage
+    - name: pyxisSecret
+      value: pyxis
+    - name: tag
+      value: latest
+    - name: addGitShaTag
+      value: "true"
+  pipeline: push-to-external-registry
+  bundle: quay.io/hacbs-release/pipeline-push-to-external-registry:main
+  policy: rh-policy
+  serviceAccount: release-service-account

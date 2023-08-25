@@ -1,0 +1,9 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: mce-23-rpa
+  namespace: rh-managed-red-hat-acm-tenant
+spec:
+  application: mce-23
+  origin: crt-redhat-acm-tenant
+  releaseStrategy: push-to-external-registry-strategy
