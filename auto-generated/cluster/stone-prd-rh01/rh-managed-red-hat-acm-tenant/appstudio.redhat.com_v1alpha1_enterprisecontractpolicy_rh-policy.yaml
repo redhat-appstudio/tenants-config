@@ -1,7 +1,8 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: EnterpriseContractPolicy
 metadata:
-  name: rh-fbc-policy
+  name: rh-policy
+  namespace: rh-managed-red-hat-acm-tenant
 spec:
   configuration:
     exclude:
