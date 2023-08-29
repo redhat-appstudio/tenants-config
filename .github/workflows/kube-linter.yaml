@@ -30,7 +30,7 @@ jobs:
             git diff --exit-code || ret=$?
             if [[ ret -ne 0 ]]; then
                 echo "Did you forget to build the manifest locally?" >&2
-                echo "Please run build-manifests.sh and update you PR" >&2
+                echo "Please run build-manifests.sh and update your PR" >&2
                 exit 1
             fi
             echo "the auto-generated directory is up to date" >&2
