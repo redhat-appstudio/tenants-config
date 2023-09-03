@@ -8,7 +8,7 @@ metadata:
 spec:
   dataFrom:
     - extract:
-        key: consoledot-ephemeral-env-provider
+        key: production/redhat/consoledot-ephemeral-env-provider
   refreshInterval: 1h
   secretStoreRef:
     kind: ClusterSecretStore
