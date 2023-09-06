@@ -27,8 +27,7 @@ jobs:
             rm -rf auto-generated
             ./build-manifests.sh
             ret=0
-            git diff --exit-code || ret=$?
-            if [[ ret -ne 0 ]]; then
+            if [[ $(git status --porcelain) ]]; then
                 echo "Did you forget to build the manifests locally?" >&2
                 echo "Please run build-manifests.sh and update your PR" >&2
                 exit 1
