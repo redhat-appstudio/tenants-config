@@ -1,0 +1,45 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false"
+  name: tekton-insights
+  namespace: ergonzale-tenant
+spec:
+  application: insights-content-template-renderer
+  params:
+  - name: APP_NAME
+    value: ccx-data-pipeline
+  - name: COMPONENTS
+    value: io-gathering-service
+  - name: COMPONENTS_W_RESOURCES
+    value: io-gathering-service
+  - name: COMPONENT_NAME
+    value: io-gathering-service
+  - name: IQE_PLUGINS
+    value: ccx
+  - name: IQE_MARKER_EXPRESSION
+    value: io_gathering
+  - name: IQE_FILTER_EXPRESSION
+    value: ""
+  - name: IQE_REQUIREMENTS
+    value: ""
+  - name: IQE_REQUIREMENTS_PRIORITY
+    value: ""
+  - name: IQE_TEST_IMPORTANCE
+    value: ""
+  - name: IQE_CJI_TIMEOUT
+    value: 60m
+  - name: IQE_ENV
+    value: clowder_smoke
+  - name: IQE_SELENIUM
+    value: "false"
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/gbenhaim/tekton-insights.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/basic.yaml
+    resolver: git
