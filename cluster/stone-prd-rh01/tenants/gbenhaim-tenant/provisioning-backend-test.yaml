@@ -1,0 +1,44 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false" # Change to "true" if you don't need the test to be mandatory
+  name: provisioning-backend-tekton-insights
+spec:
+  application: provisioning-backend
+  resolverRef:
+    params:
+      - name: url
+        value: https://github.com/gbenhaim/tekton-insights.git # Temporary on gbenhaim's org. Also, you can fork it and reference yours here.
+      - name: revision
+        value: main # Or whatever branch you want to test
+      - name: pathInRepo
+        value: pipelines/basic.yaml # This is the path to the pipeline
+    resolver: git
+  params:
+    - name: APP_NAME
+      value: provisioning
+    - name: COMPONENTS
+      value: ""
+    - name: COMPONENTS_W_RESOURCES
+      value: ""
+    - name: COMPONENT_NAME
+      value: provisioning
+    - name: IQE_PLUGINS
+      value: provisioning
+    - name: IQE_MARKER_EXPRESSION
+      value: "api and smoke"
+    - name: IQE_FILTER_EXPRESSION
+      value: test_plugin_accessible
+    - name: IQE_REQUIREMENTS
+      value: ""
+    - name: IQE_REQUIREMENTS_PRIORITY
+      value: ""
+    - name: IQE_TEST_IMPORTANCE
+      value: ""
+    - name: IQE_CJI_TIMEOUT
+      value: 30m
+    - name: IQE_ENV
+      value: clowder_smoke
+    - name: IQE_SELENIUM
+      value: "false"
