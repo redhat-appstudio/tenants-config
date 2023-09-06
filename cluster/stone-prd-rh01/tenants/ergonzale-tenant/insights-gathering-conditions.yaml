@@ -3,9 +3,9 @@ kind: IntegrationTestScenario
 metadata:
   labels:
     test.appstudio.openshift.io/optional: "false" # Change to "true" if you don't need the test to be mandatory
-  name: tekton-insights
+  name: insights-operator-gathering-conditions-service-tekton-insights
 spec:
-  application: insights-content-template-renderer
+  application: insights-operator-gathering-conditions-service
   resolverRef:
     params:
       - name: url
