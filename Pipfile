@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pytest = "*"
+pyyaml = "*"
+black = "*"
+mypy = "*"
+types-pyyaml = "*"
+pylint = "*"
+isort = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
+
+[scripts]
+static-check = """\
+black --check test.py \
+mypy test.py
+"""

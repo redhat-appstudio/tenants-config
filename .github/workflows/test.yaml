@@ -1,0 +1,23 @@
+name: tests
+
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  test:
+    permissions:
+      checks: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.11
+      - name: Install pipenv
+        run: pip install pipenv==2023.7.23
+      - name: Create virtualenv
+        run: pipenv sync
+      - name: Run tests
+        run: |
+          pipenv run pytest tests
