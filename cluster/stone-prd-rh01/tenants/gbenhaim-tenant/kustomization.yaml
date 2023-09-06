@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - ccx-integ-test.yaml
   - ../../../../lib/consoledot-test-pipeline
+  - provisioning-backend-test.yaml
 namespace: gbenhaim-tenant
