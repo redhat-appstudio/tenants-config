@@ -1,0 +1,29 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false"
+  name: tekton-insights
+  namespace: rh-hms-tenant
+spec:
+  application: provisioning-backend
+  params:
+  - name: APP_NAME
+    value: provisioning
+  - name: COMPONENT_NAME
+    value: provisioning-backend
+  - name: IQE_PLUGINS
+    value: provisioning
+  - name: IQE_MARKER_EXPRESSION
+    value: api and smoke
+  - name: IQE_FILTER_EXPRESSION
+    value: ""
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/gbenhaim/tekton-insights.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/basic.yaml
+    resolver: git
