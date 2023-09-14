@@ -1,0 +1,23 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleaseStrategy
+metadata:
+  name: fbc-staged-index-strategy
+  namespace: rh-managed-cnv-fbc-tenant
+spec:
+  bundle: quay.io/hacbs-release/pipeline-fbc-release:main
+  params:
+  - name: fromIndex
+    value: registry-proxy.engineering.redhat.com/rh-osbs/iib-pub-pending:v4.13
+  - name: targetIndex
+    value: ""
+  - name: binaryImage
+    value: registry.redhat.io/openshift4/ose-operator-registry:v4.12
+  - name: requestUpdateTimeout
+    value: "1000"
+  - name: buildTimeoutSeconds
+    value: "1000"
+  - name: fbcPublishingCredentials
+    value: staged-index-fbc-publishing-credentials
+  pipeline: fbc-release
+  policy: rh-fbc-stage-index-policy
+  serviceAccount: release-service-account

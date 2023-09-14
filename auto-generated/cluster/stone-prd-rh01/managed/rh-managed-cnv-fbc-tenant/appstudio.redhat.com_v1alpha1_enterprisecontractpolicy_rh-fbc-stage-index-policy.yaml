@@ -1,0 +1,22 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: EnterpriseContractPolicy
+metadata:
+  name: rh-fbc-stage-index-policy
+  namespace: rh-managed-cnv-fbc-tenant
+spec:
+  configuration:
+    exclude:
+    - step_image_registries
+    include:
+    - '@slsa1'
+    - '@slsa2'
+    - '@slsa3'
+  description: Includes rules for levels 1, 2 & 3 of SLSA v0.1.
+  publicKey: k8s://openshift-pipelines/public-key
+  sources:
+  - data:
+    - github.com/enterprise-contract/ec-policies//data
+    name: Default
+    policy:
+    - github.com/enterprise-contract/ec-policies//policy/lib
+    - github.com/enterprise-contract/ec-policies//policy/release
