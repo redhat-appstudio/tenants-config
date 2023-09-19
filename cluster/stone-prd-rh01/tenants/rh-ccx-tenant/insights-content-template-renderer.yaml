@@ -1,0 +1,35 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false" # Change to "true" if you don't need the test to be mandatory
+  name: insights-content-template-renderer-tekton-insights 
+  namespace: rh-ccx-tenant
+spec:
+  application: insights-content-template-renderer
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/gbenhaim/tekton-insights.git # Temporary on gbenhaim's org. Also, you can fork it and reference yours here.
+    - name: revision
+      value: main # Or whatever branch you want to test
+    - name: pathInRepo
+      value: pipelines/basic.yaml # This is the path to the pipeline
+    resolver: git
+  params:
+    - name: APP_NAME
+      value: ccx-data-pipeline # Name of app-sre "application" folder this component lives in.
+    - name: COMPONENTS
+      value: insights-content-template-renderer # Space-separated list of components to load.
+    - name: COMPONENTS_W_RESOURCES
+      value: insights-content-template-renderer # List of components to keep.
+    - name: COMPONENT_NAME #IMPORTANT: Your component in RHTAP has to be named the same as this field.
+      value: insights-content-template-renderer # Name of app-sre "resourceTemplate" in deploy.yaml for this component. 
+    - name: IQE_PLUGINS
+      value: ccx # Name of the IQE plugin for this app.
+    - name: IQE_MARKER_EXPRESSION
+      value: # This is the value passed to pytest -m. Default is ""
+    - name: IQE_FILTER_EXPRESSION
+      value: test_plugin_accessible # This is the value passed to pytest -k. Default is "" when no filter desired
+    - name: IQE_CJI_TIMEOUT
+      value: 30m # Timeout value to pass to 'oc wait', should be slightly higher than expected test run time. Default is 30m
