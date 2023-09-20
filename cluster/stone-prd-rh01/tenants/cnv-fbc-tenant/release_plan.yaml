@@ -4,9 +4,49 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
     release.appstudio.openshift.io/standing-attribution: 'true'
-  name: cnv-fbc-stage-index-releaseplan
+  name: cnv-fbc-stage-index-releaseplan-v4-14
   namespace: cnv-fbc-tenant
 spec:
-  application: cnv-fbc
-  displayName: cnv-fbc staged index release plan
+  application: cnv-fbc-v4-14
+  displayName: cnv-fbc-v4-14 staged index release plan
   target: rh-managed-cnv-fbc-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+  name: cnv-fbc-stage-index-releaseplan-v4-13
+  namespace: cnv-fbc-tenant
+spec:
+  application: cnv-fbc-v4-13
+  displayName: cnv-fbc-v4-13 staged index release plan
+  target: rh-managed-cnv-fbc-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+  name: cnv-fbc-stage-index-releaseplan-v4-12
+  namespace: cnv-fbc-tenant
+spec:
+  application: cnv-fbc-v4-12
+  displayName: cnv-fbc-v4-12 staged index release plan
+  target: rh-managed-cnv-fbc-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+  name: cnv-fbc-stage-index-releaseplan-v4-11
+  namespace: cnv-fbc-tenant
+spec:
+  application: cnv-fbc-v4-11
+  displayName: cnv-fbc-v4-11 staged index release plan
+  target: rh-managed-cnv-fbc-tenant
+---

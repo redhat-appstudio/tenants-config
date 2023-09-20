@@ -4,9 +4,9 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: cnv-fbc-stage-index-releaseplan
+  name: cnv-fbc-stage-index-releaseplan-v4-14
   namespace: cnv-fbc-tenant
 spec:
-  application: cnv-fbc
-  displayName: cnv-fbc staged index release plan
+  application: cnv-fbc-v4-14
+  displayName: cnv-fbc-v4-14 staged index release plan
   target: rh-managed-cnv-fbc-tenant

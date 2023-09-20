@@ -1,0 +1,12 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: cnv-fbc-stage-index-releaseplan-v4-12
+  namespace: cnv-fbc-tenant
+spec:
+  application: cnv-fbc-v4-12
+  displayName: cnv-fbc-v4-12 staged index release plan
+  target: rh-managed-cnv-fbc-tenant
