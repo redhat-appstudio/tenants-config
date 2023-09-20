@@ -2,4 +2,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - release-service-account-build-rb.yaml
-namespace: rh-managed-cnv-fbc-tenant
+namespace: cnv-fbc-tenant
