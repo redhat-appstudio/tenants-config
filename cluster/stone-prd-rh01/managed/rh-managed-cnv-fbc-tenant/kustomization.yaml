@@ -5,4 +5,6 @@ resources:
   - persistent_volume_claim.yaml
   - release_plan_admission.yaml
   - release_strategy.yaml
+  - release-pipeline-sa.yaml
+  - release-service-account-build-rb.yaml
 namespace: rh-managed-cnv-fbc-tenant
