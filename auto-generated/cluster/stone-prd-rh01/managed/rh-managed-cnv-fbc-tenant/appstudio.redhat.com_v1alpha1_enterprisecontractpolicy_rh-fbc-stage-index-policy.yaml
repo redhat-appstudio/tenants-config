@@ -6,12 +6,12 @@ metadata:
 spec:
   configuration:
     exclude:
+    - cve
     - step_image_registries
+    - test
     include:
-    - '@slsa1'
-    - '@slsa2'
-    - '@slsa3'
-  description: Includes rules for levels 1, 2 & 3 of SLSA v0.1.
+    - '@redhat'
+  description: Includes rules for shipping Red Hat FBC fragments without tests
   publicKey: k8s://openshift-pipelines/public-key
   sources:
   - data:
