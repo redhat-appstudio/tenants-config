@@ -18,7 +18,6 @@ from yaml import safe_load_all
 
 TENANT_NAME: Final[str] = "tenant_name"
 ALL_RESOURCES: Final[str] = "all_resources"
-MANAGED_TENANT_TYPE_NAME: Final[str] = "managed"
 
 
 class ResourceViewer(Protocol):
@@ -117,8 +116,8 @@ def load_tenants() -> TenantsViewer:
     cluster_dirs: Path = project_dir / "auto-generated/cluster"
     tenants = Tenants()
     for cluster_dir in filter(Path.is_dir, cluster_dirs.iterdir()):
-        for tenant_type in filter(Path.is_dir, cluster_dir.iterdir()):
-            for tenant_dir in tenant_type.iterdir():
+        for subdir in filter(Path.is_dir, cluster_dir.iterdir()):
+            for tenant_dir in subdir.iterdir():
                 resources = list(tenant_dir.rglob("*"))
                 filtered_resources = list(filter(Path.is_file, resources))
                 loaded_resources = []
@@ -132,9 +131,8 @@ def load_tenants() -> TenantsViewer:
                                 )
                             )
 
-                tenant_full_name = tenant_type.name + "/" + tenant_dir.name
-                tenants.tenants[tenant_full_name] = TenantDir(
-                    name=tenant_full_name, resources=loaded_resources
+                tenants.tenants[tenant_dir.name] = TenantDir(
+                    name=tenant_dir.name, resources=loaded_resources
                 )
 
     return tenants
@@ -183,15 +181,10 @@ def test_tenant_name(tenant_name: str) -> None:
 def test_resource_namespace_matches_tenants_name(
     all_resources: tuple[str, ResourceViewer]
 ) -> None:
-    """Verify the non-managed tenants doesn't try to deploy to other namespaces"""
-    tenant_full_name, resource = all_resources
-    tenant_names = tenant_full_name.split("/")
-    tenant_type = tenant_names[0]
-    tenant_dir_name = tenant_names[1]
+    """Verify the tenants doesn't try to deploy to other namespaces"""
+    tenant_dir_name, resource = all_resources
     metadata = resource.data.get("metadata", {})
     namespace = metadata.get("namespace")
     if not namespace:
         pytest.fail("Namespace was not defined in the manifest")
-    # We only care about non-managed cases
-    if tenant_type != MANAGED_TENANT_TYPE_NAME:
-        assert tenant_dir_name == namespace
+    assert tenant_dir_name == namespace
