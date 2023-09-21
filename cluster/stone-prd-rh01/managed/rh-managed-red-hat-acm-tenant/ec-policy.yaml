@@ -5,11 +5,10 @@ metadata:
 spec:
   configuration:
     exclude:
+      - hermetic_build_task # Change policy definition once https://issues.redhat.com/browse/HACBS-2657 is implemented
       - step_image_registries
     include:
-      - '@slsa1'
-      - '@slsa2'
-      - '@slsa3'
+      - '@redhat'
   description: 'Includes rules for levels 1, 2 & 3 of SLSA v0.1.'
   publicKey: 'k8s://openshift-pipelines/public-key'
   sources:
