@@ -5,12 +5,11 @@ metadata:
 spec:
   configuration:
     exclude:
+      - cve # The release process separates the catalog from the binaries, so CVEs are the responsibility of the OLM team
       - step_image_registries
     include:
-      - '@slsa1'
-      - '@slsa2'
-      - '@slsa3'
-  description: 'Includes rules for levels 1, 2 & 3 of SLSA v0.1.'
+      - '@redhat'
+  description: 'Includes rules for shipping Red Hat FBC fragments'
   publicKey: 'k8s://openshift-pipelines/public-key'
   sources:
     - data:
@@ -27,12 +26,12 @@ metadata:
 spec:
   configuration:
     exclude:
+      - cve # The release process separates the catalog from the binaries, so CVEs are the responsibility of the OLM team
       - step_image_registries
+      - test # some tests may fail when pushing to stage, scope to just fbc-related-image-check after https://issues.redhat.com/browse/HACBS-2656
     include:
-      - '@slsa1'
-      - '@slsa2'
-      - '@slsa3'
-  description: 'Includes rules for levels 1, 2 & 3 of SLSA v0.1.'
+      - '@redhat'
+  description: 'Includes rules for shipping Red Hat FBC fragments without tests'
   publicKey: 'k8s://openshift-pipelines/public-key'
   sources:
     - data:
