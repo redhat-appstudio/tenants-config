@@ -2,7 +2,7 @@
 
 main() {
     local dirs
-    dirs=($(find . -name kustomization.y?ml -printf "%h\n"))
+    dirs=($(find . -name kustomization.y?ml | xargs dirname))
     local out=auto-generated
     local ret=0
     rm -rf "$out"
