@@ -8,7 +8,7 @@ spec:
     exclude:
     - cve
     - step_image_registries
-    - tasks.pipeline_has_tasks:prefetch-dependencies
+    - tasks.required_tasks_found:prefetch-dependencies
     include:
     - '@redhat'
   description: Includes rules for shipping Red Hat FBC fragments
