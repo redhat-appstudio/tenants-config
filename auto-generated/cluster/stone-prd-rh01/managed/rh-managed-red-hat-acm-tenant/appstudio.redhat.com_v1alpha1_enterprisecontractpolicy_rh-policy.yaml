@@ -8,6 +8,7 @@ spec:
     exclude:
     - hermetic_build_task
     - step_image_registries
+    - tasks.pipeline_has_tasks:prefetch-dependencies
     include:
     - '@redhat'
   description: Includes rules for levels 1, 2 & 3 of SLSA v0.1.

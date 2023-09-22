@@ -7,6 +7,7 @@ spec:
     exclude:
       - hermetic_build_task # Change policy definition once https://issues.redhat.com/browse/HACBS-2657 is implemented
       - step_image_registries
+      - tasks.pipeline_has_tasks:prefetch-dependencies # prefetch is not required 
     include:
       - '@redhat'
   description: 'Includes rules for levels 1, 2 & 3 of SLSA v0.1.'
