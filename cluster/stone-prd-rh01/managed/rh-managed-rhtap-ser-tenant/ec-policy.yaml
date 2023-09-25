@@ -1,0 +1,21 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: EnterpriseContractPolicy
+metadata:
+  name: rh-policy
+spec:
+  configuration:
+    exclude:
+      - hermetic_build_task # Change policy definition once https://issues.redhat.com/browse/HACBS-2657 is implemented
+      - step_image_registries
+      - tasks.required_tasks_found:prefetch-dependencies # prefetch is not required
+    include:
+      - '@redhat'
+  description: 'Includes rules for levels 1, 2 & 3 of SLSA v0.1.'
+  publicKey: 'k8s://openshift-pipelines/public-key'
+  sources:
+    - data:
+        - github.com/enterprise-contract/ec-policies//data
+      name: Default
+      policy:
+        - github.com/enterprise-contract/ec-policies//policy/lib
+        - github.com/enterprise-contract/ec-policies//policy/release

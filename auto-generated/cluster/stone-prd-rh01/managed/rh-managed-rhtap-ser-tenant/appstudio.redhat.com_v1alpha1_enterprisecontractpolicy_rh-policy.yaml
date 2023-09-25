@@ -1,0 +1,22 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: EnterpriseContractPolicy
+metadata:
+  name: rh-policy
+  namespace: rh-managed-rhtap-ser-tenant
+spec:
+  configuration:
+    exclude:
+    - hermetic_build_task
+    - step_image_registries
+    - tasks.required_tasks_found:prefetch-dependencies
+    include:
+    - '@redhat'
+  description: Includes rules for levels 1, 2 & 3 of SLSA v0.1.
+  publicKey: k8s://openshift-pipelines/public-key
+  sources:
+  - data:
+    - github.com/enterprise-contract/ec-policies//data
+    name: Default
+    policy:
+    - github.com/enterprise-contract/ec-policies//policy/lib
+    - github.com/enterprise-contract/ec-policies//policy/release

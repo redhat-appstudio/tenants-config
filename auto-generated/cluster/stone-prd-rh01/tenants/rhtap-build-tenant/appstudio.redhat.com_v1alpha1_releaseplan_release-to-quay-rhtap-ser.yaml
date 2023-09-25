@@ -1,0 +1,12 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: release-to-quay-rhtap-ser
+  namespace: rhtap-build-tenant
+spec:
+  application: build
+  displayName: build release-to-quay
+  target: rh-managed-rhtap-ser-tenant
