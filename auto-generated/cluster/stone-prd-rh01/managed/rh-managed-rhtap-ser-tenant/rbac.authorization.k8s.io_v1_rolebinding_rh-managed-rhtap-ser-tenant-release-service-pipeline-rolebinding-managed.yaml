@@ -1,13 +1,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: rhtap-gitops-tenant-release-service-pipeline-rolebinding-managed
+  name: rh-managed-rhtap-ser-tenant-release-service-pipeline-rolebinding-managed
   namespace: rh-managed-rhtap-ser-tenant
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: release-pipeline-resource-role
 subjects:
-  - kind: ServiceAccount
-    name: rhtap-servicerelease-sa
-    namespace: rh-managed-rhtap-ser-tenant
+- kind: ServiceAccount
+  name: rhtap-servicerelease-sa
+  namespace: rh-managed-rhtap-ser-tenant
