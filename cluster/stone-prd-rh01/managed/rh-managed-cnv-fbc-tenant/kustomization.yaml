@@ -7,4 +7,5 @@ resources:
   - release_strategy.yaml
   - release-pipeline-sa.yaml
   - release-service-account-build-rb.yaml
+  - fbc-publishing-credentials-remote-secret.yaml
 namespace: rh-managed-cnv-fbc-tenant
