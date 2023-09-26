@@ -4,4 +4,5 @@ resources:
   - remote_secret-infra-deployments-pr-creator.yaml
   - remote_secret-slack-webhook-notification.yaml
   - remote_secret-pyxis-secret.yaml
+  - remote_secret-quay-token.yaml
 namespace: rh-managed-rhtap-ser-tenant
