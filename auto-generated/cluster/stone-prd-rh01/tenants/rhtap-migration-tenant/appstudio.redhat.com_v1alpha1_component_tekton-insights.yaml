@@ -1,0 +1,14 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+  name: tekton-insights
+  namespace: rhtap-migration-tenant
+spec:
+  application: tekton-insights
+  componentName: tekton-insights
+  source:
+    git:
+      revision: main
+      url: https://github.com/gbenhaim/tekton-insights.git

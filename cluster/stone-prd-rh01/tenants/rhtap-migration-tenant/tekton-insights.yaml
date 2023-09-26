@@ -1,0 +1,21 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: tekton-insights
+spec:
+  displayName: tekton-insights
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: tekton-insights
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+spec:
+  application: tekton-insights
+  componentName: tekton-insights
+  source:
+    git:
+      revision: main
+      url: https://github.com/gbenhaim/tekton-insights.git

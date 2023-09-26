@@ -1,0 +1,7 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: tekton-insights
+  namespace: rhtap-migration-tenant
+spec:
+  displayName: tekton-insights
