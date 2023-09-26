@@ -1,0 +1,19 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: segment-bridge-enterprise-contract
+  namespace: rhtap-o11y-tenant
+spec:
+  application: segment-bridge
+  contexts:
+    - description: Application testing
+      name: application
+  resolverRef:
+    params:
+      - name: url
+        value: 'https://github.com/redhat-appstudio/build-definitions'
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: pipelines/enterprise-contract-redhat.yaml
+    resolver: git
