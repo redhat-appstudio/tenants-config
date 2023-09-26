@@ -1,9 +1,9 @@
 resources:
 - release_plan_admission-build.yaml
 - release_plan_admission-external-secrets.yaml
+- release_plan_admission-release-service.yaml
 - release_plan_admission-segment-bridge.yaml
-- release-service-account-build-rb.yaml
-- release-service-account-external-secrets-rb.yaml
+- release-service-account-rb.yaml
 - ec-policy.yaml
 - release-strategy.yaml
 - persistent-volume-claim.yaml

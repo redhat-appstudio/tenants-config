@@ -1,0 +1,18 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+  name: rhtap-release-service-rpa
+  namespace: rh-managed-rhtap-ser-tenant
+spec:
+  application: release-service
+  displayName: ""
+  extraData:
+    infra-deployment-update-script: |
+      sed -i -e 's|\(https://github.com/redhat-appstudio/release-service/config/default?ref=\)\(.*\)|\1{{ revision }}|'\
+      -e 's/\(newTag: \).*/\1{{ revision }}/' components/release/kustomization.yaml
+      sed -i -e 's|\(https://github.com/redhat-appstudio/release-service/config/grafana/?ref=\)\(.*\)|\1{{ revision }}|'\
+      -e 's//\1{{ revision }}/' components/monitoring/grafana/base/dashboards/release/kustomization.yaml
+  origin: rhtap-release-2-tenant
+  releaseStrategy: rhtap-service-push-strategy
