@@ -19,7 +19,14 @@ spec:
       value: latest
     - name: addGitShaTag
       value: "true"
-  pipeline: push-to-external-registry
-  bundle: quay.io/hacbs-release/pipeline-push-to-external-registry:main
+  pipelineRef:
+    resolver: bundles
+    params:
+    - name: name
+      value: push-to-external-registry
+    - name: bundle
+      value: quay.io/hacbs-release/pipeline-push-to-external-registry:main
+    - name: kind
+      value: pipeline
   policy: rh-policy
   serviceAccount: release-service-account

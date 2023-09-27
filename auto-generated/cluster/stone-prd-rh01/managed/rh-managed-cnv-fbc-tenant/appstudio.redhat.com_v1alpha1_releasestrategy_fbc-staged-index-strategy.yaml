@@ -4,7 +4,6 @@ metadata:
   name: fbc-staged-index-strategy
   namespace: rh-managed-cnv-fbc-tenant
 spec:
-  bundle: quay.io/hacbs-release/pipeline-fbc-release:main
   params:
   - name: fromIndex
     value: registry-proxy.engineering.redhat.com/rh-osbs/iib-pub-pending:v4.13
@@ -18,6 +17,14 @@ spec:
     value: "1000"
   - name: fbcPublishingCredentials
     value: staged-index-fbc-publishing-credentials
-  pipeline: fbc-release
+  pipelineRef:
+    params:
+    - name: name
+      value: fbc-release
+    - name: bundle
+      value: quay.io/hacbs-release/pipeline-fbc-release:main
+    - name: kind
+      value: pipeline
+    resolver: bundles
   policy: rh-fbc-stage-index-policy
   serviceAccount: release-service-account
