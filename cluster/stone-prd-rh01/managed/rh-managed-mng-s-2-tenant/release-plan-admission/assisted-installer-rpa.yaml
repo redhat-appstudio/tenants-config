@@ -1,0 +1,45 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: assisted-installer-tenant
+spec:
+  application: assisted-events-scrape
+  origin: assisted-installer-tenant
+  releaseStrategy: push-to-external-registry-strategy
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: assisted-events-stream
+spec:
+  application: assisted-events-scrape
+  origin: assisted-events-stream
+  releaseStrategy: push-to-external-registry-strategy
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: assisted-image-service
+spec:
+  application: assisted-image-service
+  origin: assisted-installer-tenant
+  releaseStrategy: push-to-external-registry-strategy
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: assisted-service
+spec:
+  application: assisted-service
+  origin: assisted-installer-tenant
+  releaseStrategy: push-to-external-registry-strategy
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: prow-jobs-scraper
+spec:
+  application: prow-jobs-scraper
+  origin: assisted-installer-tenant
+  releaseStrategy: push-to-external-registry-strategy
