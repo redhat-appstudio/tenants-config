@@ -10,5 +10,7 @@ spec:
   componentName: tekton-insights
   source:
     git:
+      context: ./
+      dockerfileUrl: Dockerfile
       revision: main
       url: https://github.com/gbenhaim/tekton-insights.git
