@@ -6,6 +6,8 @@ spec:
   configuration:
     exclude:
       - hermetic_build_task # Change policy definition once https://issues.redhat.com/browse/HACBS-2657 is implemented
+        # Exclude step_image_registries for now since it can cause false
+        # positives due to https://issues.redhat.com/browse/OCPBUGS-8428
       - step_image_registries
       - tasks.required_tasks_found:prefetch-dependencies # prefetch is not required
     include:
