@@ -19,3 +19,5 @@ spec:
     git:
       revision: main
       url: https://github.com/gbenhaim/tekton-insights.git
+      dockerfileUrl: Dockerfile
+      context: ./
