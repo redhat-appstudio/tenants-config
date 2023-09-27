@@ -18,6 +18,7 @@ from yaml import safe_load_all
 
 TENANT_NAME: Final[str] = "tenant_name"
 ALL_RESOURCES: Final[str] = "all_resources"
+TENANT_DIR: Final[str] = "tenant_dir"
 
 
 class ResourceViewer(Protocol):
@@ -48,6 +49,20 @@ class ResourceWithContext(NamedTuple):
     resource: ResourceViewer
 
 
+@dataclass(frozen=True)
+class TenantDir:
+    """Represents a single tenant directory and its resources
+
+    name: The name of the tenant (and its directory)
+    resources: All the resources belong to the tenant
+    subdirs: All the subdirs in the tenants root dir
+    """
+
+    name: str
+    resources: Sequence[ResourceViewer]
+    subdirs: Sequence[Path]
+
+
 class TenantsViewer(Protocol):
     """Protocol for accessing Tenants data"""
 
@@ -60,6 +75,11 @@ class TenantsViewer(Protocol):
     @abstractmethod
     def resources_and_dirs(self) -> Iterable[ResourceWithContext]:
         """Returns all the resources with their context"""
+
+    @property
+    @abstractmethod
+    def tenants_dirs(self) -> Iterable[TenantDir]:
+        """Returns all the tenants directories""" ""
 
 
 @dataclass(frozen=True)
@@ -76,18 +96,6 @@ class Resource(ResourceViewer):
     @property
     def path(self) -> Path:
         return self._path
-
-
-@dataclass(frozen=True)
-class TenantDir:
-    """Represents a single tenant directory and its resources
-
-    name: The name of the tenant (and its directory)
-    resources: All the resources belong to the tenant
-    """
-
-    name: str
-    resources: Sequence[ResourceViewer]
 
 
 @dataclass(frozen=True)
@@ -108,6 +116,10 @@ class Tenants(TenantsViewer):
                 ret.append(ResourceWithContext(tenant_dir.name, res))
         return ret
 
+    @property
+    def tenants_dirs(self) -> Iterable[TenantDir]:
+        return self.tenants.values()
+
 
 def load_tenants() -> TenantsViewer:
     """Loads all the tenants data from disk"""
@@ -118,10 +130,11 @@ def load_tenants() -> TenantsViewer:
     for cluster_dir in filter(Path.is_dir, cluster_dirs.iterdir()):
         for subdir in filter(Path.is_dir, cluster_dir.iterdir()):
             for tenant_dir in subdir.iterdir():
-                resources = list(tenant_dir.rglob("*"))
-                filtered_resources = list(filter(Path.is_file, resources))
+                all_files = list(tenant_dir.rglob("*"))
+                files = list(filter(Path.is_file, all_files))
+                subdirs = list(filter(Path.is_dir, all_files))
                 loaded_resources = []
-                for res_file in filtered_resources:
+                for res_file in files:
                     with res_file.open() as fil:
                         for data in safe_load_all(fil):
                             loaded_resources.append(
@@ -132,7 +145,7 @@ def load_tenants() -> TenantsViewer:
                             )
 
                 tenants.tenants[tenant_dir.name] = TenantDir(
-                    name=tenant_dir.name, resources=loaded_resources
+                    name=tenant_dir.name, resources=loaded_resources, subdirs=subdirs
                 )
 
     return tenants
@@ -149,8 +162,21 @@ def pytest_generate_tests(metafunc: Metafunc) -> None:
     if ALL_RESOURCES in metafunc.fixturenames:
         parametrize_resources(metafunc)
         return None
+    if TENANT_DIR in metafunc.fixturenames:
+        parametrize_tenants_dirs(metafunc)
+        return None
 
     return None
+
+
+def parametrize_tenants_dirs(metafunc: Metafunc) -> None:
+    """Generate parameters for each tenant directory"""
+    metafunc.parametrize(
+        TENANT_DIR,
+        TENANTS.tenants_dirs,
+        ids=[t.name for t in TENANTS.tenants_dirs],
+        scope="module",
+    )
 
 
 def parametrize_overlay(metafunc: Metafunc) -> None:
@@ -188,3 +214,10 @@ def test_resource_namespace_matches_tenants_name(
     if not namespace:
         pytest.fail("Namespace was not defined in the manifest")
     assert tenant_dir_name == namespace
+
+
+def test_tenants_directory_does_not_have_nested_directories(
+    tenant_dir: TenantDir,
+) -> None:
+    """Verify that tenants directories doesn't have nested directories"""
+    assert not tenant_dir.subdirs, "Found nested directories"

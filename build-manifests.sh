@@ -2,7 +2,7 @@
 
 main() {
     local dirs
-    dirs=($(find . \( -name 'kustomization.yaml' -o -name 'kustomization.yml' \) | xargs dirname))
+    dirs=($(find cluster -maxdepth 4 \( -name 'kustomization.yaml' -o -name 'kustomization.yml' \) | xargs dirname))
     local out=auto-generated
     local ret=0
     rm -rf "$out"
