@@ -6,12 +6,11 @@ metadata:
 spec:
   configuration:
     exclude:
-    - hermetic_build_task
     - step_image_registries
-    - tasks.required_tasks_found:prefetch-dependencies
-    - test.required_tests_passed:sast-snyk-check
     include:
-    - '@redhat'
+    - '@slsa1'
+    - '@slsa2'
+    - '@slsa3'
   description: Includes rules for levels 1, 2 & 3 of SLSA v0.1.
   publicKey: k8s://openshift-pipelines/public-key
   sources:

@@ -5,12 +5,11 @@ metadata:
 spec:
   configuration:
     exclude:
-      - hermetic_build_task # Change policy definition once https://issues.redhat.com/browse/HACBS-2657 is implemented
       - step_image_registries
-      - tasks.required_tasks_found:prefetch-dependencies # prefetch is not required
-      - test.required_tests_passed:sast-snyk-check # requirement is for snyk to run, not to pass
     include:
-      - '@redhat'
+      - '@slsa1'
+      - '@slsa2'
+      - '@slsa3'
   description: 'Includes rules for levels 1, 2 & 3 of SLSA v0.1.'
   publicKey: 'k8s://openshift-pipelines/public-key'
   sources:
