@@ -4,7 +4,6 @@ metadata:
   name: push-to-external-registry-strategy
   namespace: rh-managed-mng-s-2-tenant
 spec:
-  bundle: quay.io/hacbs-release/pipeline-push-to-external-registry:main
   params:
   - name: extraConfigGitUrl
     value: https://github.com/hacbs-release/strategy-configs.git
@@ -20,6 +19,14 @@ spec:
     value: latest
   - name: addGitShaTag
     value: "true"
-  pipeline: push-to-external-registry
+  pipelineRef:
+    params:
+    - name: name
+      value: push-to-external-registry
+    - name: bundle
+      value: quay.io/hacbs-release/pipeline-push-to-external-registry:main
+    - name: kind
+      value: pipeline
+    resolver: bundles
   policy: rh-policy
   serviceAccount: release-service-account
