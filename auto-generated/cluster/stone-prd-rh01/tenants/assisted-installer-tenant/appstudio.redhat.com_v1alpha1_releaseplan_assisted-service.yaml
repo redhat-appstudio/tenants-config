@@ -1,0 +1,12 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: assisted-service
+  namespace: assisted-installer-tenant
+spec:
+  application: assisted-service
+  displayName: assisted-service
+  target: rh-managed-mng-s-2-tenant
