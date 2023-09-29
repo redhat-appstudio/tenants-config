@@ -1,0 +1,9 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: assisted-service
+  namespace: rh-managed-mng-s-2-tenant
+spec:
+  application: assisted-service
+  origin: assisted-installer-tenant
+  releaseStrategy: push-to-external-registry-strategy

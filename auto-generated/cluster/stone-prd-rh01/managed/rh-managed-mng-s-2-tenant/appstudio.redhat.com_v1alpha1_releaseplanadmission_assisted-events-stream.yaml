@@ -1,0 +1,9 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: assisted-events-stream
+  namespace: rh-managed-mng-s-2-tenant
+spec:
+  application: assisted-events-scrape
+  origin: assisted-events-stream
+  releaseStrategy: push-to-external-registry-strategy
