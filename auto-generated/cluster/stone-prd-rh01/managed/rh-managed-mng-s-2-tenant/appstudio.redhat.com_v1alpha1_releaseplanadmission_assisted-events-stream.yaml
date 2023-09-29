@@ -4,6 +4,6 @@ metadata:
   name: assisted-events-stream
   namespace: rh-managed-mng-s-2-tenant
 spec:
-  application: assisted-events-scrape
-  origin: assisted-events-stream
+  application: assisted-events-stream
+  origin: assisted-installer-tenant
   releaseStrategy: push-to-external-registry-strategy
