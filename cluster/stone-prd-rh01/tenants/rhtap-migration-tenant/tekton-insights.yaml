@@ -12,7 +12,7 @@ metadata:
   name: tekton-insights
   annotations:
     build.appstudio.openshift.io/request: configure-pac
-    image.redhat.com/generate: "{}"
+    image.redhat.com/generate: '{"visibility": "public"}'
 spec:
   application: tekton-insights
   componentName: tekton-insights
