@@ -3,6 +3,7 @@ kind: Component
 metadata:
   annotations:
     build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{}'
   name: tekton-insights
   namespace: rhtap-migration-tenant
 spec:
