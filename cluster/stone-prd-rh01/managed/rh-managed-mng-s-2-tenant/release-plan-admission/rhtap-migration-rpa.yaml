@@ -1,0 +1,9 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: bonfire-cicd-tools
+spec:
+  application: bonfire-cicd-tools
+  origin: rhtap-migration-tenant
+  releaseStrategy: push-to-external-registry-strategy
