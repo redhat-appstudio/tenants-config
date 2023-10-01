@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - ../../../../lib/consoledot-test-pipeline
   - tekton-insights.yaml
+  - release-plan.yaml
 namespace: rhtap-migration-tenant
