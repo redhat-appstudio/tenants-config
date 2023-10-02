@@ -1,14 +1,3 @@
----
-apiVersion: appstudio.redhat.com/v1alpha1
-kind: ReleasePlanAdmission
-metadata:
-  name: mce-23-rpa
-  namespace: rh-managed-red-hat-acm-tenant
-spec:
-  application: mce-23
-  origin: crt-redhat-acm-tenant
-  releaseStrategy: push-to-external-registry-strategy
----
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlanAdmission
 metadata:
@@ -16,5 +5,15 @@ metadata:
   namespace: rh-managed-red-hat-acm-tenant
 spec:
   application: hypershift-operator
+  extraData:
+    fileUpdates:
+      - paths:
+          - path: data/services/ocm/osd-fleet-manager/cicd/deploy.yaml
+            replacements:
+              - key: "(.resourceTemplates[] | select(.name==\"osd-fleet-manager-integration\") | .parameters.HYPERSHIFT_OPERATOR_OVERRIDING_DATA)"
+                replacement: "|hypershift-operator:.*|hypershift-operator: {{ .components[] | select(.name==\"hypershift-operator-main\") | [.repository, .containerImage |split(\"@\").[1] ] |join(\"@\")}}|"
+        ref: master
+        upstream_repo: https://gitlab.cee.redhat.com/service/app-interface.git
+        repo: https://gitlab.cee.redhat.com/rhtap-release/app-interface.git
   origin: crt-redhat-acm-tenant
   releaseStrategy: push-to-external-registry-strategy
