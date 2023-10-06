@@ -3,8 +3,6 @@ resources:
 - sa-release-pipeline.yaml
 - sa-releng-gitops-repo-ro.yaml
 - sa-releng-gitops-repo-rw.yaml
-- role-releng-gitops-repo-ro.yaml
-- role-releng-gitops-repo-rw.yaml
 - rb-release-pipeline.yaml
 - rb-releng-gitops-repo-ro.yaml
 - rb-releng-gitops-repo-rw.yaml
