@@ -1,0 +1,15 @@
+resources:
+- persistent-volume-claim.yaml
+- sa-release-pipeline.yaml
+- sa-releng-gitops-repo-ro.yaml
+- sa-releng-gitops-repo-rw.yaml
+- role-releng-gitops-repo-ro.yaml
+- role-releng-gitops-repo-rw.yaml
+- rb-release-pipeline.yaml
+- rb-releng-gitops-repo-ro.yaml
+- rb-releng-gitops-repo-rw.yaml
+- remote-secrets
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: rhtap-releng-tenant
