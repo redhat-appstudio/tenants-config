@@ -1,12 +1,16 @@
 resources:
-- persistent-volume-claim.yaml
-- sa-release-pipeline.yaml
-- sa-releng-gitops-repo-ro.yaml
-- sa-releng-gitops-repo-rw.yaml
-- rb-release-pipeline.yaml
-- rb-releng-gitops-repo-ro.yaml
-- rb-releng-gitops-repo-rw.yaml
-- remote-secrets
+  - persistent-volume-claim.yaml
+  - rb-release-registry-dev.yaml
+  - rb-release-registry-prod.yaml
+  - rb-release-registry-staging.yaml
+  - rb-releng-gitops-repo-ro.yaml
+  - rb-releng-gitops-repo-rw.yaml
+  - sa-release-registry-dev.yaml
+  - sa-release-registry-prod.yaml
+  - sa-release-registry-staging.yaml
+  - sa-releng-gitops-repo-ro.yaml
+  - sa-releng-gitops-repo-rw.yaml
+  - remote-secrets
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
