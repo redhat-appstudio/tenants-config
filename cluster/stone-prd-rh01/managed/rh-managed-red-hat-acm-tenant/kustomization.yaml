@@ -7,4 +7,5 @@ resources:
   - release_strategy.yaml
   - release-pipeline-sa.yaml
   - release-service-account-build-rb.yaml
+  - remote-secrets
 namespace: rh-managed-red-hat-acm-tenant
