@@ -15,7 +15,8 @@ spec:
   publicKey: k8s://openshift-pipelines/public-key
   sources:
   - data:
-    - github.com/enterprise-contract/ec-policies//data
+    - github.com/release-engineering/rhtap-ec-policy//data
+    - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
     name: Default
     policy:
     - github.com/enterprise-contract/ec-policies//policy/lib

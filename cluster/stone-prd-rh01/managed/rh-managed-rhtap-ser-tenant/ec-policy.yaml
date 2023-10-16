@@ -17,7 +17,7 @@ spec:
   sources:
     - name: Release Policies
       data:
-        - github.com/release-engineering/rhtap-ec-policy//data?ref=be7e1ef73bdeef2752dde400a52f9eab9b7542ca
+        - github.com/release-engineering/rhtap-ec-policy//data
         - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
       policy:
         - oci::quay.io/enterprise-contract/ec-release-policy:git-1f33b3b@sha256:e9a2feafa17a2b189b20376e29d787a2f7816885491bd19ea37d4e95876ed380
