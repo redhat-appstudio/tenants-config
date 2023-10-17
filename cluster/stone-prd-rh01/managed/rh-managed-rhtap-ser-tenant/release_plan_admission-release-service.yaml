@@ -14,7 +14,7 @@ spec:
       addGitShaTag: true
       defaultTag: latest
     infra-deployment-update-script: |
-      sed -i -e 's|\(https://github.com/redhat-appstudio/release-service/config/default?ref=\)\(.*\)|\1{{ revision }}|' -e 's/\(newTag: \).*/\1{{ revision }}/' components/release/kustomization.yaml
+      sed -i -e 's|\(https://github.com/redhat-appstudio/release-service/config/default?ref=\)\(.*\)|\1{{ revision }}|' -e 's/\(newTag: \).*/\1{{ revision }}/' components/release/development/kustomization.yaml
       sed -i -e 's|\(https://github.com/redhat-appstudio/release-service/config/grafana/?ref=\)\(.*\)|\1{{ revision }}|' -e 's//\1{{ revision }}/' components/monitoring/grafana/base/dashboards/release/kustomization.yaml
     mapping:
       components:
