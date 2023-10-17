@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - assisted-installer-rpa.yaml
   - rhtap-migration-rpa.yaml
+  - trusted-content-trustification-rpa.yaml
