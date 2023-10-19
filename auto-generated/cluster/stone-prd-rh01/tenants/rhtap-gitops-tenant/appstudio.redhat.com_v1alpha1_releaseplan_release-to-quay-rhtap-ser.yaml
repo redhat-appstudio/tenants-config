@@ -8,5 +8,4 @@ metadata:
   namespace: rhtap-gitops-tenant
 spec:
   application: external-secrets
-  displayName: external-secrets release-to-quay
   target: rh-managed-rhtap-ser-tenant

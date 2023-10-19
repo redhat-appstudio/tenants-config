@@ -1,9 +1,0 @@
-apiVersion: appstudio.redhat.com/v1alpha1
-kind: ReleasePlanAdmission
-metadata:
-  name: fbc-staged-index-release-v4-13
-  namespace: rh-managed-cnv-fbc-tenant
-spec:
-  application: cnv-fbc-v4-13
-  origin: cnv-fbc-tenant
-  releaseStrategy: fbc-staged-index-strategy

@@ -6,7 +6,6 @@ resources:
 - release_plan_admission-segment-bridge.yaml
 - release-service-account-rb.yaml
 - ec-policy.yaml
-- release-strategy.yaml
 - persistent-volume-claim.yaml
 - release-pipeline-sa.yaml
 - remote-secrets

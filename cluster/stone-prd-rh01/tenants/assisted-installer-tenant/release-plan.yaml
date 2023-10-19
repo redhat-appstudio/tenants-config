@@ -8,7 +8,6 @@ metadata:
   name: assisted-events-scrape
 spec:
   application: assisted-events-scrape
-  displayName: assisted-events-scrape
   target: rh-managed-mng-s-2-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
@@ -20,7 +19,6 @@ metadata:
   name: assisted-events-stream
 spec:
   application: assisted-events-stream
-  displayName: assisted-events-stream
   target: rh-managed-mng-s-2-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
@@ -32,7 +30,6 @@ metadata:
   name: assisted-image-service
 spec:
   application: assisted-image-service
-  displayName: assisted-image-service
   target: rh-managed-mng-s-2-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
@@ -44,7 +41,6 @@ metadata:
   name: assisted-service
 spec:
   application: assisted-service
-  displayName: assisted-service
   target: rh-managed-mng-s-2-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
@@ -56,5 +52,4 @@ metadata:
   name: prow-jobs-scraper
 spec:
   application: prow-jobs-scraper
-  displayName: prow-jobs-scraper
   target: rh-managed-mng-s-2-tenant

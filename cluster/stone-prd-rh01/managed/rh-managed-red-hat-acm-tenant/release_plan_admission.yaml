@@ -1,11 +1,13 @@
+---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlanAdmission
 metadata:
   name: hypershift-operator-rpa
   namespace: rh-managed-red-hat-acm-tenant
 spec:
-  application: hypershift-operator
-  extraData:
+  applications:
+    - hypershift-operator
+  data:
     fileUpdates:
       - paths:
           - path: data/services/ocm/osd-fleet-manager/cicd/deploy.yaml
@@ -15,5 +17,25 @@ spec:
         ref: master
         upstream_repo: https://gitlab.cee.redhat.com/service/app-interface.git
         repo: https://gitlab.cee.redhat.com/rhtap-release/app-interface.git
+    images:
+      addGitShaTag: true
+      defaultTag: latest
+    mapping:
+      components:
+        - name: hypershift-operator-main
+          repository: "quay.io/acm-d/rhtap-hypershift-operator"
+    pyxis:
+      secret: pyxis-staging-secret
+      server: stage
   origin: crt-redhat-acm-tenant
-  releaseStrategy: push-to-external-registry-strategy
+  pipelineRef:
+    resolver: git
+    params:
+      - name: url
+        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: "pipelines/push-to-external-registry/push-to-external-registry.yaml"
+  policy: rh-policy
+  serviceAccount: release-service-account

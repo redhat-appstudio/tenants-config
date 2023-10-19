@@ -8,5 +8,4 @@ metadata:
   namespace: rhtap-build-tenant
 spec:
   application: build
-  displayName: build release-to-quay
   target: rh-managed-rhtap-ser-tenant

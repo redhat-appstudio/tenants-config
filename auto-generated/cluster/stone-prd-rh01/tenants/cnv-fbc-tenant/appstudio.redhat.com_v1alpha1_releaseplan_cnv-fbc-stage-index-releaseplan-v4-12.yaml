@@ -8,5 +8,4 @@ metadata:
   namespace: cnv-fbc-tenant
 spec:
   application: cnv-fbc-v4-12
-  displayName: cnv-fbc-v4-12 staged index release plan
   target: rh-managed-cnv-fbc-tenant
