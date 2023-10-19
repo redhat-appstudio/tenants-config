@@ -1,0 +1,12 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+  name: rhtap-internal-services-rpa
+  namespace: rh-managed-rhtap-ser-tenant
+spec:
+  application: internal-services
+  displayName: ""
+  origin: rhtap-release-2-tenant
+  releaseStrategy: rhtap-service-push-strategy
