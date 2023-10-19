@@ -1,6 +1,7 @@
 resources:
 - release_plan_admission-build.yaml
 - release_plan_admission-external-secrets.yaml
+- release_plan_admission-internal-services.yaml
 - release_plan_admission-release-service.yaml
 - release_plan_admission-segment-bridge.yaml
 - release-service-account-rb.yaml
