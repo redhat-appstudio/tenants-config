@@ -8,5 +8,4 @@ metadata:
   namespace: assisted-installer-tenant
 spec:
   application: assisted-events-scrape
-  displayName: assisted-events-scrape
   target: rh-managed-mng-s-2-tenant

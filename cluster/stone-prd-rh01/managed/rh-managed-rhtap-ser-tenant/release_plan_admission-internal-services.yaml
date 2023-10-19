@@ -1,3 +1,4 @@
+---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlanAdmission
 metadata:
@@ -6,7 +7,28 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
 spec:
-  application: internal-services
-  displayName: ''
+  applications:
+    - internal-services
+  data:
+    images:
+      addGitShaTag: true
+      defaultTag: latest
+    mapping:
+      components:
+        - name: internal-services
+          repository: "quay.io/redhat-appstudio/internal-services"
+    pyxis:
+      secret: pyxis-staging-secret
+      server: stage
   origin: rhtap-release-2-tenant
-  releaseStrategy: rhtap-service-push-strategy
+  pipelineRef:
+    resolver: git
+    params:
+      - name: url
+        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: "pipelines/rhtap-service-push/rhtap-service-push.yaml"
+  policy: rh-policy
+  serviceAccount: rhtap-servicerelease-sa

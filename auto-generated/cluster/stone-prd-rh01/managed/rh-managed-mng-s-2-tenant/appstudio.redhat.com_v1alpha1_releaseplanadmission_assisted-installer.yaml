@@ -1,11 +1,15 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlanAdmission
 metadata:
-  name: bonfire-cicd-tools
+  name: assisted-installer
   namespace: rh-managed-mng-s-2-tenant
 spec:
   applications:
-  - bonfire-cicd-tools
+  - assisted-events-scrape
+  - assisted-events-stream
+  - assisted-image-service
+  - assisted-service
+  - prow-jobs-scraper
   data:
     images:
       addGitShaTag: true
@@ -27,7 +31,7 @@ spec:
     pyxis:
       secret: pyxis-staging-secret
       server: stage
-  origin: rhtap-migration-tenant
+  origin: assisted-installer-tenant
   pipelineRef:
     params:
     - name: url

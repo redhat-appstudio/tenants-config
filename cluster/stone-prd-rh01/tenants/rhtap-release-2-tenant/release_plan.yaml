@@ -8,7 +8,6 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: release-service
-  displayName: release-service release-to-quay
   target: rh-managed-rhtap-ser-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
@@ -21,5 +20,4 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: internal-services
-  displayName: internal-services release-to-quay
   target: rh-managed-rhtap-ser-tenant

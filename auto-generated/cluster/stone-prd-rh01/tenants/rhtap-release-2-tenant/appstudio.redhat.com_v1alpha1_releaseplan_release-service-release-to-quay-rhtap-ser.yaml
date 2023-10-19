@@ -8,5 +8,4 @@ metadata:
   namespace: rhtap-release-2-tenant
 spec:
   application: release-service
-  displayName: release-service release-to-quay
   target: rh-managed-rhtap-ser-tenant

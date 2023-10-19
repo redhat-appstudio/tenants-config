@@ -4,47 +4,56 @@ metadata:
   name: fbc-release
   namespace: rh-managed-cnv-fbc-tenant
 spec:
-  application: cnv-fbc
+  applications:
+    - cnv-fbc
+  data:
+    fbc:
+      binaryImage: "registry.redhat.io/openshift4/ose-operator-registry:v4.12"
+      buildTimeoutSeconds: 480
+      fromIndex: "quay.io/scoheb/fbc-index-testing:latest"
+      requestUpdateTimeout: 420
+      targetIndex: "quay.io/scoheb/fbc-target-index-testing:latest"
+  pipelineRef:
+    resolver: git
+    params:
+      - name: url
+        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: "pipelines/fbc-release/fbc-release.yaml"
   origin: cnv-fbc-tenant
-  releaseStrategy: fbc-strategy
+  policy: rh-fbc-policy
+  serviceAccount: release-service-account
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlanAdmission
 metadata:
-  name: fbc-staged-index-release-v4-14
+  name: fbc-staged-index-release
   namespace: rh-managed-cnv-fbc-tenant
 spec:
-  application: cnv-fbc-v4-14
+  applications:
+    - cnv-fbc-v4-11
+    - cnv-fbc-v4-12
+    - cnv-fbc-v4-13
+    - cnv-fbc-v4-14
+  data:
+    fbc:
+      binaryImage: "registry.redhat.io/openshift4/ose-operator-registry:v4.12"
+      buildTimeoutSeconds: 1000
+      fbcPublishingCredentials: "staged-index-fbc-publishing-credentials"
+      fromIndex: "registry-proxy.engineering.redhat.com/rh-osbs/iib-pub-pending:v4.13"
+      requestUpdateTimeout: 1000
+      targetIndex: ""
+  pipelineRef:
+    resolver: git
+    params:
+      - name: url
+        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: "pipelines/fbc-release/fbc-release.yaml"
   origin: cnv-fbc-tenant
-  releaseStrategy: fbc-staged-index-strategy
----
-apiVersion: appstudio.redhat.com/v1alpha1
-kind: ReleasePlanAdmission
-metadata:
-  name: fbc-staged-index-release-v4-13
-  namespace: rh-managed-cnv-fbc-tenant
-spec:
-  application: cnv-fbc-v4-13
-  origin: cnv-fbc-tenant
-  releaseStrategy: fbc-staged-index-strategy
----
-apiVersion: appstudio.redhat.com/v1alpha1
-kind: ReleasePlanAdmission
-metadata:
-  name: fbc-staged-index-release-v4-12
-  namespace: rh-managed-cnv-fbc-tenant
-spec:
-  application: cnv-fbc-v4-12
-  origin: cnv-fbc-tenant
-  releaseStrategy: fbc-staged-index-strategy
----
-apiVersion: appstudio.redhat.com/v1alpha1
-kind: ReleasePlanAdmission
-metadata:
-  name: fbc-staged-index-release-v4-11
-  namespace: rh-managed-cnv-fbc-tenant
-spec:
-  application: cnv-fbc-v4-11
-  origin: cnv-fbc-tenant
-  releaseStrategy: fbc-staged-index-strategy
----
+  policy: rh-fbc-stage-index-policy
+  serviceAccount: release-service-account

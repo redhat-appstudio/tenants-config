@@ -1,9 +1,0 @@
-apiVersion: appstudio.redhat.com/v1alpha1
-kind: ReleasePlanAdmission
-metadata:
-  name: prow-jobs-scraper
-  namespace: rh-managed-mng-s-2-tenant
-spec:
-  application: prow-jobs-scraper
-  origin: assisted-installer-tenant
-  releaseStrategy: push-to-external-registry-strategy
