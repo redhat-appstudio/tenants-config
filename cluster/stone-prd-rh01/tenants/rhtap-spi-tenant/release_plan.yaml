@@ -1,0 +1,23 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: remotesecret-release-to-quay-rhtap-ser
+  namespace: rhtap-spi-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: remotesecret
+  target: rh-managed-rhtap-ser-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: spi-release-to-quay-rhtap-ser
+  namespace: rhtap-spi-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: internal-services
+  target: rh-managed-rhtap-ser-tenant
