@@ -6,4 +6,5 @@ resources:
   - remote_secret-quay-token-hacbs-release-tests.yaml
   - remote_secret-quay-token-redhat-prod.yaml
   - remote_secret-quay-token-redhat-staging.yaml
+  - remote_secret-quay-token-redhat-dev.yaml
 namespace: rhtap-releng-tenant
