@@ -8,7 +8,7 @@ metadata:
     release.appstudio.openshift.io/auto-release: 'true'
 spec:
   applications:
-    - release-service
+    - spi
   data:
     images:
       addGitShaTag: true
