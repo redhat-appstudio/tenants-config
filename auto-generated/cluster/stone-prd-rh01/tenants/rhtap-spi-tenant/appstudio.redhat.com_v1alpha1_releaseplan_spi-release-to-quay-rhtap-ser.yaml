@@ -7,5 +7,5 @@ metadata:
   name: spi-release-to-quay-rhtap-ser
   namespace: rhtap-spi-tenant
 spec:
-  application: internal-services
+  application: spi
   target: rh-managed-rhtap-ser-tenant
