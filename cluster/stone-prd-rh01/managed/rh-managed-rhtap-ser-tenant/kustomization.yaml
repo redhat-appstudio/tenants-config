@@ -4,6 +4,8 @@ resources:
 - release_plan_admission-internal-services.yaml
 - release_plan_admission-release-service.yaml
 - release_plan_admission-segment-bridge.yaml
+- release_plan_admission-remotesecret.yaml
+- release_plan_admission-spi.yaml
 - release-service-account-rb.yaml
 - ec-policy.yaml
 - persistent-volume-claim.yaml

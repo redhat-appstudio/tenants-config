@@ -1,0 +1,48 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: rhtap-spi-rpa
+  namespace: rh-managed-rhtap-ser-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+spec:
+  applications:
+    - spi
+  data:
+    images:
+      addGitShaTag: true
+      defaultTag: latest
+    infra-deployment-update-script: |
+      sed -i -e 's|\(https://github.com/redhat-appstudio/service-provider-integration-operator/config/overlays/openshift_aws?ref=\)\(.*\)|\1{{ revision }}|' components/spi/overlays/staging/base/kustomization.yaml;
+      awk  -i inplace -v n=1 '/newTag:/ { if (++count == n) sub(/newTag:.*/, "newTag: {{ revision }}")} 1' components/spi/overlays/staging/base/kustomization.yaml
+      awk  -i inplace -v n=2 '/newTag:/ { if (++count == n) sub(/newTag:.*/, "newTag: {{ revision }}")} 1' components/spi/overlays/staging/base/kustomization.yaml
+      sed -i -e 's|\(https://github.com/redhat-appstudio/service-provider-integration-operator/config/overlays/openshift_vault?ref=\)\(.*\)|\1{{ revision }}|' components/spi/overlays/development/kustomization.yaml;
+      awk  -i inplace -v n=1 '/newTag:/ { if (++count == n) sub(/newTag:.*/, "newTag: {{ revision }}")} 1' components/spi/overlays/development/kustomization.yaml
+      awk  -i inplace -v n=2 '/newTag:/ { if (++count == n) sub(/newTag:.*/, "newTag: {{ revision }}")} 1' components/spi/overlays/development/kustomization.yaml
+      sed -i -e 's|\(https://github.com/redhat-appstudio/service-provider-integration-operator/config/vault/openshift?ref=\)\(.*\)|\1{{ revision }}|' components/spi-vault/kustomization.yaml
+      sed -i -e 's|\(https://github.com/redhat-appstudio/service-provider-integration-operator/config/monitoring/grafana/base?ref=\)\(.*\)|\1{{ revision }}|' components/monitoring/grafana/base/dashboards/spi/kustomization.yaml
+      sed -i -e 's|\(https://github.com/redhat-appstudio/service-provider-integration-operator/config/monitoring/prometheus/base?ref=\)\(.*\)|\1{{ revision }}|' components/spi/overlays/staging/base/kustomization.yaml
+
+    mapping:
+      components:
+        - name: spi-operator
+          repository: "quay.io/redhat-appstudio/service-provider-integration-operator"
+        - name: spi-oauth
+          repository: "quay.io/redhat-appstudio/service-provider-integration-oauth"
+
+    pyxis:
+      secret: pyxis-staging-secret
+      server: stage
+  origin: rhtap-spi-tenant
+  pipelineRef:
+    resolver: git
+    params:
+      - name: url
+        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: "pipelines/rhtap-service-push/rhtap-service-push.yaml"
+  policy: rh-policy
+  serviceAccount: rhtap-servicerelease-sa
