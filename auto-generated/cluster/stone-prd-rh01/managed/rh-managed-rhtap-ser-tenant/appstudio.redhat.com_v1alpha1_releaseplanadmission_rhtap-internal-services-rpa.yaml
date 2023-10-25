@@ -19,13 +19,15 @@ spec:
     pyxis:
       secret: pyxis-staging-secret
       server: stage
+    slack:
+      channelId: C05UDUDJRMZ
   origin: rhtap-release-2-tenant
   pipelineRef:
     params:
     - name: url
-      value: https://github.com/redhat-appstudio/release-service-catalog.git
+      value: https://github.com/scoheb/release-service-catalog.git
     - name: revision
-      value: main
+      value: refactor-slack
     - name: pathInRepo
       value: pipelines/rhtap-service-push/rhtap-service-push.yaml
     resolver: git
