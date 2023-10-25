@@ -21,7 +21,7 @@ spec:
 apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
-  name: internal-services-enterprise-contract
+  name: spi-enterprise-contract
   namespace: rhtap-spi-tenant
 spec:
   application: spi
