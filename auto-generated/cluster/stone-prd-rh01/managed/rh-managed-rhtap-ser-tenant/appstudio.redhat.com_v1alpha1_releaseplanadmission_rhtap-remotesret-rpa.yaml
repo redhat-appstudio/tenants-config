@@ -3,7 +3,7 @@ kind: ReleasePlanAdmission
 metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
-  name: rhtap-remotesret-rpa
+  name: rhtap-remotesecret-rpa
   namespace: rh-managed-rhtap-ser-tenant
 spec:
   applications:
