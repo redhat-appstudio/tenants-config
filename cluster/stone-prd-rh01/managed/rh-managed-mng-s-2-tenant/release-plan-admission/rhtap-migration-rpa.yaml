@@ -39,3 +39,27 @@ spec:
         value: "pipelines/push-to-external-registry/push-to-external-registry.yaml"
   policy: rh-policy
   serviceAccount: release-service-account
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: terraform-provider-rhcs
+spec:
+  applications:
+    - terraform-provider-rhcs
+  data:
+    images:
+      addGitShaTag: true
+      defaultTag: latest
+  origin: rhtap-migration-tenant
+  pipelineRef:
+    resolver: git
+    params:
+      - name: url
+        value: "https://github.com/ernesgonzalez33/release-service-catalog.git"
+      - name: revision
+        value: add-terraform-pipeline
+      - name: pathInRepo
+        value: "pipelines/terraform-release/terraform-release.yaml"
+  policy: rh-policy
+  serviceAccount: release-service-account

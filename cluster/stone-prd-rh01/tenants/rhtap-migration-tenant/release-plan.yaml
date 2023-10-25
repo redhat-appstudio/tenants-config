@@ -9,3 +9,14 @@ metadata:
 spec:
   application: bonfire-cicd-tools
   target: rh-managed-mng-s-2-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+  name: terraform-provider-rhcs
+spec:
+  application: terraform-provider-rhcs
+  target: rh-managed-mng-s-2-tenant

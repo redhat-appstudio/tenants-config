@@ -1,0 +1,24 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: terraform-provider-rhcs
+  namespace: rh-managed-mng-s-2-tenant
+spec:
+  applications:
+  - terraform-provider-rhcs
+  data:
+    images:
+      addGitShaTag: true
+      defaultTag: latest
+  origin: rhtap-migration-tenant
+  pipelineRef:
+    params:
+    - name: url
+      value: https://github.com/ernesgonzalez33/release-service-catalog.git
+    - name: revision
+      value: add-terraform-pipeline
+    - name: pathInRepo
+      value: pipelines/terraform-release/terraform-release.yaml
+    resolver: git
+  policy: rh-policy
+  serviceAccount: release-service-account
