@@ -19,5 +19,5 @@ metadata:
     release.appstudio.openshift.io/auto-release: 'true'
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
-  application: internal-services
+  application: spi
   target: rh-managed-rhtap-ser-tenant
