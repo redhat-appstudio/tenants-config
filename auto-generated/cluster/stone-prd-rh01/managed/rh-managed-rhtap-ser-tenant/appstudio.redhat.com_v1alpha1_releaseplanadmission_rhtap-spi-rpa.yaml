@@ -31,7 +31,6 @@ spec:
     pyxis:
       secret: pyxis-staging-secret
       server: stage
-    slack-webhook-notification-secret-keyname: release
   origin: rhtap-spi-tenant
   pipelineRef:
     params:
