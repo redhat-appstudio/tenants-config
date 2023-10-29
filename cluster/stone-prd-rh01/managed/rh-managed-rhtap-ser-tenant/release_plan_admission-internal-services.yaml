@@ -21,7 +21,8 @@ spec:
       secret: pyxis-staging-secret
       server: stage
     slack:
-      channelId: C05UDUDJRMZ
+      slack-notification-secret: "slack-webhook-notification-secret"
+      slack-webhook-notification-secret-keyname: "release"
   origin: rhtap-release-2-tenant
   pipelineRef:
     resolver: git
