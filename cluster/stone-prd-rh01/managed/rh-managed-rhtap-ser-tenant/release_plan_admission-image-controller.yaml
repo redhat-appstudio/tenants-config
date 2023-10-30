@@ -1,26 +1,24 @@
----
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlanAdmission
 metadata:
-  name: rhtap-build-rpa
+  name: rhtap-image-controller-rpa
   namespace: rh-managed-rhtap-ser-tenant
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
-    release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   applications:
-    - build
+    - image-controller
   data:
     images:
       addGitShaTag: true
       defaultTag: latest
     infra-deployment-update-script: >
-      sed -i -e 's|\(https://github.com/redhat-appstudio/build-service/.*?ref=\)\(.*\)|\1{{ revision }}
-      |' -e 's/\(newTag: \).*/\1{{ revision }}/' components/build-service/base/kustomization.yaml
+      sed -i -e 's|\(https://github.com/redhat-appstudio/image-controller/config/default?ref=\)\(.*\)|\1{{ revision }}|' -e 's/\(newTag: \).*/\1{{ revision }}/'
+        components/image-controller/base/kustomization.yaml
     mapping:
       components:
-        - name: build-service
-          repository: "quay.io/redhat-appstudio/build-service"
+        - name: image-controller
+          repository: "quay.io/redhat-appstudio/image-controller"
     pyxis:
       secret: pyxis-staging-secret
       server: stage

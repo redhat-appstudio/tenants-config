@@ -1,11 +1,23 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
-  name: release-to-quay-rhtap-ser
+  name: build-service-release-to-quay-rhtap-ser
   namespace: rhtap-build-tenant
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: build
+  target: rh-managed-rhtap-ser-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: image-controller-release-to-quay-rhtap-ser
+  namespace: rhtap-build-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: image-controller
   target: rh-managed-rhtap-ser-tenant
