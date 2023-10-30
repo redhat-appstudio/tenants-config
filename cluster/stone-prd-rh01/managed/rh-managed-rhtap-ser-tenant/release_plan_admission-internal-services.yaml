@@ -22,7 +22,7 @@ spec:
       server: stage
     slack:
       slack-notification-secret: "slack-webhook-notification-secret"
-      slack-webhook-notification-secret-keyname: "release"
+      slack-webhook-notification-secret-keyname: "internal-services"
   origin: rhtap-release-2-tenant
   pipelineRef:
     resolver: git
