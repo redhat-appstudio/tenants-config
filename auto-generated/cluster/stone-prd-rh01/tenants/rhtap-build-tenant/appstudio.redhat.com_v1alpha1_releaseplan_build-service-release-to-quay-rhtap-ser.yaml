@@ -4,7 +4,7 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: release-to-quay-rhtap-ser
+  name: build-service-release-to-quay-rhtap-ser
   namespace: rhtap-build-tenant
 spec:
   application: build

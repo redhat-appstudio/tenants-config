@@ -1,7 +1,7 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
-  name: release-to-quay-rhtap-ser
+  name: build-service-release-to-quay-rhtap-ser
   namespace: rhtap-build-tenant
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
