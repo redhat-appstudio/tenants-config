@@ -8,4 +8,4 @@ metadata:
   name: rh-trex-release-to-quay
 spec:
   application: rh-trex
-  target: rh-trex-tenant
+  target: rh-managed-mng-s-2-tenant
