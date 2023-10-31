@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - remote_secret-pyxis-secret.yaml
   - remote_secret-quay-token.yaml
+  - remote_secret-rh-trex-tenant-quay-token.yaml
