@@ -4,8 +4,8 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: terraform-provider-rhcs
-  namespace: rhtap-migration-tenant
+  name: terraform-provider-rhcs-rhtap
+  namespace: rh-terraform-tenant
 spec:
-  application: terraform-provider-rhcs
+  application: terraform-provider-rhcs-rhtap
   target: rh-managed-mng-s-2-tenant
