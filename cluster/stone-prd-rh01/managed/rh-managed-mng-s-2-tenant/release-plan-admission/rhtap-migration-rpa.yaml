@@ -43,14 +43,14 @@ spec:
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlanAdmission
 metadata:
-  name: terraform-provider-rhcs
+  name: terraform-provider-rhcs-rhtap
 spec:
   applications:
-    - terraform-provider-rhcs
+    - terraform-provider-rhcs-rhtap
   data:
     github:
       githubSecret: github-secret
-  origin: rhtap-migration-tenant
+  origin: rh-terraform-tenant
   pipelineRef:
     resolver: git
     params:
