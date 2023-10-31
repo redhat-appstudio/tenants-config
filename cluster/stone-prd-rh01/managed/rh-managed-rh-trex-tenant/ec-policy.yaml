@@ -1,0 +1,22 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: EnterpriseContractPolicy
+metadata:
+  name: rh-policy
+spec:
+  configuration:
+    exclude:
+      - step_image_registries
+    include:
+      - '@slsa1'
+      - '@slsa2'
+      - '@slsa3'
+  description: 'Includes rules for levels 1, 2 & 3 of SLSA v0.1.'
+  publicKey: 'k8s://openshift-pipelines/public-key'
+  sources:
+    - data:
+        - github.com/release-engineering/rhtap-ec-policy//data
+        - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
+      name: Default
+      policy:
+        - github.com/enterprise-contract/ec-policies//policy/lib
+        - github.com/enterprise-contract/ec-policies//policy/release
