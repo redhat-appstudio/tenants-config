@@ -48,9 +48,8 @@ spec:
   applications:
     - terraform-provider-rhcs
   data:
-    images:
-      addGitShaTag: true
-      defaultTag: latest
+    github:
+      githubSecret: github-secret
   origin: rhtap-migration-tenant
   pipelineRef:
     resolver: git
