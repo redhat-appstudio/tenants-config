@@ -1,0 +1,24 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: EnterpriseContractPolicy
+metadata:
+  name: rh-policy
+  namespace: rh-managed-mng-s-2-tenant
+spec:
+  configuration:
+    exclude:
+    - hermetic_build_task
+    - step_image_registries
+    - tasks.required_tasks_found:prefetch-dependencies
+    - test.required_tests_passed:sast-snyk-check
+    include:
+    - '@redhat'
+  description: Includes rules for levels 1, 2 & 3 of SLSA v0.1.
+  publicKey: k8s://openshift-pipelines/public-key
+  sources:
+  - data:
+    - github.com/release-engineering/rhtap-ec-policy//data
+    - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
+    name: Default
+    policy:
+    - github.com/enterprise-contract/ec-policies//policy/lib
+    - github.com/enterprise-contract/ec-policies//policy/release

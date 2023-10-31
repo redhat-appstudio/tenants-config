@@ -1,0 +1,31 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: rh-trex-tenant
+  namespace: rh-managed-mng-s-2-tenant
+spec:
+  applications:
+  - rh-trex
+  data:
+    images:
+      addGitShaTag: true
+      defaultTag: latest
+    mapping:
+      components:
+      - name: rh-trex
+        repository: quay.io/stolostron/rh-trex
+    pyxis:
+      secret: pyxis-staging-secret
+      server: stage
+  origin: rh-trex-tenant
+  pipelineRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/release-service-catalog.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/push-to-external-registry/push-to-external-registry.yaml
+    resolver: git
+  policy: rh-policy
+  serviceAccount: rh-trex-tenant-release-service-account
