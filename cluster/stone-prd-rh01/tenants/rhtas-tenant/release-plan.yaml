@@ -1,0 +1,16 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: rhtas-cli-1-0-beta-registry-redhat-io
+spec:
+  application: rhtas-cli-1-0-beta
+  target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: rhtas-stack-1-0-beta-registry-redhat-io
+spec:
+  application: rhtas-stack-1-0-beta
+  target: rhtap-releng-tenant
