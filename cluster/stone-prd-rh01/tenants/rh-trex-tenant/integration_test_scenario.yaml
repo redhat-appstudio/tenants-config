@@ -21,7 +21,7 @@ spec:
 apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
-  name: spi-enterprise-contract
+  name: rh-trex-tenant-enterprise-contract
   namespace: rh-trex-tenant
 spec:
   application: spi
