@@ -1,6 +1,8 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "false"
   name: rhtas-cli-1-0-beta-registry-redhat-io
   namespace: rhtas-tenant
 spec:
