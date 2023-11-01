@@ -6,5 +6,7 @@ resources:
   - release-plan-admission
   - release-pipeline-sa.yaml
   - release-service-account-build-rb.yaml
+  - rh-trex-tenant-release-pipeline-sa.yaml
+  - rh-trex-tenant-release-service-account-build-rb.yaml
   - remote-secrets
 namespace: rh-managed-mng-s-2-tenant

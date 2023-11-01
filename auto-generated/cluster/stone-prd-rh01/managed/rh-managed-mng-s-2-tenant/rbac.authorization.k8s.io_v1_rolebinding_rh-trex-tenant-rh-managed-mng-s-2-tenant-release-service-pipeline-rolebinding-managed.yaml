@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: rh-trex-tenant-rh-managed-mng-s-2-tenant-release-service-pipeline-rolebinding-managed
+  namespace: rh-managed-mng-s-2-tenant
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: release-pipeline-resource-role
+subjects:
+- kind: ServiceAccount
+  name: rh-trex-tenant-release-service-account
+  namespace: rh-managed-mng-s-2-tenant
