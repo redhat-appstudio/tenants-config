@@ -20,7 +20,7 @@ spec:
       secret: pyxis-staging-secret
       server: stage
     slack:
-      slack-notification-secret: slack-webhook-notification-secret
+      slack-notification-secret: release-team-slack-webhook-notification-secret
       slack-webhook-notification-secret-keyname: internal-services
   origin: rhtap-release-2-tenant
   pipelineRef:

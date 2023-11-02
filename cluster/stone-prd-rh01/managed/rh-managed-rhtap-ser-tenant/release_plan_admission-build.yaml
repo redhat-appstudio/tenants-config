@@ -24,15 +24,17 @@ spec:
     pyxis:
       secret: pyxis-staging-secret
       server: stage
-    slack-webhook-notification-secret-keyname: "build"
+    slack:
+      slack-notification-secret: "build-team-slack-webhook-notification-secret"
+      slack-webhook-notification-secret-keyname: "build"
   origin: rhtap-build-tenant
   pipelineRef:
     resolver: git
     params:
       - name: url
-        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+        value: "https://github.com/scoheb/release-service-catalog.git"
       - name: revision
-        value: main
+        value: refactor-slack
       - name: pathInRepo
         value: "pipelines/rhtap-service-push/rhtap-service-push.yaml"
   policy: rh-policy
