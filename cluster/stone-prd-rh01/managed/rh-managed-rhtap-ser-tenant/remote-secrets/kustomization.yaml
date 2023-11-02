@@ -3,7 +3,10 @@ kind: Kustomization
 resources:
   - remote_secret-infra-deployments-pr-creator.yaml
   - remote_secret-send-slack-notification.yaml
-  - remote_secret-slack-webhook-notification.yaml
+  - remote_secret-build-team-slack-webhook-notification.yaml
+  - remote_secret-pipeline-team-slack-webhook-notification.yaml
+  - remote_secret-release-team-slack-webhook-notification.yaml
+  - remote_secret-spi-team-slack-webhook-notification.yaml
   - remote_secret-pyxis-secret.yaml
   - remote_secret-quay-token.yaml
 namespace: rh-managed-rhtap-ser-tenant
