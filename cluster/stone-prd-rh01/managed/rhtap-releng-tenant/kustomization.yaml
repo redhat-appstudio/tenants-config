@@ -1,5 +1,6 @@
 resources:
   - persistent-volume-claim.yaml
+  - rb-ecp.yaml
   - rb-release-registry-dev.yaml
   - rb-release-registry-prod.yaml
   - rb-release-registry-staging.yaml
