@@ -17,7 +17,7 @@ spec:
     - name: revision
       value: add-terraform-pipeline
     - name: pathInRepo
-      value: pipelines/terraform-release/terraform-release.yaml
+      value: pipelines/release-to-github-signed/release-to-github-signed.yaml
     resolver: git
   policy: rh-policy
   serviceAccount: release-service-account
