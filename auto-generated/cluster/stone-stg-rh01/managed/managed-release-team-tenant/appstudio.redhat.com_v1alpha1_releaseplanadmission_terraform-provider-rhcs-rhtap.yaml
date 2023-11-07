@@ -2,14 +2,14 @@ apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlanAdmission
 metadata:
   name: terraform-provider-rhcs-rhtap
-  namespace: rh-managed-mng-s-2-tenant
+  namespace: managed-release-team-tenant
 spec:
   applications:
   - terraform-provider-rhcs-rhtap
   data:
     github:
       githubSecret: github-secret
-  origin: rh-terraform-tenant
+  origin: dev-release-team
   pipelineRef:
     params:
     - name: url
@@ -20,4 +20,4 @@ spec:
       value: pipelines/release-to-github-signed/release-to-github-signed.yaml
     resolver: git
   policy: rh-policy
-  serviceAccount: release-service-account
+  serviceAccount: rh-sign-and-push-to-github

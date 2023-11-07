@@ -5,7 +5,7 @@ metadata:
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
   name: terraform-provider-rhcs-rhtap
-  namespace: rh-terraform-tenant
+  namespace: dev-release-team-tenant
 spec:
   application: terraform-provider-rhcs-rhtap
-  target: rh-managed-mng-s-2-tenant
+  target: managed-release-team-tenant

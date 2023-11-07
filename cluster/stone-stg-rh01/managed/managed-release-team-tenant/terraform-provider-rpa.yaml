@@ -1,0 +1,23 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: terraform-provider-rhcs-rhtap
+  namespace: managed-release-team-tenant
+spec:
+  applications:
+    - terraform-provider-rhcs-rhtap
+  data:
+    github:
+      githubSecret: github-secret
+  origin: dev-release-team
+  pipelineRef:
+    resolver: git
+    params:
+      - name: url
+        value: "https://github.com/ernesgonzalez33/release-service-catalog.git"
+      - name: revision
+        value: add-terraform-pipeline
+      - name: pathInRepo
+        value: "pipelines/release-to-github-signed/release-to-github-signed.yaml"
+  policy: rh-policy
+  serviceAccount: rh-sign-and-push-to-github
