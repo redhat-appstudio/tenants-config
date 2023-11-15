@@ -28,9 +28,9 @@ spec:
   pipelineRef:
     params:
     - name: url
-      value: https://github.com/scoheb/release-service-catalog.git
+      value: https://github.com/redhat-appstudio/release-service-catalog.git
     - name: revision
-      value: refactor-slack
+      value: main
     - name: pathInRepo
       value: pipelines/rhtap-service-push/rhtap-service-push.yaml
     resolver: git
