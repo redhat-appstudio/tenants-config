@@ -8,6 +8,6 @@ roleRef:
   kind: ClusterRole
   name: enterprisecontractpolicy-viewer-role
 subjects:
-- kind: ServiceAccount
-  name: appstudio-pipeline
-  namespace: rhtas-tenant
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:authenticated
