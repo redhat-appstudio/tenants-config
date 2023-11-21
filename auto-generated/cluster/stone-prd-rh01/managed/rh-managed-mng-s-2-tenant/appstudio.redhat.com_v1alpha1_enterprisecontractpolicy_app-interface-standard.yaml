@@ -1,0 +1,24 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: EnterpriseContractPolicy
+metadata:
+  name: app-interface-standard
+  namespace: rh-managed-mng-s-2-tenant
+spec:
+  configuration:
+    exclude:
+    - cve
+    - tasks.required_tasks_found:prefetch-dependencies
+    - test.required_tests_passed:sast-snyk-check
+    - test.no_skipped_tests:sast-snyk-check
+    - hermetic_build_task
+    include:
+    - '@redhat'
+  description: Includes rules to set a standard for current App Interface deployments
+  publicKey: k8s://openshift-pipelines/public-key
+  sources:
+  - data:
+    - github.com/release-engineering/rhtap-ec-policy//data
+    - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
+    name: Release Policies
+    policy:
+    - oci::quay.io/enterprise-contract/ec-release-policy:latest

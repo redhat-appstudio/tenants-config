@@ -37,5 +37,5 @@ spec:
     - name: pathInRepo
       value: pipelines/push-to-external-registry/push-to-external-registry.yaml
     resolver: git
-  policy: rh-policy
+  policy: app-interface-standard
   serviceAccount: release-service-account
