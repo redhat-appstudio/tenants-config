@@ -7,18 +7,6 @@ spec:
   applications:
   - hypershift-operator
   data:
-    fileUpdates:
-    - paths:
-      - path: data/services/ocm/osd-fleet-manager/cicd/deploy.yaml
-        replacements:
-        - key: (.resourceTemplates[] | select(.name=="osd-fleet-manager-integration")
-            | .parameters.HYPERSHIFT_OPERATOR_OVERRIDING_DATA)
-          replacement: '|hypershift-operator:.*|hypershift-operator: {{ .components[]
-            | select(.name=="hypershift-operator-main") | [.repository, .containerImage
-            |split("@").[1] ] |join("@")}}|'
-      ref: master
-      repo: https://gitlab.cee.redhat.com/rhtap-release/app-interface.git
-      upstream_repo: https://gitlab.cee.redhat.com/service/app-interface.git
     images:
       addGitShaTag: true
       defaultTag: latest
