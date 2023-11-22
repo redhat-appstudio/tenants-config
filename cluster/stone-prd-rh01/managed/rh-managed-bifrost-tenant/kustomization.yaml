@@ -1,0 +1,11 @@
+resources:
+- release-plan-admission
+- release-service-account-rb.yaml
+- ec-policy.yaml
+- persistent-volume-claim.yaml
+- release-pipeline-sa.yaml
+- remote-secrets
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: rh-managed-bifrost-tenant
