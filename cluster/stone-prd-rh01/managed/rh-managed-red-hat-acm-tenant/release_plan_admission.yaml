@@ -7,6 +7,7 @@ metadata:
 spec:
   applications:
     - hypershift-operator
+    - hypershift-operator-main-hotfix
   data:
 # Disabled per discussion at
 # https://redhat-internal.slack.com/archives/C04PZ7H0VA8/p1700577123371839?thread_ts=1698413546.005219&cid=C04PZ7H0VA8
