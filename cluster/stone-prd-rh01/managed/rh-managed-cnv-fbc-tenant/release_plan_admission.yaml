@@ -37,6 +37,8 @@ spec:
     - cnv-fbc-v4-12
     - cnv-fbc-v4-13
     - cnv-fbc-v4-14
+    - cnv-fbc-v4-15
+    - cnv-fbc-v4-16
   data:
     fbc:
       binaryImage: "registry.redhat.io/openshift4/ose-operator-registry:v4.12"
