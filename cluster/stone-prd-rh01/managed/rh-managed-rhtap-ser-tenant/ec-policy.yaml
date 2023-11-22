@@ -20,4 +20,4 @@ spec:
         - github.com/release-engineering/rhtap-ec-policy//data
         - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
       policy:
-        - oci::quay.io/enterprise-contract/ec-release-policy:git-6e6566f@sha256:79092b29f85163c41f9f19f830f260b8d7626046af9cd634db19dd7229bac866
+        - oci::quay.io/enterprise-contract/ec-release-policy:git-bb96264@sha256:1bc02bc28a9eb029a152016a507800397acd7853f1f8866592ca0eb59593cec1
