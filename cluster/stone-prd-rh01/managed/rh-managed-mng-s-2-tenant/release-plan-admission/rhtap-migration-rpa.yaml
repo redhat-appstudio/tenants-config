@@ -37,7 +37,7 @@ spec:
         value: main
       - name: pathInRepo
         value: "pipelines/push-to-external-registry/push-to-external-registry.yaml"
-  policy: rh-policy
+  policy: app-interface-standard
   serviceAccount: release-service-account
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
