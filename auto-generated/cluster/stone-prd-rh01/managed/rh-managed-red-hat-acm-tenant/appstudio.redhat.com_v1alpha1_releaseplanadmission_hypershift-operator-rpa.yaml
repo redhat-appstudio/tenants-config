@@ -6,6 +6,7 @@ metadata:
 spec:
   applications:
   - hypershift-operator
+  - hypershift-operator-main-hotfix
   data:
     images:
       addGitShaTag: true
