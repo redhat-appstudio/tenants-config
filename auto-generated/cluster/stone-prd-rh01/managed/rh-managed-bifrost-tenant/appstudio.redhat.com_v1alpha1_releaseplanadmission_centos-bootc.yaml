@@ -1,0 +1,32 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+  name: centos-bootc
+  namespace: rh-managed-bifrost-tenant
+spec:
+  applications:
+  - centos-bootc
+  data:
+    images:
+      addGitShaTag: true
+      defaultTag: latest
+    mapping:
+      components:
+      - name: fedora-bootc
+        repository: quay.io/centos-bootc/fedora-bootc
+      - name: centos-bootc-infra
+        repository: quay.io/centos-bootc/centos-bootc-infra
+  origin: centos-bootc-tenant
+  pipelineRef:
+    params:
+    - name: url
+      value: https://github.com/scoheb/release-service-catalog.git
+    - name: revision
+      value: vanilla
+    - name: pathInRepo
+      value: pipelines/rh-push-to-external-registry/rh-push-to-external-registry.yaml
+    resolver: git
+  policy: rh-policy
+  serviceAccount: release-sa-centos-bootc
