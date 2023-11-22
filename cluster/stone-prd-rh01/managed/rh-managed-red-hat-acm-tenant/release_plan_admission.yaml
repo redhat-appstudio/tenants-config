@@ -27,6 +27,8 @@ spec:
       components:
         - name: hypershift-operator-main
           repository: "quay.io/acm-d/rhtap-hypershift-operator"
+        - name: hypershift
+          repository: "quay.io/acm-d/rhtap-hypershift-operator"
     pyxis:
       secret: pyxis-staging-secret
       server: stage
