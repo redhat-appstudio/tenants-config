@@ -41,6 +41,8 @@ spec:
       - test.no_skipped_tests:sast-snyk-check
       # hermetic build is not required yet
       - hermetic_build_task
+      # we don't need teams to update the labels for the first migration
+      - labels.disallowed_inherited_labels
   description: 'Includes rules to set a standard for current App Interface deployments'
   publicKey: 'k8s://openshift-pipelines/public-key'
   sources:
