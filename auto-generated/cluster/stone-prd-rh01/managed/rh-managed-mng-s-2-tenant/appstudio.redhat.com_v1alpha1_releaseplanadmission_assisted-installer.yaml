@@ -26,8 +26,6 @@ spec:
         repository: quay.io/rhtap-managed-services/assisted-installer-assisted-service
       - name: prow-jobs-scraper-xg3v
         repository: quay.io/rhtap-managed-services/assisted-installer-prow-jobs-scraper
-      - name: cicd-tools
-        repository: quay.io/rhtap-managed-services/rhtap-migration-bonfire-cicd-tools
     pyxis:
       secret: pyxis-staging-secret
       server: stage
@@ -41,5 +39,5 @@ spec:
     - name: pathInRepo
       value: pipelines/push-to-external-registry/push-to-external-registry.yaml
     resolver: git
-  policy: rh-policy
+  policy: app-interface-standard
   serviceAccount: release-service-account
