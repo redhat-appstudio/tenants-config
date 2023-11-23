@@ -11,8 +11,16 @@ spec:
       - step_image_registries
       - tasks.required_tasks_found:prefetch-dependencies # prefetch is not required
     include:
-      - '@redhat'
-  description: 'Includes rules for levels 1, 2 & 3 of SLSA v0.1.'
+        - '@minimal'
+        - '@slsa3'
+  description: >-
+    Rules specifically related to levels 1, 2 & 3 of SLSA v0.1, plus a set of
+    basic checks that are expected to pass for all RHTAP builds. Available
+    collections are defined in
+    https://redhat-appstudio.github.io/docs.stonesoup.io/ec-policies/release_policy.html#_available_rule_collections.
+    If a different policy configuration is desired, this resource can serve as a
+    starting point. See the docs on how to include and exclude rules
+    https://redhat-appstudio.github.io/docs.stonesoup.io/ec-policies/policy_configuration.html#_including_and_excluding_rules.
   publicKey: 'k8s://openshift-pipelines/public-key'
   sources:
     - name: Release Policies
