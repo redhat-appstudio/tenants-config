@@ -24,9 +24,9 @@ spec:
     - name: url
       value: https://github.com/scoheb/release-service-catalog.git
     - name: revision
-      value: vanilla
+      value: push-to-external-registry-with-no-pyxis
     - name: pathInRepo
-      value: pipelines/rh-push-to-external-registry/rh-push-to-external-registry.yaml
+      value: pipelines/push-to-external-registry/push-to-external-registry.yaml
     resolver: git
   policy: rh-policy
   serviceAccount: release-sa-centos-bootc
