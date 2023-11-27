@@ -1,0 +1,32 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: fbc-release-to-prod
+  namespace: rh-managed-cnv-fbc-tenant
+spec:
+  applications:
+  - cnv-fbc-v4-14
+  data:
+    fbc:
+      binaryImage: registry.redhat.io/openshift4/ose-operator-registry:v4.14
+      buildTimeoutSeconds: 800
+      fbcPublishingCredentials: fbc-production-publishing-credentials
+      fromIndex: quay.io/rh-osbs/iib-pub:v4.14
+      iibOverwriteFromIndexCredential: iib-overwrite-fromimage-credentials
+      iibServiceConfigSecret: iib-services-config
+      requestUpdateTimeout: 860
+      targetIndex: quay.io/redhat/redhat----redhat-operator-index:v4.14
+    sign:
+      configMapName: hacbs-signing-pipeline-config-redhatrelease2
+  origin: cnv-fbc-tenant
+  pipelineRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/release-service-catalog.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/fbc-release/fbc-release.yaml
+    resolver: git
+  policy: rh-fbc-policy
+  serviceAccount: release-service-account
