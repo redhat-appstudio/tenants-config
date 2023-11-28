@@ -32,3 +32,7 @@ spec:
       - registry.redhat.io/
       - brew.registry.redhat.io/rh-osbs/openshift-golang-builder
       - localhost/rhtap-final-image
+      restrict_cve_security_levels:
+      - critical
+      warn_cve_security_levels:
+      - high

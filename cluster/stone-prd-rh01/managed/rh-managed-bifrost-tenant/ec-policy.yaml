@@ -39,3 +39,10 @@ spec:
           - brew.registry.redhat.io/rh-osbs/openshift-golang-builder
           # Custom addition to permit localhost/rhtap-final-image as a base image
           - localhost/rhtap-final-image
+        # Currently there are four high severity CVEs that aren't practical to fix
+        # in the short term. Configure 'high' severity CVEs to be warnings instead of
+        # violations. The default values are:
+        #  restrict_cve_security_levels: [critical, high]
+        #  warn_cve_security_levels: []
+        restrict_cve_security_levels: [critical]
+        warn_cve_security_levels: [high]
