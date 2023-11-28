@@ -18,6 +18,7 @@ spec:
       fbcPublishingCredentials: staged-index-fbc-publishing-credentials
       fromIndex: registry-proxy.engineering.redhat.com/rh-osbs/iib-pub-pending:v4.13
       requestUpdateTimeout: 1000
+      stagedIndex: true
       targetIndex: ""
   origin: cnv-fbc-tenant
   pipelineRef:
