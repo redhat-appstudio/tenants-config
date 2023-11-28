@@ -10,6 +10,8 @@ spec:
         # positives due to https://issues.redhat.com/browse/OCPBUGS-8428
       - step_image_registries
       - tasks.required_tasks_found:prefetch-dependencies # prefetch is not required
+      # Currently using a non-standard buildah task that does not push an SBOM
+      - sbom_cyclonedx
     include:
         - '@minimal'
         - '@slsa3'
