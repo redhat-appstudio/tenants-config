@@ -4,8 +4,68 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: 'false'
     release.appstudio.openshift.io/standing-attribution: 'true'
+  name: cnv-fbc-prod-index-releaseplan-v4-11
+  namespace: cnv-fbc-tenant
+spec:
+  application: cnv-fbc-v4-11
+  target: rh-managed-cnv-fbc-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+  name: cnv-fbc-prod-index-releaseplan-v4-12
+  namespace: cnv-fbc-tenant
+spec:
+  application: cnv-fbc-v4-12
+  target: rh-managed-cnv-fbc-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+  name: cnv-fbc-prod-index-releaseplan-v4-13
+  namespace: cnv-fbc-tenant
+spec:
+  application: cnv-fbc-v4-13
+  target: rh-managed-cnv-fbc-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/standing-attribution: 'true'
   name: cnv-fbc-prod-index-releaseplan-v4-14
   namespace: cnv-fbc-tenant
 spec:
   application: cnv-fbc-v4-14
+  target: rh-managed-cnv-fbc-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+  name: cnv-fbc-prod-index-releaseplan-v4-15
+  namespace: cnv-fbc-tenant
+spec:
+  application: cnv-fbc-v4-15
+  target: rh-managed-cnv-fbc-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+  name: cnv-fbc-prod-index-releaseplan-v4-16
+  namespace: cnv-fbc-tenant
+spec:
+  application: cnv-fbc-v4-16
   target: rh-managed-cnv-fbc-tenant
