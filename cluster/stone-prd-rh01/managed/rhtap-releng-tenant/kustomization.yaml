@@ -1,11 +1,13 @@
 resources:
   - persistent-volume-claim.yaml
   - rb-ecp.yaml
+  - rb-release-index-image-prod.yaml
   - rb-release-registry-dev.yaml
   - rb-release-registry-prod.yaml
   - rb-release-registry-staging.yaml
   - rb-releng-gitops-repo-ro.yaml
   - rb-releng-gitops-repo-rw.yaml
+  - sa-release-index-image-prod.yaml
   - sa-release-registry-dev.yaml
   - sa-release-registry-prod.yaml
   - sa-release-registry-staging.yaml
