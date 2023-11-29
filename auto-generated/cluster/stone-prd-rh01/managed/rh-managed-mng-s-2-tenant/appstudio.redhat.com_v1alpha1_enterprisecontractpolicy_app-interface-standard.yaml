@@ -22,4 +22,4 @@ spec:
     - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
     name: Release Policies
     policy:
-    - oci::quay.io/enterprise-contract/ec-release-policy:latest
+    - oci::quay.io/enterprise-contract/ec-release-policy:git-2f48179@sha256:ba89f48bfac5750e9e105e4d158f371c99fd8d407090cd1cdcfba9ebb1c6549e

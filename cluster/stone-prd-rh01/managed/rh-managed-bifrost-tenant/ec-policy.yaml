@@ -6,23 +6,17 @@ spec:
   configuration:
     exclude:
       - hermetic_build_task # Change policy definition once https://issues.redhat.com/browse/HACBS-2657 is implemented
-        # Exclude step_image_registries for now since it can cause false
-        # positives due to https://issues.redhat.com/browse/OCPBUGS-8428
+      # Exclude step_image_registries for now since it can cause false
+      # positives due to https://issues.redhat.com/browse/OCPBUGS-8428
       - step_image_registries
       - tasks.required_tasks_found:prefetch-dependencies # prefetch is not required
       # Currently using a non-standard buildah task that does not push an SBOM
       - sbom_cyclonedx
     include:
-        - '@minimal'
-        - '@slsa3'
+      - '@minimal'
+      - '@slsa3'
   description: >-
-    Rules specifically related to levels 1, 2 & 3 of SLSA v0.1, plus a set of
-    basic checks that are expected to pass for all RHTAP builds. Available
-    collections are defined in
-    https://redhat-appstudio.github.io/docs.stonesoup.io/ec-policies/release_policy.html#_available_rule_collections.
-    If a different policy configuration is desired, this resource can serve as a
-    starting point. See the docs on how to include and exclude rules
-    https://redhat-appstudio.github.io/docs.stonesoup.io/ec-policies/policy_configuration.html#_including_and_excluding_rules.
+    Rules specifically related to levels 1, 2 & 3 of SLSA v0.1, plus a set of basic checks that are expected to pass for all RHTAP builds. Available collections are defined in https://redhat-appstudio.github.io/docs.stonesoup.io/ec-policies/release_policy.html#_available_rule_collections. If a different policy configuration is desired, this resource can serve as a starting point. See the docs on how to include and exclude rules https://redhat-appstudio.github.io/docs.stonesoup.io/ec-policies/policy_configuration.html#_including_and_excluding_rules.
   publicKey: 'k8s://openshift-pipelines/public-key'
   sources:
     - name: Release Policies
@@ -30,7 +24,7 @@ spec:
         - github.com/release-engineering/rhtap-ec-policy//data
         - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
       policy:
-        - oci::quay.io/enterprise-contract/ec-release-policy:git-fab6481@sha256:757440524b5312a14170ee688e21e973fb1b9510a6a0ed862aabd4957d392f4d
+        - oci::quay.io/enterprise-contract/ec-release-policy:git-2f48179@sha256:ba89f48bfac5750e9e105e4d158f371c99fd8d407090cd1cdcfba9ebb1c6549e
       ruleData:
         allowed_registry_prefixes:
           # These are the defaults
