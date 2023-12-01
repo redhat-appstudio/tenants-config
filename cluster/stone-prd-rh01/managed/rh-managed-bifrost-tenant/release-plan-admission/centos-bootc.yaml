@@ -12,7 +12,7 @@ spec:
   data:
     images:
       addGitShaTag: true
-      defaultTag: latest
+      floatingTag: "eln"
     mapping:
       components:
         - name: fedora-bootc
