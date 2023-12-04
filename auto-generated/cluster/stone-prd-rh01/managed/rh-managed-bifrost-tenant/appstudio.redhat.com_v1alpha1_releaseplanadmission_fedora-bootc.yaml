@@ -3,19 +3,19 @@ kind: ReleasePlanAdmission
 metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
-  name: centos-bootc
+  name: fedora-bootc
   namespace: rh-managed-bifrost-tenant
 spec:
   applications:
-  - centos-bootc
+  - fedora-bootc
   data:
     images:
       addGitShaTag: true
-      floatingTag: stream9
+      floatingTag: eln
     mapping:
       components:
-      - name: centos-bootc
-        repository: quay.io/centos-bootc/centos-bootc
+      - name: fedora-bootc
+        repository: quay.io/centos-bootc/fedora-bootc
   origin: centos-bootc-tenant
   pipelineRef:
     params:
