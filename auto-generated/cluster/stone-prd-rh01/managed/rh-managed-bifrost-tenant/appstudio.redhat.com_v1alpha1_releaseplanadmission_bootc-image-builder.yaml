@@ -1,0 +1,30 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+  name: bootc-image-builder
+  namespace: rh-managed-bifrost-tenant
+spec:
+  applications:
+  - bootc-image-builder
+  data:
+    images:
+      addGitShaTag: true
+      floatingTag: latest
+    mapping:
+      components:
+      - name: bootc-image-builder
+        repository: quay.io/centos-bootc/bootc-image-builder
+  origin: centos-bootc-tenant
+  pipelineRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/release-service-catalog.git
+    - name: revision
+      value: development
+    - name: pathInRepo
+      value: pipelines/push-to-external-registry/push-to-external-registry.yaml
+    resolver: git
+  policy: rh-policy
+  serviceAccount: release-sa-centos-bootc
