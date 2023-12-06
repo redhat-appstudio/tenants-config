@@ -32,6 +32,7 @@ spec:
       - registry.redhat.io/
       - brew.registry.redhat.io/rh-osbs/openshift-golang-builder
       - localhost/rhtap-final-image
+      - registry.fedoraproject.org/fedora
       restrict_cve_security_levels:
       - critical
       warn_cve_security_levels:
