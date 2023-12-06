@@ -1,0 +1,11 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: bootc-image-builder
+  namespace: centos-bootc-tenant
+spec:
+  application: bootc-image-builder
+  target: rh-managed-bifrost-tenant
