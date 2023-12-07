@@ -15,8 +15,8 @@ spec:
         - name: rh-trex
           repository: "quay.io/stolostron/rh-trex"
     pyxis:
-      secret: pyxis-staging-secret
-      server: stage
+      secret: pyxis-prod-secret
+      server: production
   origin: rh-trex-tenant
   pipelineRef:
     resolver: git

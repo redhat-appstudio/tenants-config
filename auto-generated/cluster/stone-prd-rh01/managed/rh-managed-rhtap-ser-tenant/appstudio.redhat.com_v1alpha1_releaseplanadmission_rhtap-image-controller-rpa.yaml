@@ -19,8 +19,8 @@ spec:
       - name: image-controller
         repository: quay.io/redhat-appstudio/image-controller
     pyxis:
-      secret: pyxis-staging-secret
-      server: stage
+      secret: pyxis-prod-secret
+      server: production
     slack:
       slack-notification-secret: build-team-slack-webhook-notification-secret
       slack-webhook-notification-secret-keyname: build

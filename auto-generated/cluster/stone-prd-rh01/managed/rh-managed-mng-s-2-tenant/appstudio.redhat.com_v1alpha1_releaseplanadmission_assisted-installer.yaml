@@ -27,8 +27,8 @@ spec:
       - name: prow-jobs-scraper-xg3v
         repository: quay.io/rhtap-managed-services/assisted-installer-prow-jobs-scraper
     pyxis:
-      secret: pyxis-staging-secret
-      server: stage
+      secret: pyxis-prod-secret
+      server: production
   origin: assisted-installer-tenant
   pipelineRef:
     params:
