@@ -12,6 +12,7 @@ resources:
 - ec-policy.yaml
 - persistent-volume-claim.yaml
 - release-pipeline-sa.yaml
+- release_plan_admission-integration-service.yaml
 - remote-secrets
 
 apiVersion: kustomize.config.k8s.io/v1beta1
