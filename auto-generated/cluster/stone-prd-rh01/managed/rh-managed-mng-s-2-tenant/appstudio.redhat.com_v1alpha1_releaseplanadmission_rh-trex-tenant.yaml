@@ -15,7 +15,7 @@ spec:
       - name: rh-trex
         repository: quay.io/stolostron/rh-trex
     pyxis:
-      secret: pyxis-prod-secret
+      secret: pyxis-production-secret
       server: production
   origin: rh-trex-tenant
   pipelineRef:

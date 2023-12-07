@@ -17,7 +17,7 @@ spec:
       - name: segment-bridge
         repository: quay.io/redhat-appstudio/segment-bridge
     pyxis:
-      secret: pyxis-prod-secret
+      secret: pyxis-production-secret
       server: production
   origin: rhtap-o11y-tenant
   pipelineRef:

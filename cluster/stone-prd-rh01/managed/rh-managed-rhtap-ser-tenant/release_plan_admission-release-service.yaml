@@ -23,7 +23,7 @@ spec:
         - name: release-service-utils
           repository: "quay.io/redhat-appstudio/release-service-utils"
     pyxis:
-      secret: pyxis-prod-secret
+      secret: pyxis-production-secret
       server: production
     slack:
       slack-notification-secret: "release-team-slack-webhook-notification-secret"

@@ -22,7 +22,7 @@ spec:
         - name: build-service
           repository: "quay.io/redhat-appstudio/build-service"
     pyxis:
-      secret: pyxis-prod-secret
+      secret: pyxis-production-secret
       server: production
     slack:
       slack-notification-secret: "build-team-slack-webhook-notification-secret"

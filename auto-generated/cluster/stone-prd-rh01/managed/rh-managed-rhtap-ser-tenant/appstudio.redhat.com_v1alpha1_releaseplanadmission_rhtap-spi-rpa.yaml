@@ -29,7 +29,7 @@ spec:
       - name: spi-oauth
         repository: quay.io/redhat-appstudio/service-provider-integration-oauth
     pyxis:
-      secret: pyxis-prod-secret
+      secret: pyxis-production-secret
       server: production
     slack:
       slack-notification-secret: spi-team-slack-webhook-notification-secret
