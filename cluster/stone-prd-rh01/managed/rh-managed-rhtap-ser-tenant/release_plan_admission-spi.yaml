@@ -32,8 +32,8 @@ spec:
           repository: "quay.io/redhat-appstudio/service-provider-integration-oauth"
 
     pyxis:
-      secret: pyxis-staging-secret
-      server: stage
+      secret: pyxis-prod-secret
+      server: production
     slack:
       slack-notification-secret: "spi-team-slack-webhook-notification-secret"
       slack-webhook-notification-secret-keyname: "spi"

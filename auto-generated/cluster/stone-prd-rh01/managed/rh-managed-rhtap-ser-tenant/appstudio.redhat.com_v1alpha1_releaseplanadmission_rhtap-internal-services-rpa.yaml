@@ -17,8 +17,8 @@ spec:
       - name: internal-services
         repository: quay.io/redhat-appstudio/internal-services
     pyxis:
-      secret: pyxis-staging-secret
-      server: stage
+      secret: pyxis-prod-secret
+      server: production
     slack:
       slack-notification-secret: release-team-slack-webhook-notification-secret
       slack-webhook-notification-secret-keyname: internal-services
