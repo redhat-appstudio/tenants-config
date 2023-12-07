@@ -22,7 +22,7 @@ spec:
     - name: url
       value: https://github.com/redhat-appstudio/release-service-catalog.git
     - name: revision
-      value: development
+      value: production
     - name: pathInRepo
       value: pipelines/push-to-external-registry/push-to-external-registry.yaml
     resolver: git
