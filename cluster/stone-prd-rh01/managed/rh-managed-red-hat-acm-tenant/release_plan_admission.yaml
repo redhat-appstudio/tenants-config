@@ -30,8 +30,8 @@ spec:
         - name: hypershift
           repository: "quay.io/acm-d/rhtap-hypershift-operator"
     pyxis:
-      secret: pyxis-staging-secret
-      server: stage
+      secret: pyxis-prod-secret
+      server: production
   origin: crt-redhat-acm-tenant
   pipelineRef:
     resolver: git
