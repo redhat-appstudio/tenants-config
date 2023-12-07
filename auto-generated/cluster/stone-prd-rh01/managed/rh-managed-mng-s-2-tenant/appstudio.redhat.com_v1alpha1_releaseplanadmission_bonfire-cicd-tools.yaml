@@ -15,7 +15,7 @@ spec:
       - name: cicd-tools
         repository: quay.io/rhtap-managed-services/rhtap-migration-bonfire-cicd-tools
     pyxis:
-      secret: pyxis-prod-secret
+      secret: pyxis-production-secret
       server: production
   origin: rhtap-migration-tenant
   pipelineRef:

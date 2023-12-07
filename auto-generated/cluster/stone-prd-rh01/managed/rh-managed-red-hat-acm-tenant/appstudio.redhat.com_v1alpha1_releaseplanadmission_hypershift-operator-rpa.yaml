@@ -18,7 +18,7 @@ spec:
       - name: hypershift
         repository: quay.io/acm-d/rhtap-hypershift-operator
     pyxis:
-      secret: pyxis-prod-secret
+      secret: pyxis-production-secret
       server: production
   origin: crt-redhat-acm-tenant
   pipelineRef:

@@ -17,7 +17,7 @@ spec:
       - name: internal-services
         repository: quay.io/redhat-appstudio/internal-services
     pyxis:
-      secret: pyxis-prod-secret
+      secret: pyxis-production-secret
       server: production
     slack:
       slack-notification-secret: release-team-slack-webhook-notification-secret
