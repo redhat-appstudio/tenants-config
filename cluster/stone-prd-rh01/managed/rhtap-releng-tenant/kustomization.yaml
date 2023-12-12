@@ -1,13 +1,14 @@
 resources:
   - persistent-volume-claim.yaml
   - rb-ecp.yaml
-  - rb-release-index-image-prod.yaml
-  - rb-release-registry-dev.yaml
-  - rb-release-registry-prod.yaml
-  - rb-release-registry-staging.yaml
+  - rb-release-pipelines.yaml
   - rb-releng-gitops-repo-ro.yaml
   - rb-releng-gitops-repo-rw.yaml
+  - sa-release-app-interface-prod.yaml
+  - sa-release-app-interface-staging.yaml
   - sa-release-index-image-prod.yaml
+  - sa-release-github-terraform-dev.yaml
+  - sa-release-github-terraform-prod.yaml
   - sa-release-registry-dev.yaml
   - sa-release-registry-prod.yaml
   - sa-release-registry-staging.yaml
