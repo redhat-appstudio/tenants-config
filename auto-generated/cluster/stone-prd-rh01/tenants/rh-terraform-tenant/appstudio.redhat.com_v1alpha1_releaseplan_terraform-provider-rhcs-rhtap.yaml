@@ -8,4 +8,4 @@ metadata:
   namespace: rh-terraform-tenant
 spec:
   application: terraform-provider-rhcs-rhtap
-  target: rh-managed-mng-s-2-tenant
+  target: rhtap-releng-tenant
