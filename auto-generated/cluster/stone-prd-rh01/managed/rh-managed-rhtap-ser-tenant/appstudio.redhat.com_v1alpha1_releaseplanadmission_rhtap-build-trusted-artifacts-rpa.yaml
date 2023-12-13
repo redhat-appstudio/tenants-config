@@ -3,7 +3,6 @@ kind: ReleasePlanAdmission
 metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
-    release.appstudio.openshift.io/standing-attribution: "true"
   name: rhtap-build-trusted-artifacts-rpa
   namespace: rh-managed-rhtap-ser-tenant
 spec:
