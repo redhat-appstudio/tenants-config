@@ -1,0 +1,38 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: rhtap-build-trusted-artifacts-rpa
+  namespace: rh-managed-rhtap-ser-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  applications:
+    - build-trusted-artifacts
+  data:
+    images:
+      addGitShaTag: true
+      defaultTag: latest
+    mapping:
+      components:
+        - name: build-trusted-artifacts
+          repository: "quay.io/redhat-appstudio/build-trusted-artifacts"
+    pyxis:
+      secret: pyxis-production-secret
+      server: production
+    slack:
+      slack-notification-secret: "build-team-slack-webhook-notification-secret"
+      slack-webhook-notification-secret-keyname: "build"
+  origin: rhtap-build-tenant
+  pipelineRef:
+    resolver: git
+    params:
+      - name: url
+        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+      - name: revision
+        value: production
+      - name: pathInRepo
+        value: "pipelines/rh-push-to-external-registry/rh-push-to-external-registry.yaml"
+  policy: rh-policy
+  serviceAccount: rhtap-servicerelease-sa
