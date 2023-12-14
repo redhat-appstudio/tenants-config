@@ -38,5 +38,5 @@ spec:
         value: production
       - name: pathInRepo
         value: "pipelines/rhtap-service-push/rhtap-service-push.yaml"
-  policy: rh-policy
+  policy: release-service-rh-policy
   serviceAccount: rhtap-servicerelease-sa
