@@ -30,6 +30,7 @@ jobs:
             if [[ $(git status --porcelain) ]]; then
                 echo "Did you forget to build the manifests locally?" >&2
                 echo "Please run build-manifests.sh and update your PR" >&2
+                git diff >&2
                 exit 1
             fi
             echo "the auto-generated directory is up to date" >&2
