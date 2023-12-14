@@ -1,0 +1,4 @@
+resources:
+  - ../../../../lib/consoledot-test-pipeline
+  - release-plan.yaml
+namespace: trusted-content-tenant

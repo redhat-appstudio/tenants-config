@@ -4,3 +4,4 @@ resources:
   - assisted-installer-rpa.yaml
   - rh-trex-tenant-rpa.yaml
   - rhtap-migration-rpa.yaml
+  - trusted-content-trustification-rpa.yaml
