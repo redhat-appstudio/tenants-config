@@ -5,7 +5,7 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
     release.appstudio.openshift.io/standing-attribution: 'true'
-  name: terraform-provider-rhcs-rhtap
+  name: terraform-provider-rhcs
 spec:
-  application: terraform-provider-rhcs-rhtap
+  application: terraform-provider-rhcs
   target: rhtap-releng-tenant
