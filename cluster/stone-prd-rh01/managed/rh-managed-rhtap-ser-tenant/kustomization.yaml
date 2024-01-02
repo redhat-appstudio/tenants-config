@@ -10,7 +10,6 @@ resources:
 - release_plan_admission-build-trusted-artifacts.yaml
 - release-service-account-rb.yaml
 - ec-policy.yaml
-- release-service-rh-policy.yaml
 - persistent-volume-claim.yaml
 - release-pipeline-sa.yaml
 - release_plan_admission-integration-service.yaml
