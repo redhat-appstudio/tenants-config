@@ -2,7 +2,7 @@ apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
   name: insights-ingress-go-enterprise-contract
-  namespace: insights-ingress-go
+  namespace: insights-ingress-go-tenant
 spec:
   application: ingress-go
   contexts:
