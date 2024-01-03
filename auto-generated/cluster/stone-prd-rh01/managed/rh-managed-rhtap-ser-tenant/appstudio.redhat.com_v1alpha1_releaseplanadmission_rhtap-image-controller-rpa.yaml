@@ -13,7 +13,8 @@ spec:
       addGitShaTag: true
       defaultTag: latest
     infra-deployment-update-script: |
-      sed -i -e 's|\(https://github.com/redhat-appstudio/image-controller/config/default?ref=\)\(.*\)|\1{{ revision }}|' -e 's/\(newTag: \).*/\1{{ revision }}/' components/image-controller/base/kustomization.yaml
+      sed -i -e 's|\(https://github.com/redhat-appstudio/image-controller/config/default?ref=\)\(.*\)|\1{{ revision }}|' -e 's/\(newTag: \).*/\1{{ revision }}/' components/image-controller/development/kustomization.yaml
+      sed -i -e 's|\(https://github.com/redhat-appstudio/image-controller/config/default?ref=\)\(.*\)|\1{{ revision }}|' -e 's/\(newTag: \).*/\1{{ revision }}/' components/image-controller/staging/kustomization.yaml
     mapping:
       components:
       - name: image-controller
