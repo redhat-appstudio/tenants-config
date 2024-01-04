@@ -1,0 +1,12 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: insights-ingress-go-release-to-quay-rhtap-ser
+  namespace: rhtap-hcc-pipeline-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: insights-ingress-go
+  displayName: insights-ingress-go release-to-quay
+  target: rh-managed-rhtap-ser-tenant
