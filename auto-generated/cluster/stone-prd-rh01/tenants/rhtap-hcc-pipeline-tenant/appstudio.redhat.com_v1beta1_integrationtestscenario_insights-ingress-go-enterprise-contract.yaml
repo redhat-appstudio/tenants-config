@@ -2,9 +2,9 @@ apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
   name: insights-ingress-go-enterprise-contract
-  namespace: insights-ingress-go-tenant
+  namespace: rhtap-hcc-pipeline-tenant
 spec:
-  application: ingress-go
+  application: insights-ingress-go
   contexts:
   - description: Application testing
     name: application
