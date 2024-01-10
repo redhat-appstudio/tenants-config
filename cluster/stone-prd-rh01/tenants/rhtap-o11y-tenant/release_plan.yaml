@@ -9,3 +9,16 @@ metadata:
 spec:
   application: segment-bridge
   target: rh-managed-rhtap-ser-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: o11y-release-to-quay-rhtap-ser
+  namespace: rhtap-o11y-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: o11y
+  displayName: o11y release-to-quay
+  target: rh-managed-rhtap-ser-tenant
