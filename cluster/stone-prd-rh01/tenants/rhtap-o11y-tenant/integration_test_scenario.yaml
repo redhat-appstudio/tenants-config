@@ -28,6 +28,13 @@ spec:
   contexts:
     - description: Application testing
       name: application
+  configuration:
+    exclude:
+      # Because o11y includes a custom task in it's build pipelines in order to run unit
+      # tests. That should be fine, but EC complains about it today. Grant this exception until EC
+      # can learn to tolerate it.
+      # https://issues.redhat.com/browse/RHTAP-1707
+      - 'attestation_task_bundle.task_ref_bundles_acceptable'
   resolverRef:
     params:
       - name: url
