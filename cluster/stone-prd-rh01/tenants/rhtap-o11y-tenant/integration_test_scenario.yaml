@@ -35,6 +35,7 @@ spec:
       # can learn to tolerate it.
       # https://issues.redhat.com/browse/RHTAP-1707
       - 'attestation_task_bundle.task_ref_bundles_acceptable'
+      - 'attestation_task_bundle.tasks_defined_in_bundle'
   resolverRef:
     params:
       - name: url
