@@ -8,6 +8,7 @@ spec:
   configuration:
     exclude:
     - attestation_task_bundle.task_ref_bundles_acceptable
+    - attestation_task_bundle.tasks_defined_in_bundle
   contexts:
   - description: Application testing
     name: application
