@@ -9,4 +9,4 @@ metadata:
 spec:
   application: insights-ingress-go
   displayName: insights-ingress-go release-to-quay
-  target: rh-managed-rhtap-ser-tenant
+  target: rhtap-releng-tenant
