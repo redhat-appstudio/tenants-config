@@ -1,0 +1,33 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: insights-ingress-go
+  namespace: rhtap-releng-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+spec:
+  applications:
+    - insights-ingress-go
+  data:
+    images:
+      addGitShaTag: true
+      defaultTag: latest
+    mapping:
+      components:
+        - name: insights-ingress-go
+          repository: "quay.io/redhat-appstudio/insights-ingress-go"
+    pyxis:
+      secret: pyxis-staging-secret
+      server: production
+  origin: rhtap-hcc-pipeline-tenant
+  pipelineRef:
+    resolver: git
+    params:
+      - name: url
+        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: "pipelines/rhtap-service-push/rhtap-service-push.yaml"
+  policy: rh-policy
+  serviceAccount: rhtap-servicerelease-sa
