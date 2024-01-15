@@ -23,14 +23,15 @@ spec:
       secret: pyxis-production-secret
       server: production
   origin: rhtap-o11y-tenant
-  pipelineRef:
-    resolver: git
-    params:
-      - name: url
-        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
-      - name: revision
-        value: production
-      - name: pathInRepo
-        value: "pipelines/rhtap-service-push/rhtap-service-push.yaml"
-  policy: rh-policy-o11y
-  serviceAccount: rhtap-servicerelease-sa
+  pipeline:
+    pipelineRef:
+      resolver: git
+      params:
+        - name: url
+          value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+        - name: revision
+          value: production
+        - name: pathInRepo
+          value: "pipelines/rhtap-service-push/rhtap-service-push.yaml"
+    serviceAccountName: rhtap-servicerelease-sa
+  policy: rh-policy

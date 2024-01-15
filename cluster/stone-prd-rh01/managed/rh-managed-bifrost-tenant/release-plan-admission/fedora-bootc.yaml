@@ -18,14 +18,15 @@ spec:
         - name: fedora-bootc
           repository: "quay.io/centos-bootc/fedora-bootc"
   origin: centos-bootc-tenant
-  pipelineRef:
-    resolver: git
-    params:
-      - name: url
-        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
-      - name: revision
-        value: production
-      - name: pathInRepo
-        value: "pipelines/push-to-external-registry/push-to-external-registry.yaml"
+  pipeline:
+    pipelineRef:
+      resolver: git
+      params:
+        - name: url
+          value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+        - name: revision
+          value: production
+        - name: pathInRepo
+          value: "pipelines/push-to-external-registry/push-to-external-registry.yaml"
+    serviceAccountName: release-sa-centos-bootc
   policy: rh-policy
-  serviceAccount: release-sa-centos-bootc
