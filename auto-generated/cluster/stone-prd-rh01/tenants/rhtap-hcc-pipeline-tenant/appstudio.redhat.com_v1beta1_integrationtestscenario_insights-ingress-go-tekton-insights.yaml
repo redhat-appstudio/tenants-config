@@ -26,5 +26,5 @@ spec:
     - name: revision
       value: main
     - name: pathInRepo
-      value: pipelines/enterprise-contract-redhat-no-hermetic.yaml
+      value: pipelines/basic.yaml
     resolver: git
