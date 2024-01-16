@@ -1,17 +1,28 @@
 apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
-  name: insights-ingress-go-enterprise-contract
+  labels:
+    test.appstudio.openshift.io/optional: "false"
+  name: insights-ingress-go-tekton-insights
   namespace: rhtap-hcc-pipeline-tenant
 spec:
   application: insights-ingress-go
   contexts:
   - description: Application testing
     name: application
+  params:
+  - name: APP_NAME
+    value: ingress
+  - name: COMPONENT_NAME
+    value: ingress
+  - name: IQE_PLUGINS
+    value: ingress
+  - name: IQE_MARKER_EXPRESSION
+    value: smoke
   resolverRef:
     params:
     - name: url
-      value: https://github.com/redhat-appstudio/build-definitions
+      value: https://github.com/gbenhaim/tekton-insights.git
     - name: revision
       value: main
     - name: pathInRepo
