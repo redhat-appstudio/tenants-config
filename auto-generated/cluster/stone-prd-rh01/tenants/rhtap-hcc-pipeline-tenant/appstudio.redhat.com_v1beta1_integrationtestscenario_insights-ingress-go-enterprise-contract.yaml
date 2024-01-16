@@ -1,0 +1,19 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: insights-ingress-go-enterprise-contract
+  namespace: rhtap-hcc-pipeline-tenant
+spec:
+  application: insights-ingress-go
+  contexts:
+  - description: Application testing
+    name: application
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/build-definitions
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/enterprise-contract-redhat-no-hermetic.yaml
+    resolver: git

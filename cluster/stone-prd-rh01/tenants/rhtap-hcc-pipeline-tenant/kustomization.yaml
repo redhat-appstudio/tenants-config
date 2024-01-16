@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
   - integration_test_scenario.yaml
   - release_plan.yaml
+  - integration_test_tekton.yaml
   - ../../../../lib/consoledot-test-pipeline
 namespace: rhtap-hcc-pipeline-tenant
