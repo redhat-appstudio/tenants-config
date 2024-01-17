@@ -10,7 +10,7 @@ spec:
     name: application
   params:
   - name: POLICY_CONFIGURATION
-    value: rh-managed-rhtap-ser-tenant/ec-policy-o11y.yaml
+    value: rh-managed-rhtap-ser-tenant/rh-policy-o11y
   resolverRef:
     params:
     - name: url
