@@ -15,6 +15,7 @@ resources:
 - release_plan_admission-integration-service.yaml
 - remote-secrets
 - release_plan_admission-o11y.yaml
+- rb-ecp.yaml
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
