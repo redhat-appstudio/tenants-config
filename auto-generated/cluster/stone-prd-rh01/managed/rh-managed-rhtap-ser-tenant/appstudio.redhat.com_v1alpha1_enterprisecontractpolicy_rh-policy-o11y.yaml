@@ -12,6 +12,7 @@ spec:
     - attestation_task_bundle.task_ref_bundles_acceptable
     - attestation_task_bundle.tasks_defined_in_bundle
     - labels.disallowed_inherited_labels
+    - tasks.required_tasks_found
     include:
     - '@redhat'
   description: A special reduced ruleset for Observability.
