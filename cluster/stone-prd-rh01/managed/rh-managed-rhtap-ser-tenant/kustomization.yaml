@@ -1,4 +1,5 @@
 resources:
+- release_plan_admission-application-service.yaml
 - release_plan_admission-build.yaml
 - release_plan_admission-external-secrets.yaml
 - release_plan_admission-image-controller.yaml
