@@ -19,7 +19,7 @@ spec:
       - name: o11y
         repository: quay.io/redhat-appstudio/o11y
     pyxis:
-      secret: pyxis-staging-secret
+      secret: pyxis-production-secret
       server: production
   origin: rhtap-o11y-tenant
   pipelineRef:
