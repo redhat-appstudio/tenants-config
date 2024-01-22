@@ -23,7 +23,7 @@ spec:
         - name: application-service
           repository: "quay.io/redhat-appstudio/application-service"
     pyxis:
-      secret: pyxis-staging-secret
+      secret: pyxis-production-secret
       server: production
   origin: rhtap-has-tenant
   pipelineRef:
