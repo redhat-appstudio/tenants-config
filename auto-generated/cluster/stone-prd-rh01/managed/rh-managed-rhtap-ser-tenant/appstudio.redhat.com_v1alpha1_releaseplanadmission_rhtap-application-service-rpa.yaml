@@ -1,0 +1,44 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+  name: rhtap-application-service-rpa
+  namespace: rh-managed-rhtap-ser-tenant
+spec:
+  applications:
+  - application-service
+  data:
+    images:
+      addGitShaTag: true
+      defaultTag: latest
+    infra-deployment-update-script: "sed -i -e 's|\\(https://github.com/redhat-appstudio/application-service/.*?ref=\\)\\(.*\\)|\\1{{
+      revision }}|' -e 's/\\(newTag: \\).*/\\1{{ revision }}/' components/has/base/kustomization.yaml\nsed
+      -i -e 's|\\(https://github.com/redhat-appstudio/application-service/.*?ref=\\)\\(.*\\)|\\1{{
+      revision }}|' -e 's/\\(newTag: \\).*/\\1{{ revision }}/' components/has/production/kustomization.yaml\nsed
+      -i -e 's|\\(https://github.com/redhat-appstudio/application-service/config/prometheus/?ref=\\)\\(.*\\)|\\1{{
+      revision }}|' -e 's/\\(newTag: \\).*/\\1{{ revision }}/' components/has/production/kustomization.yaml\nsed
+      -i -e 's|\\(https://github.com/redhat-appstudio/application-service/config/prometheus/?ref=\\)\\(.*\\)|\\1{{
+      revision }}|' -e 's/\\(newTag: \\).*/\\1{{ revision }}/' components/has/staging/kustomization.yaml\nsed
+      -i -e 's|\\(https://github.com/redhat-appstudio/application-service/config/monitoring/?ref=\\)\\(.*\\)|\\1{{
+      revision }}|' -e 's/\\(newTag: \\).*/\\1{{ revision }}/' components/monitoring/grafana/base/dashboards/has/kustomization.yaml
+      \   \n"
+    mapping:
+      components:
+      - name: application-service
+        repository: quay.io/redhat-appstudio/application-service
+    pyxis:
+      secret: pyxis-production-secret
+      server: production
+  origin: rhtap-has-tenant
+  pipelineRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/release-service-catalog.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/rhtap-service-push/rhtap-service-push.yaml
+    resolver: git
+  policy: rh-policy
+  serviceAccount: rhtap-servicerelease-sa
