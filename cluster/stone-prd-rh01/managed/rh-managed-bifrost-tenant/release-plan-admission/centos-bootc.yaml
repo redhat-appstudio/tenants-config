@@ -12,7 +12,8 @@ spec:
   data:
     images:
       addGitShaTag: true
-      floatingTag: "stream9"
+      floatingTags:
+        - stream9
     mapping:
       components:
         - name: centos-bootc

@@ -11,7 +11,8 @@ spec:
   data:
     images:
       addGitShaTag: true
-      floatingTag: eln
+      floatingTags:
+      - eln
     mapping:
       components:
       - name: fedora-bootc
