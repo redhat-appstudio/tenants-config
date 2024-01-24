@@ -8,6 +8,9 @@ spec:
   contexts:
     - description: Application testing
       name: application
+  params: 
+    - name: POLICY_CONFIGURATION
+      value: rhtap-releng-tenant/app-interface-standard
   resolverRef:
     params:
       - name: url
@@ -16,6 +19,4 @@ spec:
         value: main
       - name: pathInRepo
         value: pipelines/enterprise-contract-redhat-no-hermetic.yaml
-      - name: POLICY_CONFIGURATION
-        value: rhtap-releng-tenant/app-interface-standard
     resolver: git
