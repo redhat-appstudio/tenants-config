@@ -13,7 +13,8 @@ spec:
       addGitShaTag: true
       defaultTag: latest
     infra-deployment-update-script: |
-      sed -i -e 's|\(https://github.com/redhat-appstudio/o11y/.*?ref=\)\(.*\)|\1{{ revision }}|' -e 's/\(newTag: \).*/\1{{ revision }}/' components/monitoring/grafana/base/kustomization.yaml
+      sed -i -e 's|\(https://github.com/redhat-appstudio/o11y/.*?ref=\)\(.*\)|\1{{ revision }}|' -e 's/\(newTag: \).*/\1{{ revision }}/' components/monitoring/grafana/development/kustomization.yaml
+      sed -i -e 's|\(https://github.com/redhat-appstudio/o11y/.*?ref=\)\(.*\)|\1{{ revision }}|' -e 's/\(newTag: \).*/\1{{ revision }}/' components/monitoring/grafana/staging/kustomization.yaml
     mapping:
       components:
         - name: o11y
