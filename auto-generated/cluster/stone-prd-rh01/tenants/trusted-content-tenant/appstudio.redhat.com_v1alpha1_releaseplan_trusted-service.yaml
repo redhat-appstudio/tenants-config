@@ -1,0 +1,11 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: trusted-service
+  namespace: trusted-content-tenant
+spec:
+  application: trusted-service
+  target: rhtap-releng-tenant
