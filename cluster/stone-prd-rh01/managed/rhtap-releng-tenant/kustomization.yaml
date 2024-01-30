@@ -7,6 +7,7 @@ resources:
   - sa-release-app-interface-prod.yaml
   - sa-release-app-interface-staging.yaml
   - sa-release-index-image-prod.yaml
+  - sa-release-index-image-staging.yaml
   - sa-release-github-terraform-dev.yaml
   - sa-release-github-terraform-prod.yaml
   - sa-release-registry-dev.yaml

@@ -21,6 +21,9 @@ subjects:
   name: release-index-image-prod
   namespace: rhtap-releng-tenant
 - kind: ServiceAccount
+  name: release-index-image-staging
+  namespace: rhtap-releng-tenant
+- kind: ServiceAccount
   name: release-app-interface-prod
   namespace: rhtap-releng-tenant
 - kind: ServiceAccount
