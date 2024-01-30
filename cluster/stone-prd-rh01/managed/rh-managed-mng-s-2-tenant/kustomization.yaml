@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - persistent_volume_claim.yaml
   - ec-policy.yaml
-  - release-plan-admission
   - release-pipeline-sa.yaml
   - release-service-account-build-rb.yaml
   - rh-trex-tenant-release-pipeline-sa.yaml
