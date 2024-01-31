@@ -30,14 +30,15 @@ spec:
       secret: pyxis-production-secret
       server: production
   origin: assisted-installer-tenant
-  pipelineRef:
-    resolver: git
-    params:
-      - name: url
-        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
-      - name: revision
-        value: production
-      - name: pathInRepo
-        value: "pipelines/push-to-external-registry/push-to-external-registry.yaml"
+  pipeline:
+    pipelineRef:
+      resolver: git
+      params:
+        - name: url
+          value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+        - name: revision
+          value: production
+        - name: pathInRepo
+          value: "pipelines/push-to-external-registry/push-to-external-registry.yaml"
+    serviceAccountName: release-service-account
   policy: app-interface-standard
-  serviceAccount: release-service-account

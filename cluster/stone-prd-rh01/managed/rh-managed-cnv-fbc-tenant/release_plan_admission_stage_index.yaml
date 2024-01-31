@@ -20,15 +20,16 @@ spec:
       fromIndex: "registry-proxy.engineering.redhat.com/rh-osbs/iib-pub-pending:v4.13"
       requestUpdateTimeout: 1000
       targetIndex: ""
-  pipelineRef:
-    resolver: git
-    params:
-      - name: url
-        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
-      - name: revision
-        value: production
-      - name: pathInRepo
-        value: "pipelines/fbc-release/fbc-release.yaml"
   origin: cnv-fbc-tenant
+  pipeline:
+    pipelineRef:
+      resolver: git
+      params:
+        - name: url
+          value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+        - name: revision
+          value: production
+        - name: pathInRepo
+          value: "pipelines/fbc-release/fbc-release.yaml"
+    serviceAccountName: release-service-account
   policy: rh-fbc-stage-index-policy
-  serviceAccount: release-service-account

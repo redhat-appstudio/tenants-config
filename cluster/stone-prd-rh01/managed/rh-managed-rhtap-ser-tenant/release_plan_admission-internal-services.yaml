@@ -24,14 +24,15 @@ spec:
       slack-notification-secret: "release-team-slack-webhook-notification-secret"
       slack-webhook-notification-secret-keyname: "internal-services"
   origin: rhtap-release-2-tenant
-  pipelineRef:
-    resolver: git
-    params:
-      - name: url
-        value: "https://github.com/redhat-appstudio/release-service-catalog.git"
-      - name: revision
-        value: production
-      - name: pathInRepo
-        value: "pipelines/rhtap-service-push/rhtap-service-push.yaml"
+  pipeline:
+    pipelineRef:
+      resolver: git
+      params:
+        - name: url
+          value: "https://github.com/redhat-appstudio/release-service-catalog.git"
+        - name: revision
+          value: production
+        - name: pathInRepo
+          value: "pipelines/rhtap-service-push/rhtap-service-push.yaml"
+    serviceAccountName: rhtap-servicerelease-sa
   policy: rh-policy
-  serviceAccount: rhtap-servicerelease-sa

@@ -21,14 +21,15 @@ spec:
       secret: pyxis-production-secret
       server: production
   origin: crt-redhat-acm-tenant
-  pipelineRef:
-    params:
-    - name: url
-      value: https://github.com/redhat-appstudio/release-service-catalog.git
-    - name: revision
-      value: production
-    - name: pathInRepo
-      value: pipelines/push-to-external-registry/push-to-external-registry.yaml
-    resolver: git
+  pipeline:
+    pipelineRef:
+      params:
+      - name: url
+        value: https://github.com/redhat-appstudio/release-service-catalog.git
+      - name: revision
+        value: production
+      - name: pathInRepo
+        value: pipelines/push-to-external-registry/push-to-external-registry.yaml
+      resolver: git
+    serviceAccountName: release-service-account
   policy: rh-policy
-  serviceAccount: release-service-account
