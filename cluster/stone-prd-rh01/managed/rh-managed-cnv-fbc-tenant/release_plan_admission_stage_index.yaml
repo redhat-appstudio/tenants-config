@@ -15,10 +15,10 @@ spec:
     fbc:
       stagedIndex: true
       binaryImage: "registry.redhat.io/openshift4/ose-operator-registry:v4.12"
-      buildTimeoutSeconds: 1000
+      buildTimeoutSeconds: 1500
       fbcPublishingCredentials: "staged-index-fbc-publishing-credentials"
       fromIndex: "registry-proxy.engineering.redhat.com/rh-osbs/iib-pub-pending:v4.13"
-      requestUpdateTimeout: 1000
+      requestUpdateTimeout: 1500
       targetIndex: ""
   origin: cnv-fbc-tenant
   pipeline:
