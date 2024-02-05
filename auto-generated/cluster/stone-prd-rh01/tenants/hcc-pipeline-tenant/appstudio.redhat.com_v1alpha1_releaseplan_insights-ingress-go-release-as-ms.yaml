@@ -4,9 +4,9 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: ingress-release-as-ms
+  name: insights-ingress-go-release-as-ms
   namespace: hcc-pipeline-tenant
 spec:
-  application: ingress
-  displayName: ingress release
+  application: insights-ingress-go
+  displayName: insights-ingress-go release
   target: rhtap-releng-tenant
