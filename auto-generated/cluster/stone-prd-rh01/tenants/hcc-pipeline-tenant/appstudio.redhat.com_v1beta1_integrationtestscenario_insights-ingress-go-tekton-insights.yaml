@@ -3,10 +3,10 @@ kind: IntegrationTestScenario
 metadata:
   labels:
     test.appstudio.openshift.io/optional: "true"
-  name: ingress-tekton-insights
+  name: insights-ingress-go-tekton-insights
   namespace: hcc-pipeline-tenant
 spec:
-  application: ingress
+  application: insights-ingress-go
   contexts:
   - description: Application testing
     name: application
