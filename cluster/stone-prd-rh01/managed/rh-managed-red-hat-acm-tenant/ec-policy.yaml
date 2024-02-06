@@ -7,8 +7,6 @@ spec:
     exclude:
       - step_image_registries
     include:
-      - '@slsa1'
-      - '@slsa2'
       - '@slsa3'
   description: 'Includes rules for levels 1, 2 & 3 of SLSA v0.1.'
   publicKey: 'k8s://openshift-pipelines/public-key'
