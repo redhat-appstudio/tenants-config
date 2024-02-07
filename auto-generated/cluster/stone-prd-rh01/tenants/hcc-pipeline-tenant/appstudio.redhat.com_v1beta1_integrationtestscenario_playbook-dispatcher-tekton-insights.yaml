@@ -1,0 +1,34 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "true"
+  name: playbook-dispatcher-tekton-insights
+  namespace: hcc-pipeline-tenant
+spec:
+  application: playbook-dispatcher
+  contexts:
+  - description: Application testing
+    name: application
+  params:
+  - name: APP_NAME
+    value: playbook-dispatcher
+  - name: COMPONENT_NAME
+    value: playbook-dispatcher
+  - name: CONNECT_COMPONENT_NAME
+    value: playbook-dispatcher-connect
+  - name: IQE_PLUGINS
+    value: playbook-dispatcher
+  - name: IQE_MARKER_EXPRESSION
+    value: smoke
+  - name: IQE_CJI_TIMEOUT
+    value: 30m
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/gbenhaim/tekton-insights.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/basic.yaml
+    resolver: git

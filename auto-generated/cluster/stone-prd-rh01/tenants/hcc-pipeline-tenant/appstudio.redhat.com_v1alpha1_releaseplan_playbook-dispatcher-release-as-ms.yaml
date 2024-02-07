@@ -1,0 +1,12 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: playbook-dispatcher-release-as-ms
+  namespace: hcc-pipeline-tenant
+spec:
+  application: playbook-dispatcher
+  displayName: playbook-dispatcher release
+  target: rhtap-releng-tenant
