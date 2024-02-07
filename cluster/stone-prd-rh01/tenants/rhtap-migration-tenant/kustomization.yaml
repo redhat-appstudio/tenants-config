@@ -4,4 +4,5 @@ resources:
   - ../../../../lib/consoledot-test-pipeline
   - tekton-insights.yaml
   - release-plan.yaml
+  - consoledot-frontend-standard.yaml
 namespace: rhtap-migration-tenant

@@ -1,0 +1,23 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: EnterpriseContractPolicy
+metadata:
+  name: consoledot-frontend-standard
+  namespace: rhtap-migration-tenant
+spec:
+  configuration:
+    exclude:
+    - base_image_registries.base_image_permitted
+    - labels.disallowed_inherited_labels
+    - tasks.required_tasks_found:source-build
+    - test.no_skipped_tests:sast-snyk-check
+    include:
+    - '@redhat'
+  description: Includes rules to set a standard for current App Interface deployments
+  publicKey: k8s://openshift-pipelines/public-key
+  sources:
+  - data:
+    - github.com/release-engineering/rhtap-ec-policy//data
+    - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
+    name: Release Policies
+    policy:
+    - oci::quay.io/enterprise-contract/ec-release-policy:latest
