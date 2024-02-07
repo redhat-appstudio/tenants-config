@@ -12,7 +12,8 @@ spec:
   data:
     images:
       addGitShaTag: true
-      floatingTag: "latest"
+      floatingTags:
+        - latest
     mapping:
       components:
         - name: bootc-image-builder
