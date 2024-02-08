@@ -1,0 +1,12 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: application-service-release-to-quay-konflux-ser
+  namespace: rhtap-has-tenant
+spec:
+  application: application-service
+  displayName: application-service release-to-quay
+  target: rh-managed-rhtap-ser-tenant
