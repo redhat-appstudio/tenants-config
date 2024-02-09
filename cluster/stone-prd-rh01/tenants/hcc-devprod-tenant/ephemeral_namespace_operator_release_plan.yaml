@@ -1,0 +1,12 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: ephemeral-namespace-operator-release-as-ms
+  namespace: hcc-devprod-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: ephemeral-namespace-operator
+  displayName: ephemeral-namespace-operator release
+  target: rhtap-releng-tenant
