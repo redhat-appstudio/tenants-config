@@ -10,6 +10,10 @@ spec:
     - labels.disallowed_inherited_labels
     - tasks.required_tasks_found:source-build
     - test.no_skipped_tests:sast-snyk-check
+    - hermetic_build_task.build_task_hermetic
+    - attestation_task_bundle.tasks_defined_in_bundle
+    - tasks.required_tasks_found:prefetch-dependencies
+    - tasks.pinned_task_refs
     include:
     - '@redhat'
   description: Includes rules to set a standard for current App Interface deployments
