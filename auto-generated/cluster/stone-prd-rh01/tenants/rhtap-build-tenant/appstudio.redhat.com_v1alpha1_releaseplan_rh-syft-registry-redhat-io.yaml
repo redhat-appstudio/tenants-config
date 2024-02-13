@@ -1,0 +1,10 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "false"
+  name: rh-syft-registry-redhat-io
+  namespace: rhtap-build-tenant
+spec:
+  application: rh-syft
+  target: rhtap-releng-tenant
