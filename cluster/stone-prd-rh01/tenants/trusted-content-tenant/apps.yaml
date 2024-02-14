@@ -19,6 +19,7 @@ spec:
   source:
     git:
       revision: trustification-main
-      url: https://github.com/trustification/guac.git
+      devfileUrl: https://raw.githubusercontent.com/devfile-samples/devfile-sample-go-basic/main/devfile.yaml
+      url: https://github.com/trustification/guac
       dockerfileUrl: dockerfiles/Dockerfile.guac-ubi
       context: ./
