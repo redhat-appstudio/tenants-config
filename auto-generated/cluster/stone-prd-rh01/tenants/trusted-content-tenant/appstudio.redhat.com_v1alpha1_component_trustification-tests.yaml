@@ -1,0 +1,18 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "private"}'
+  name: trustification-tests
+  namespace: trusted-content-tenant
+spec:
+  application: trustification
+  componentName: trustification-tests
+  source:
+    git:
+      context: ./
+      devfileUrl: https://raw.githubusercontent.com/devfile-samples/devfile-sample-go-basic/main/devfile.yaml
+      dockerfileUrl: container_files/Containerfile.tests
+      revision: stable
+      url: https://github.com/trustification/trustification

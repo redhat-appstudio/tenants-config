@@ -23,3 +23,39 @@ spec:
       url: https://github.com/trustification/guac
       dockerfileUrl: dockerfiles/Dockerfile.guac-ubi
       context: ./
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: trustification-service
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "private"}'
+spec:
+  application: trustification
+  componentName: trustification-service
+  source:
+    git:
+      revision: stable
+      devfileUrl: https://raw.githubusercontent.com/devfile-samples/devfile-sample-go-basic/main/devfile.yaml
+      url: https://github.com/trustification/trustification
+      dockerfileUrl: container_files/Containerfile.services
+      context: ./
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: trustification-tests
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "private"}'
+spec:
+  application: trustification
+  componentName: trustification-tests
+  source:
+    git:
+      revision: stable
+      devfileUrl: https://raw.githubusercontent.com/devfile-samples/devfile-sample-go-basic/main/devfile.yaml
+      url: https://github.com/trustification/trustification
+      dockerfileUrl: container_files/Containerfile.tests
+      context: ./
