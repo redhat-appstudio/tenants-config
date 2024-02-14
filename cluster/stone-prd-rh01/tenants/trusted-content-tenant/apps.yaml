@@ -1,0 +1,24 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: trustification
+spec:
+  displayName: trustification
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: trustification-guac
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "private"}'
+spec:
+  application: trustification
+  componentName: trustification-guac
+  source:
+    git:
+      revision: trustification-main
+      url: https://github.com/trustification/guac.git
+      dockerfileUrl: dockerfiles/Dockerfile.guac-ubi
+      context: ./
