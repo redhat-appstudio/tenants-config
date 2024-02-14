@@ -1,0 +1,22 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: hac-dev-enterprise-contract
+  namespace: konflux-ui-tenant
+spec:
+  application: hac-dev
+  contexts:
+  - description: Application testing
+    name: application
+  params:
+    name: POLICY_CONFIGURATION
+    value: rhtap-releng-tenant/consoledot-frontend-standard
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/build-definitions
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/enterprise-contract-redhat-no-hermetic.yaml
+    resolver: git

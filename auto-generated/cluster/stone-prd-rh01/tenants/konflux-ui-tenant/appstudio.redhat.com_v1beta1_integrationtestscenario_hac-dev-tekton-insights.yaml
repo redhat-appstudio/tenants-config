@@ -1,0 +1,29 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false"
+  name: hac-dev-tekton-insights
+  namespace: konflux-ui-tenant
+spec:
+  application: hac-dev
+  params:
+  - name: APP_NAME
+    value: hac-dev
+  - name: COMPONENTS
+    value: hac-dev
+  - name: COMPONENT_NAME
+    value: hac-dev
+  - name: IQE_PLUGINS
+    value: hac_dev
+  - name: IQE_MARKER_EXPRESSION
+    value: smoke
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/gbenhaim/tekton-insights.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/basic.yaml
+    resolver: git
