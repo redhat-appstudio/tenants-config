@@ -8,6 +8,9 @@ spec:
   contexts:
     - description: Application testing
       name: application
+  params:
+    - name: POLICY_CONFIGURATION
+      value: rhtap-releng-tenant/registry-standard
   resolverRef:
     params:
       - name: url
@@ -28,6 +31,9 @@ spec:
   contexts:
     - description: Application testing
       name: application
+  params:
+    - name: POLICY_CONFIGURATION
+      value: rhtap-releng-tenant/registry-standard
   resolverRef:
     params:
       - name: url
