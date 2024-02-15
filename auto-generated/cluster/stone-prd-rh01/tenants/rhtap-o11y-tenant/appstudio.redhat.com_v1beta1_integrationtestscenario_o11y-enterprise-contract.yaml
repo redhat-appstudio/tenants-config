@@ -8,6 +8,9 @@ spec:
   contexts:
   - description: Application testing
     name: application
+  params:
+  - name: POLICY_CONFIGURATION
+    value: rh-managed-rhtap-ser-tenant/rh-policy-o11y
   resolverRef:
     params:
     - name: url
