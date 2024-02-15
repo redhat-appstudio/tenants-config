@@ -1,0 +1,24 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: openshift-pipelines
+spec:
+  displayName: openshift-pipelines
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: operator
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+spec:
+  application: openshift-pipelines
+  componentName: operator
+  source:
+    git:
+      revision: main
+      url: https://github.com/openshift-pipelines/operator.git
+      dockerfileUrl: Dockerfile
+      context: ./
