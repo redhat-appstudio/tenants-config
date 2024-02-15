@@ -39,4 +39,4 @@ spec:
         value: pipelines/rhtap-service-push/rhtap-service-push.yaml
       resolver: git
     serviceAccountName: rhtap-servicerelease-sa
-  policy: rh-policy
+  policy: rh-policy-release-service
