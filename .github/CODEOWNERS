@@ -5,6 +5,4 @@
 # the repo. Unless a later match takes precedence,
 # owners will be requested for
 # review when someone opens a pull request.
-* @scoheb
-* @ernesgonzalez33
-* @gbenhaim
+* @redhat-appstudio/tenants-config-approvers
