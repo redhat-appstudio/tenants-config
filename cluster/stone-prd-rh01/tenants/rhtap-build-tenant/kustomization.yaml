@@ -2,7 +2,6 @@ resources:
 - release_plan.yaml
 - external-secrets
 - integration_test_scenario.yaml
-- service_account.yaml
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
