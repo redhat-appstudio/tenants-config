@@ -1,9 +1,11 @@
 resources:
   - persistent-volume-claim.yaml
   - rb-ecp.yaml
+  - rb-maestro-service-account.yaml
   - rb-release-pipelines.yaml
   - rb-releng-gitops-repo-ro.yaml
   - rb-releng-gitops-repo-rw.yaml
+  - sa-maestro-service-account.yaml
   - sa-release-app-interface-prod.yaml
   - sa-release-app-interface-staging.yaml
   - sa-release-index-image-prod.yaml
