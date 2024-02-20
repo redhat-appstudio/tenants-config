@@ -14,15 +14,15 @@ spec:
       addGitShaTag: true
       defaultTag: latest
     infra-deployment-update-script: |
-      sed -i -e 's|\(https://github.com/redhat-appstudio/service-provider-integration-operator/config/overlays/openshift_aws?ref=\)\(.*\)|\1{{ revision }}|' components/spi/overlays/staging/base/kustomization.yaml;
+      sed -i -e 's|\(https://github.com/konflux-ci/service-provider-integration-operator/config/overlays/openshift_aws?ref=\)\(.*\)|\1{{ revision }}|' components/spi/overlays/staging/base/kustomization.yaml;
       awk  -i inplace -v n=1 '/newTag:/ { if (++count == n) sub(/newTag:.*/, "newTag: {{ revision }}")} 1' components/spi/overlays/staging/base/kustomization.yaml
       awk  -i inplace -v n=2 '/newTag:/ { if (++count == n) sub(/newTag:.*/, "newTag: {{ revision }}")} 1' components/spi/overlays/staging/base/kustomization.yaml
-      sed -i -e 's|\(https://github.com/redhat-appstudio/service-provider-integration-operator/config/overlays/openshift_vault?ref=\)\(.*\)|\1{{ revision }}|' components/spi/overlays/development/kustomization.yaml;
+      sed -i -e 's|\(https://github.com/konflux-ci/service-provider-integration-operator/config/overlays/openshift_vault?ref=\)\(.*\)|\1{{ revision }}|' components/spi/overlays/development/kustomization.yaml;
       awk  -i inplace -v n=1 '/newTag:/ { if (++count == n) sub(/newTag:.*/, "newTag: {{ revision }}")} 1' components/spi/overlays/development/kustomization.yaml
       awk  -i inplace -v n=2 '/newTag:/ { if (++count == n) sub(/newTag:.*/, "newTag: {{ revision }}")} 1' components/spi/overlays/development/kustomization.yaml
-      sed -i -e 's|\(https://github.com/redhat-appstudio/service-provider-integration-operator/config/vault/openshift?ref=\)\(.*\)|\1{{ revision }}|' components/spi-vault/kustomization.yaml
-      sed -i -e 's|\(https://github.com/redhat-appstudio/service-provider-integration-operator/config/monitoring/grafana/base?ref=\)\(.*\)|\1{{ revision }}|' components/monitoring/grafana/base/dashboards/spi/kustomization.yaml
-      sed -i -e 's|\(https://github.com/redhat-appstudio/service-provider-integration-operator/config/monitoring/prometheus/base?ref=\)\(.*\)|\1{{ revision }}|' components/spi/overlays/staging/base/kustomization.yaml
+      sed -i -e 's|\(https://github.com/konflux-ci/service-provider-integration-operator/config/vault/openshift?ref=\)\(.*\)|\1{{ revision }}|' components/spi-vault/kustomization.yaml
+      sed -i -e 's|\(https://github.com/konflux-ci/service-provider-integration-operator/config/monitoring/grafana/base?ref=\)\(.*\)|\1{{ revision }}|' components/monitoring/grafana/base/dashboards/spi/kustomization.yaml
+      sed -i -e 's|\(https://github.com/konflux-ci/service-provider-integration-operator/config/monitoring/prometheus/base?ref=\)\(.*\)|\1{{ revision }}|' components/spi/overlays/staging/base/kustomization.yaml
 
     mapping:
       components:
