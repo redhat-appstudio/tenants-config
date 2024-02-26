@@ -8,4 +8,4 @@ metadata:
   namespace: rhtap-migration-tenant
 spec:
   application: bonfire-cicd-tools
-  target: rh-managed-mng-s-2-tenant
+  target: rhtap-releng-tenant
