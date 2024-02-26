@@ -8,4 +8,4 @@ metadata:
   namespace: rh-trex-tenant
 spec:
   application: rh-trex
-  target: rh-managed-mng-s-2-tenant
+  target: rhtap-releng-tenant

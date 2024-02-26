@@ -8,4 +8,4 @@ metadata:
   name: bonfire-cicd-tools
 spec:
   application: bonfire-cicd-tools
-  target: rh-managed-mng-s-2-tenant
+  target: rhtap-releng-tenant
