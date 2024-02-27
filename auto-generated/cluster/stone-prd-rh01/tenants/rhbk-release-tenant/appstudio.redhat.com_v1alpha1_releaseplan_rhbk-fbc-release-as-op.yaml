@@ -5,7 +5,7 @@ metadata:
     release.appstudio.openshift.io/auto-release: "false"
     release.appstudio.openshift.io/standing-attribution: "true"
   name: rhbk-fbc-release-as-op
-  namespace: rhbk-tenant
+  namespace: rhbk-release-tenant
 spec:
   application: rhbk-fbc
   displayName: rhbk-fbc release
