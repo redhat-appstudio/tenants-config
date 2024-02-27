@@ -8,5 +8,4 @@ metadata:
   namespace: hcc-pipeline-tenant
 spec:
   application: insights-ingress-go
-  displayName: insights-ingress-go release
   target: rhtap-releng-tenant

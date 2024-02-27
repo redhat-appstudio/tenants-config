@@ -8,5 +8,4 @@ metadata:
   namespace: hcc-pipeline-tenant
 spec:
   application: playbook-dispatcher
-  displayName: playbook-dispatcher release
   target: rhtap-releng-tenant

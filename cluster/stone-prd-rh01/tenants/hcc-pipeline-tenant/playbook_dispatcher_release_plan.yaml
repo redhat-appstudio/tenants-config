@@ -8,5 +8,4 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: playbook-dispatcher
-  displayName: playbook-dispatcher release
   target: rhtap-releng-tenant
