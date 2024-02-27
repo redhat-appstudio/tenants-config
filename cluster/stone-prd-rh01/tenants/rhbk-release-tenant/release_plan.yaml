@@ -2,7 +2,7 @@ apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
   name: rhbk-fbc-release-as-op
-  namespace: rhbk-tenant
+  namespace: rhbk-release-tenant
   labels:
     release.appstudio.openshift.io/auto-release: 'false'
     release.appstudio.openshift.io/standing-attribution: 'true'
