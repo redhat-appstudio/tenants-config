@@ -2,10 +2,11 @@ apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
   labels:
-    release.appstudio.openshift.io/auto-release: "false"
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/releasePlanAdmission: rhbk-fbc-staging-index
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: rhbk-fbc-release-as-op
+  name: rhbk-fbc-v4-14-staging-release-plan
   namespace: rhbk-release-tenant
 spec:
-  application: rhbk-fbc
+  application: rhbk-fbc-v4-14
   target: rhtap-releng-tenant
