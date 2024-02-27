@@ -8,5 +8,4 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: ephemeral-namespace-operator
-  displayName: ephemeral-namespace-operator release
   target: rhtap-releng-tenant

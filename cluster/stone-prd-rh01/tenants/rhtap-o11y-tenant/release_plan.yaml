@@ -20,5 +20,4 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: o11y
-  displayName: o11y release-to-quay
   target: rh-managed-rhtap-ser-tenant
