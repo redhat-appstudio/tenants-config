@@ -33,13 +33,13 @@ metadata:
     image.redhat.com/generate: '{"visibility": "private"}'
 spec:
   application: trustification
-  componentName: trustification-service
+  componentName: trustification-product-1-0-z
   source:                                                                                                                                                                                     
     git:                                                                                                                                                                                      
       devfileUrl: https://raw.githubusercontent.com/nodeshift-starters/devfile-sample/main/devfile.yaml
       dockerfileUrl: https://raw.githubusercontent.com/trustification/trustification/stable/container_files/Containerfile.services
-      revision: stable                
-      url: https://github.com/trustification/trustification/
+      revision: release/1.0.z
+      url: https://github.com/trustification/trustification
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: Component
@@ -50,11 +50,11 @@ metadata:
     image.redhat.com/generate: '{"visibility": "private"}'
 spec:
   application: trustification
-  componentName: trustification-tests
+  componentName: trustification-product-test-1-0-z
   source:                                                                                                                                                                                     
     git:                                                                                                                                                                                      
       context: ./                                                                                                                                                                             
       devfileUrl: https://raw.githubusercontent.com/devfile-samples/devfile-sample-go-basic/main/devfile.yaml                                                                                 
-      dockerfileUrl: container_files/Containerfile.tests                                                                                                                                      
-      revision: stable                                                                                                                                                                        
+      dockerfileUrl: https://raw.githubusercontent.com/trustification/trustification/release/1.0.z/container_files/Containerfile.tests
+      revision: release/1.0.z
       url: https://github.com/trustification/trustification
