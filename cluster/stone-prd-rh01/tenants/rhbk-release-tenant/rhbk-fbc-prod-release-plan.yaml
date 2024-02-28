@@ -1,0 +1,53 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: rhbk-fbc-v4-11-prod-release-plan
+  namespace: rhbk-release-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/releasePlanAdmission: rhbk-fbc-prod-index
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: rhbk-fbc-v4-11
+  target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: rhbk-fbc-v4-12-prod-release-plan
+  namespace: rhbk-release-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/releasePlanAdmission: rhbk-fbc-prod-index
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: rhbk-fbc-v4-12
+  target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: rhbk-fbc-v4-13-prod-release-plan
+  namespace: rhbk-release-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/releasePlanAdmission: rhbk-fbc-prod-index
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: rhbk-fbc-v4-13
+  target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: rhbk-fbc-v4-14-prod-release-plan
+  namespace: rhbk-release-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/releasePlanAdmission: rhbk-fbc-prod-index
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: rhbk-fbc-v4-14
+  target: rhtap-releng-tenant
+---

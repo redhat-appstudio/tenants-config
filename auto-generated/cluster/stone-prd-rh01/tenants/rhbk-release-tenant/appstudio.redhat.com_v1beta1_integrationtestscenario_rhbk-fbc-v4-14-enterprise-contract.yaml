@@ -1,0 +1,19 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: rhbk-fbc-v4-14-enterprise-contract
+  namespace: rhbk-release-tenant
+spec:
+  application: rhbk-fbc-v4-14
+  contexts:
+  - description: Application testing
+    name: application
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/build-definitions
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/enterprise-contract-redhat-no-hermetic.yaml
+    resolver: git
