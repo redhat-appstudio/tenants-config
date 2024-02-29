@@ -4,6 +4,7 @@ resources:
   - ec-policy.yaml
   - persistent_volume_claim.yaml
   - release_plan_admission_stage_index.yaml
+  - release_plan_admission_stage_index_v4_15_plus.yaml
   - release-pipeline-sa.yaml
   - release-service-account-build-rb.yaml
   - fbc-publishing-credentials-remote-secret.yaml

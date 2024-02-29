@@ -1,17 +1,15 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlanAdmission
 metadata:
-  name: fbc-staged-index-release
+  name: fbc-staged-index-release-v4-15-plus
   namespace: rh-managed-cnv-fbc-tenant
 spec:
   applications:
-  - cnv-fbc-v4-11
-  - cnv-fbc-v4-12
-  - cnv-fbc-v4-13
-  - cnv-fbc-v4-14
+  - cnv-fbc-v4-15
+  - cnv-fbc-v4-16
   data:
     fbc:
-      binaryImage: registry.redhat.io/openshift4/ose-operator-registry:v4.12
+      binaryImage: registry.redhat.io/openshift4/ose-operator-registry-rhel9:v4.15
       buildTimeoutSeconds: 1500
       fbcPublishingCredentials: staged-index-fbc-publishing-credentials
       fromIndex: registry-proxy.engineering.redhat.com/rh-osbs/iib-pub-pending:v4.13
