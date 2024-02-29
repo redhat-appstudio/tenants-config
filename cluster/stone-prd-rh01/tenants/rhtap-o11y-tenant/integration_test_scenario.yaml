@@ -53,7 +53,7 @@ spec:
       name: application
   params:
     - name: POLICY_CONFIGURATION
-      value: rh-managed-rhtap-ser-tenant/rh-policy
+      value: rhtap-releng-tenant/app-interface-standard
   resolverRef:
     params:
       - name: url

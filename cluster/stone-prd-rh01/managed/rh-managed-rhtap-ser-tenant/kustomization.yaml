@@ -6,7 +6,6 @@ resources:
 - release_plan_admission-internal-services.yaml
 - release_plan_admission-release-service.yaml
 - release_plan_admission-segment-bridge.yaml
-- release_plan_admission-tools.yaml
 - release_plan_admission-remotesecret.yaml
 - release_plan_admission-spi.yaml
 - release_plan_admission-build-trusted-artifacts.yaml
