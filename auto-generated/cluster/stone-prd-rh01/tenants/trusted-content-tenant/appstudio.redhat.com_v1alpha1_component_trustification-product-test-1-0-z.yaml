@@ -4,7 +4,7 @@ metadata:
   annotations:
     build.appstudio.openshift.io/request: configure-pac
     image.redhat.com/generate: '{"visibility": "private"}'
-  name: trustification-tests
+  name: trustification-product-test-1-0-z
   namespace: trusted-content-tenant
 spec:
   application: trustification

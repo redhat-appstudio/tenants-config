@@ -16,7 +16,7 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: 'false'
     release.appstudio.openshift.io/standing-attribution: 'true'
-  name: trusted-service
+  name: trustification
 spec:
-  application: trusted-service
+  application: trustification
   target: rhtap-releng-tenant
