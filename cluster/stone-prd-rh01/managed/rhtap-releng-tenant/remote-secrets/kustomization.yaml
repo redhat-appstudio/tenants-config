@@ -14,4 +14,8 @@ resources:
   - remote_secret-quay-token-redhat-prod.yaml
   - remote_secret-quay-token-redhat-staging.yaml
   - remote_secret-quay-token-redhat-dev.yaml
+  - remote_secret-build-team-slack-webhook-notification.yaml
+  - remote_secret-pipeline-team-slack-webhook-notification.yaml
+  - remote_secret-release-team-slack-webhook-notification.yaml
+  - remote_secret-spi-team-slack-webhook-notification.yaml
 namespace: rhtap-releng-tenant
