@@ -8,4 +8,4 @@ metadata:
   namespace: rhtap-spi-tenant
 spec:
   application: spi
-  target: rh-managed-rhtap-ser-tenant
+  target: rhtap-releng-tenant

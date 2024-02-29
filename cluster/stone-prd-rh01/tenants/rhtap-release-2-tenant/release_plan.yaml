@@ -8,7 +8,7 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: release-service
-  target: rh-managed-rhtap-ser-tenant
+  target: rhtap-releng-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
@@ -20,4 +20,4 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: internal-services
-  target: rh-managed-rhtap-ser-tenant
+  target: rhtap-releng-tenant

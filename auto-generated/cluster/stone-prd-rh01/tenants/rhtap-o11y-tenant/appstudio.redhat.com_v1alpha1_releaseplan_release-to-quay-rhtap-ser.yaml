@@ -8,4 +8,4 @@ metadata:
   namespace: rhtap-o11y-tenant
 spec:
   application: segment-bridge
-  target: rh-managed-rhtap-ser-tenant
+  target: rhtap-releng-tenant
