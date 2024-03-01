@@ -18,4 +18,5 @@ resources:
   - remote_secret-pipeline-team-slack-webhook-notification.yaml
   - remote_secret-release-team-slack-webhook-notification.yaml
   - remote_secret-spi-team-slack-webhook-notification.yaml
+  - remote_secret-send-slack-notification.yaml
 namespace: rhtap-releng-tenant
