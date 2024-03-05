@@ -1,7 +1,7 @@
 apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
-  name: acs-enterprise-contract-allow-quay-registry
+  name: acs-enterprise-contract
   namespace: rh-acs-tenant
 spec:
   application: acs
@@ -10,7 +10,7 @@ spec:
     name: application
   params:
   - name: POLICY_CONFIGURATION
-    value: github.com/stackrox/stackrox?ref=rhtap-allow-quay-registry//.tekton/enterprise-contract
+    value: rhtap-releng-tenant/registry-rhacs
   resolverRef:
     params:
     - name: url
