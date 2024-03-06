@@ -1,10 +1,10 @@
 apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
-  name: rhbk-enterprise-contract
-  namespace: rhbk-tenant
+  name: rhbk-fbc-v4-11-enterprise-contract
+  namespace: rhbk-release-tenant
 spec:
-  application: rhbk-fbc
+  application: rhbk-fbc-v4-11
   contexts:
   - description: Application testing
     name: application

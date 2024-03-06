@@ -4,14 +4,14 @@ metadata:
   annotations:
     build.appstudio.openshift.io/request: configure-pac
     image.redhat.com/generate: '{"visibility": "private"}'
-  name: trustification-service
+  name: trustification-product-1-0-z
   namespace: trusted-content-tenant
 spec:
   application: trustification
-  componentName: trustification-service
+  componentName: trustification-product-1-0-z
   source:
     git:
       devfileUrl: https://raw.githubusercontent.com/nodeshift-starters/devfile-sample/main/devfile.yaml
-      dockerfileUrl: https://raw.githubusercontent.com/trustification/trustification/stable/container_files/Containerfile.services
-      revision: stable
-      url: https://github.com/trustification/trustification/
+      dockerfileUrl: https://raw.githubusercontent.com/trustification/trustification/release/1.0.z/container_files/Containerfile.services
+      revision: release/1.0.z
+      url: https://github.com/trustification/trustification

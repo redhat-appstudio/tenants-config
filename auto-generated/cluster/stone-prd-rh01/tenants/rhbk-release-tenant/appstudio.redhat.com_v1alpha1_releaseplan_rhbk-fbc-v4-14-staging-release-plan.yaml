@@ -3,9 +3,10 @@ kind: ReleasePlan
 metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/releasePlanAdmission: rhbk-fbc-staging-index
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: trusted-service
-  namespace: trusted-content-tenant
+  name: rhbk-fbc-v4-14-staging-release-plan
+  namespace: rhbk-release-tenant
 spec:
-  application: trusted-service
+  application: rhbk-fbc-v4-14
   target: rhtap-releng-tenant

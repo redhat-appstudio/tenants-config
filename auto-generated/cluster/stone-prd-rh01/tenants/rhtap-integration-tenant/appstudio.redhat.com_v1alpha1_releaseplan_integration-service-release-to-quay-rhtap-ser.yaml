@@ -8,4 +8,4 @@ metadata:
   namespace: rhtap-integration-tenant
 spec:
   application: integration-service
-  target: rh-managed-rhtap-ser-tenant
+  target: rhtap-releng-tenant

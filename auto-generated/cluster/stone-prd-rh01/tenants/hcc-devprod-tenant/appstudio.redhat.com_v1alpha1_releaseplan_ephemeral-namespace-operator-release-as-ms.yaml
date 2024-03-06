@@ -8,5 +8,4 @@ metadata:
   namespace: hcc-devprod-tenant
 spec:
   application: ephemeral-namespace-operator
-  displayName: ephemeral-namespace-operator release
   target: rhtap-releng-tenant

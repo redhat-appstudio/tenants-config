@@ -4,15 +4,15 @@ metadata:
   annotations:
     build.appstudio.openshift.io/request: configure-pac
     image.redhat.com/generate: '{"visibility": "private"}'
-  name: trustification-tests
+  name: trustification-product-test-1-0-z
   namespace: trusted-content-tenant
 spec:
   application: trustification
-  componentName: trustification-tests
+  componentName: trustification-product-test-1-0-z
   source:
     git:
       context: ./
       devfileUrl: https://raw.githubusercontent.com/devfile-samples/devfile-sample-go-basic/main/devfile.yaml
-      dockerfileUrl: container_files/Containerfile.tests
-      revision: stable
+      dockerfileUrl: https://raw.githubusercontent.com/trustification/trustification/release/1.0.z/container_files/Containerfile.tests
+      revision: release/1.0.z
       url: https://github.com/trustification/trustification

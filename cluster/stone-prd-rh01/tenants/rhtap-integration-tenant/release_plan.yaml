@@ -8,4 +8,4 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: integration-service
-  target: rh-managed-rhtap-ser-tenant
+  target: rhtap-releng-tenant

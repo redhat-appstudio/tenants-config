@@ -3,13 +3,20 @@ kind: Kustomization
 resources:
   - remote_secret-github-pat-enriquebelarte-terraform-provider-rhcs.yaml
   - remote_secret-github-pat-terraform-redhat-terraform-provider-rhcs.yaml
+  - remote_secret-infra-deployments-pr-creator.yaml
   - remote_secret-pyxis-prod-secret.yaml
   - remote_secret-pyxis-staging-secret.yaml
   - remote_secret-quay-token-hacbs-release-tests.yaml
+  - remote_secret-quay-token-konflux-service-release.yaml
   - remote_secret-quay-token-redhat-services-prod.yaml
   - remote_secret-quay-token-redhat-services-staging.yaml
   - remote_secret-quay-token-redhat-acm.yaml
   - remote_secret-quay-token-redhat-prod.yaml
   - remote_secret-quay-token-redhat-staging.yaml
   - remote_secret-quay-token-redhat-dev.yaml
+  - remote_secret-build-team-slack-webhook-notification.yaml
+  - remote_secret-pipeline-team-slack-webhook-notification.yaml
+  - remote_secret-release-team-slack-webhook-notification.yaml
+  - remote_secret-spi-team-slack-webhook-notification.yaml
+  - remote_secret-send-slack-notification.yaml
 namespace: rhtap-releng-tenant

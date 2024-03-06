@@ -1,0 +1,7 @@
+resources:
+- rhbk-fbc-enterprise-contract.yaml
+- rhbk-fbc-staging-release-plan.yaml
+- rhbk-fbc-prod-release-plan.yaml
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

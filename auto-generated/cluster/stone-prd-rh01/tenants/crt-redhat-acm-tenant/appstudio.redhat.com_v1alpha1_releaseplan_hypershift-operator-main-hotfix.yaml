@@ -2,11 +2,10 @@ apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
   labels:
-    release.appstudio.openshift.io/auto-release: "false"
+    release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: rhbk-fbc-release-as-op
-  namespace: rhbk-tenant
+  name: hypershift-operator-main-hotfix
+  namespace: crt-redhat-acm-tenant
 spec:
-  application: rhbk-fbc
-  displayName: rhbk-fbc release
+  application: hypershift-operator-main-hotfix
   target: rhtap-releng-tenant

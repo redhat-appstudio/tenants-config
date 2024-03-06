@@ -19,7 +19,7 @@ metadata:
   name: assisted-events-stream
 spec:
   application: assisted-events-stream
-  target: rh-managed-mng-s-2-tenant
+  target: rhtap-releng-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
@@ -30,7 +30,7 @@ metadata:
   name: assisted-image-service
 spec:
   application: assisted-image-service
-  target: rh-managed-mng-s-2-tenant
+  target: rhtap-releng-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
@@ -41,7 +41,7 @@ metadata:
   name: assisted-service
 spec:
   application: assisted-service
-  target: rh-managed-mng-s-2-tenant
+  target: rhtap-releng-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
@@ -52,4 +52,4 @@ metadata:
   name: prow-jobs-scraper
 spec:
   application: prow-jobs-scraper
-  target: rh-managed-mng-s-2-tenant
+  target: rhtap-releng-tenant

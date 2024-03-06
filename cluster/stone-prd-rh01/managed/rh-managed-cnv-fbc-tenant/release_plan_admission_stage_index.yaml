@@ -9,8 +9,6 @@ spec:
     - cnv-fbc-v4-12
     - cnv-fbc-v4-13
     - cnv-fbc-v4-14
-    - cnv-fbc-v4-15
-    - cnv-fbc-v4-16
   data:
     fbc:
       stagedIndex: true

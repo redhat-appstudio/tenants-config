@@ -1,0 +1,31 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: fbc-staged-index-release-v4-15-plus
+  namespace: rh-managed-cnv-fbc-tenant
+spec:
+  applications:
+  - cnv-fbc-v4-15
+  - cnv-fbc-v4-16
+  data:
+    fbc:
+      binaryImage: registry.redhat.io/openshift4/ose-operator-registry-rhel9:v4.15
+      buildTimeoutSeconds: 1500
+      fbcPublishingCredentials: staged-index-fbc-publishing-credentials
+      fromIndex: registry-proxy.engineering.redhat.com/rh-osbs/iib-pub-pending:v4.13
+      requestUpdateTimeout: 1500
+      stagedIndex: true
+      targetIndex: ""
+  origin: cnv-fbc-tenant
+  pipeline:
+    pipelineRef:
+      params:
+      - name: url
+        value: https://github.com/redhat-appstudio/release-service-catalog.git
+      - name: revision
+        value: production
+      - name: pathInRepo
+        value: pipelines/fbc-release/fbc-release.yaml
+      resolver: git
+    serviceAccountName: release-service-account
+  policy: rh-fbc-stage-index-policy

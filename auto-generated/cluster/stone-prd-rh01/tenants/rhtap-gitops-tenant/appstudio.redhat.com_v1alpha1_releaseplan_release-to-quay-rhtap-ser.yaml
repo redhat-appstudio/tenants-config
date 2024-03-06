@@ -8,4 +8,4 @@ metadata:
   namespace: rhtap-gitops-tenant
 spec:
   application: external-secrets
-  target: rh-managed-rhtap-ser-tenant
+  target: rhtap-releng-tenant

@@ -8,7 +8,7 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: segment-bridge
-  target: rh-managed-rhtap-ser-tenant
+  target: rhtap-releng-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
@@ -20,5 +20,17 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: o11y
-  displayName: o11y release-to-quay
-  target: rh-managed-rhtap-ser-tenant
+  target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: tools-release-to-quay-konflux-ser
+  namespace: rhtap-o11y-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: tools
+  displayName: tools release-to-quay
+  target: rhtap-releng-tenant
