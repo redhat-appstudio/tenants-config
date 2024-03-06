@@ -1,0 +1,30 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "true"
+  name: insights-storage-broker-tekton-insights
+  namespace: hcc-pipeline-tenant
+spec:
+  application: insights-storage-broker
+  contexts:
+  - description: Application testing
+    name: application
+  params:
+  - name: APP_NAME
+    value: ingress
+  - name: COMPONENT_NAME
+    value: storage-broker
+  - name: IQE_MARKER_EXPRESSION
+    value: smoke
+  - name: IQE_CJI_TIMEOUT
+    value: 30m
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/gbenhaim/tekton-insights.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/basic.yaml
+    resolver: git
