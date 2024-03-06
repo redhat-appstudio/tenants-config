@@ -1,0 +1,30 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "true" # Change to "true" if you don't need the test to be mandatory
+  name: insights-storage-broker-tekton-insights
+  namespace: hcc-pipeline-tenant
+spec:
+  application: insights-storage-broker
+  contexts:
+    - description: Application testing
+      name: application
+  resolverRef:
+    params:
+      - name: url
+        value: https://github.com/gbenhaim/tekton-insights.git # Temporary on gbenhaim's org. Also, you can fork it and reference yours here.
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: pipelines/basic.yaml
+    resolver: git
+  params:
+      - name: APP_NAME
+        value: ingress
+      - name: COMPONENT_NAME #IMPORTANT: Your component in RHTAP has to be named the same as this field.
+        value: storage-broker
+      - name: IQE_MARKER_EXPRESSION
+        value: smoke
+      - name: IQE_CJI_TIMEOUT
+        value: 30m

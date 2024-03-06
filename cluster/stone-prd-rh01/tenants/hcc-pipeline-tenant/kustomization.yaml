@@ -6,6 +6,9 @@ resources:
   - release_plan.yaml                           #Ingress
   - playbook_dispatcher_integration_test.yaml
   - playbook_dispatcher_tekton_test.yaml
-  - playbook_dispatcher_release_plan.yaml 
+  - playbook_dispatcher_release_plan.yaml
+  - storage_broker_integration_test.yaml
+  - storage_broker_tekton_test.yaml
+  - storage_broker_release_plan.yaml 
   - ../../../../lib/consoledot-test-pipeline
 namespace: hcc-pipeline-tenant
