@@ -7,6 +7,8 @@ resources:
   - rb-releng-gitops-repo-rw.yaml
   - rb-redhat-acm-service-account.yaml
   - sa-redhat-acm-service-account.yaml
+  - rb-redhat-acs-service-account.yaml
+  - sa-redhat-acs-service-account.yaml
   - sa-konflux-service-release.yaml
   - sa-release-app-interface-prod.yaml
   - sa-release-app-interface-staging.yaml
