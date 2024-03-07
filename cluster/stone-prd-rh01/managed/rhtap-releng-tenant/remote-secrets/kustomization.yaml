@@ -11,6 +11,7 @@ resources:
   - remote_secret-quay-token-redhat-services-prod.yaml
   - remote_secret-quay-token-redhat-services-staging.yaml
   - remote_secret-quay-token-redhat-acm.yaml
+  - remote_secret-quay-token-redhat-acs.yaml
   - remote_secret-quay-token-redhat-prod.yaml
   - remote_secret-quay-token-redhat-staging.yaml
   - remote_secret-quay-token-redhat-dev.yaml
