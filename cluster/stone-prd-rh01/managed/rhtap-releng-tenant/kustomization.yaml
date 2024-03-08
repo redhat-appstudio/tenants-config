@@ -2,6 +2,7 @@ resources:
   - persistent-volume-claim.yaml
   - rb-ecp.yaml
   - rb-konflux-service-release.yaml
+  - rb-konflux-integration-service.yaml
   - rb-release-pipelines.yaml
   - rb-releng-gitops-repo-ro.yaml
   - rb-releng-gitops-repo-rw.yaml
@@ -10,6 +11,7 @@ resources:
   - rb-redhat-acs-service-account.yaml
   - sa-redhat-acs-service-account.yaml
   - sa-konflux-service-release.yaml
+  - sa-konflux-integration-service.yaml
   - sa-release-app-interface-prod.yaml
   - sa-release-app-interface-staging.yaml
   - sa-release-index-image-prod.yaml
