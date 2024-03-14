@@ -34,3 +34,16 @@ spec:
   application: tools
   displayName: tools release-to-quay
   target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: project-controller-release-to-quay-rhtap-ser
+  namespace: rhtap-o11y-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: project-controller
+  displayName: project-controller release-to-quay
+  target: rhtap-releng-tenant
