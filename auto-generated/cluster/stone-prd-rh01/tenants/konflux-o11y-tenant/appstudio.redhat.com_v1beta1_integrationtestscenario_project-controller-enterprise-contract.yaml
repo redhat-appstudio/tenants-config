@@ -1,0 +1,22 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: project-controller-enterprise-contract
+  namespace: konflux-o11y-tenant
+spec:
+  application: project-controller
+  contexts:
+  - description: Application testing
+    name: application
+  params:
+  - name: POLICY_CONFIGURATION
+    value: rhtap-releng-tenant/app-interface-standard
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/build-definitions
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/enterprise-contract-redhat-no-hermetic.yaml
+    resolver: git
