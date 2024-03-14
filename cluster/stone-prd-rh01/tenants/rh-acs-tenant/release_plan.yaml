@@ -1,0 +1,13 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: rh-acs-fast-stream
+  namespace: rh-acs-tenant
+  labels:
+    # Your application will trigger the release every time a snapshot is created.
+    release.appstudio.openshift.io/auto-release: 'false'
+    # The author of the release plan will be provided as the standing attribution for releases.
+    release.appstudio.openshift.io/standing-attribution: 'false'
+spec:
+  application: acs
+  target: rhtap-releng-tenant
