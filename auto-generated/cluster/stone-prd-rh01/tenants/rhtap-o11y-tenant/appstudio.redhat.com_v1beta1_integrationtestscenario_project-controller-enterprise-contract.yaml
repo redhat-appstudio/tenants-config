@@ -2,7 +2,7 @@ apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
   name: project-controller-enterprise-contract
-  namespace: konflux-o11y-tenant
+  namespace: rhtap-o11y-tenant
 spec:
   application: project-controller
   contexts:
