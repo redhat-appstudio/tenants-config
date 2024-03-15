@@ -3,7 +3,7 @@ kind: ReleasePlan
 metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
-    release.appstudio.openshift.io/releasePlanAdmission: rhbk-fbc-staging-index
+    release.appstudio.openshift.io/releasePlanAdmission: rhbk-fbc-staging-index-v4-15-plus
     release.appstudio.openshift.io/standing-attribution: "true"
   name: rhbk-fbc-v4-15-staging-release-plan
   namespace: rhbk-release-tenant
