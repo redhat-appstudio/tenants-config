@@ -51,3 +51,16 @@ spec:
   application: rhbk-fbc-v4-14
   target: rhtap-releng-tenant
 ---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: rhbk-fbc-v4-15-prod-release-plan
+  namespace: rhbk-release-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/releasePlanAdmission: rhbk-fbc-prod-index
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: rhbk-fbc-v4-15
+  target: rhtap-releng-tenant
+---
