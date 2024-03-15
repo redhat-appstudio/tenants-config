@@ -58,7 +58,7 @@ metadata:
   namespace: rhbk-release-tenant
   labels:
     release.appstudio.openshift.io/auto-release: 'false'
-    release.appstudio.openshift.io/releasePlanAdmission: rhbk-fbc-prod-index
+    release.appstudio.openshift.io/releasePlanAdmission: rhbk-fbc-prod-index-v4-15-plus
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: rhbk-fbc-v4-15
