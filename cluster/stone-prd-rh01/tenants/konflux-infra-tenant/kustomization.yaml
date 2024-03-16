@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
 - integration_test_scenario.yaml
 - release_plan.yaml
+- repository-validator.yaml
 namespace: konflux-infra-tenant
