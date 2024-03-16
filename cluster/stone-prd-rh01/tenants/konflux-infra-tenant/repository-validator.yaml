@@ -1,0 +1,24 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: repository-validator
+spec:
+  displayName: repository-validator
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: repository-validator
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+spec:
+  application: repository-validator
+  componentName: repository-validator
+  source:
+    git:
+      revision: main
+      url: https://github.com/konflux-ci/repository-validator.git
+      dockerfileUrl: Dockerfile
+      context: ./
