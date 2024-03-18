@@ -32,7 +32,6 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: tools
-  displayName: tools release-to-quay
   target: rhtap-releng-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
