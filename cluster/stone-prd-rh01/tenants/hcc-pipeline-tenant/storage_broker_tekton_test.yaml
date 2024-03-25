@@ -6,7 +6,7 @@ metadata:
   name: insights-storage-broker-tekton-insights
   namespace: hcc-pipeline-tenant
 spec:
-  application: insights-storage-broker
+  application: insights-ingress-go
   contexts:
     - description: Application testing
       name: application
@@ -26,5 +26,7 @@ spec:
         value: storage-broker
       - name: IQE_MARKER_EXPRESSION
         value: smoke
+      - name: IQE_FILTER_EXPRESSION
+        value: ""
       - name: IQE_CJI_TIMEOUT
         value: 30m
