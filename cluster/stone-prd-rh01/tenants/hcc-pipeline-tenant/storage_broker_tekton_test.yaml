@@ -6,7 +6,7 @@ metadata:
   name: insights-storage-broker-tekton-insights
   namespace: hcc-pipeline-tenant
 spec:
-  application: insights-storage-broker
+  application: insights-ingress-go
   contexts:
     - description: Application testing
       name: application
