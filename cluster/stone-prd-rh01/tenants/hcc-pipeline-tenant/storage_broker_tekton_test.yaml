@@ -27,6 +27,6 @@ spec:
       - name: IQE_MARKER_EXPRESSION
         value: smoke
       - name: IQE_FILTER_EXPRESSION
-        value: ""
+        value: 
       - name: IQE_CJI_TIMEOUT
         value: 30m
