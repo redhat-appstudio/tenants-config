@@ -15,8 +15,12 @@ spec:
     value: ingress
   - name: COMPONENT_NAME
     value: storage-broker
+  - name: IQE_PLUGINS
+    value: null
   - name: IQE_MARKER_EXPRESSION
     value: smoke
+  - name: IQE_FILTER_EXPRESSION
+    value: null
   - name: IQE_CJI_TIMEOUT
     value: 30m
   resolverRef:
