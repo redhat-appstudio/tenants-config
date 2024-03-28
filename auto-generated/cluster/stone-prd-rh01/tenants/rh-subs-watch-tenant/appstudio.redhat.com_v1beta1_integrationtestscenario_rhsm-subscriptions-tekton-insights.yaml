@@ -1,0 +1,33 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false"
+  name: rhsm-subscriptions-tekton-insights
+  namespace: rh-subs-watch-tenant
+spec:
+  application: rhsm-subscriptions
+  params:
+  - name: APP_NAME
+    value: rhsm
+  - name: COMPONENTS
+    value: rhsm swatch-tally swatch-system-conduit swatch-api swatch-producer-aws
+      swatch-subscription-sync swatch-producer-red-hat-marketplace swatch-metrics
+      swatch-contracts swatch-producer-azure
+  - name: COMPONENTS_W_RESOURCES
+    value: app:rhsm
+  - name: COMPONENT_NAME
+    value: rhsm
+  - name: IQE_PLUGINS
+    value: rhsm-subscriptions
+  - name: IQE_MARKER_EXPRESSION
+    value: ephemeral
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/gbenhaim/tekton-insights.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/basic.yaml
+    resolver: git
