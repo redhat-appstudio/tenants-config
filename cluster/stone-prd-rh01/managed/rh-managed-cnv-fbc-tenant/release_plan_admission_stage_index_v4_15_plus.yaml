@@ -8,6 +8,9 @@ spec:
     - cnv-fbc-v4-15
     - cnv-fbc-v4-16
   data:
+    releaseNotes:
+      product_name: Red Hat OpenShift Virtualization
+      product_version: fbc
     fbc:
       stagedIndex: true
       binaryImage: "registry.redhat.io/openshift4/ose-operator-registry-rhel9:v4.15"
@@ -16,6 +19,7 @@ spec:
       fromIndex: "registry-proxy.engineering.redhat.com/rh-osbs/iib-pub-pending:v4.13"
       requestUpdateTimeout: 1500
       targetIndex: ""
+      allowedPackages: [kubevirt-hyperconverged]
   origin: cnv-fbc-tenant
   pipeline:
     pipelineRef:
@@ -28,4 +32,6 @@ spec:
         - name: pathInRepo
           value: "pipelines/fbc-release/fbc-release.yaml"
     serviceAccountName: release-service-account
+    timeouts:
+      pipeline: "1h0m0s"
   policy: rh-fbc-stage-index-policy
