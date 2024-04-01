@@ -3,10 +3,10 @@ kind: IntegrationTestScenario
 metadata:
   labels:
     test.appstudio.openshift.io/optional: "true"
-  name: insights-storage-broker-tekton-insights
+  name: insights-ingress-go-sc-tekton-insights
   namespace: hcc-pipeline-tenant
 spec:
-  application: insights-storage-broker
+  application: insights-ingress-go-sc
   contexts:
   - description: Application testing
     name: application
@@ -14,19 +14,15 @@ spec:
   - name: APP_NAME
     value: ingress
   - name: COMPONENT_NAME
-    value: storage-broker
+    value: ingress-sc
   - name: IQE_PLUGINS
-    value: ""
+    value: ingress
   - name: IQE_MARKER_EXPRESSION
     value: smoke
-  - name: IQE_FILTER_EXPRESSION
-    value: ""
-  - name: IQE_CJI_TIMEOUT
-    value: 30m
   resolverRef:
     params:
     - name: url
-      value: https://github.com/gbenhaim/tekton-insights.git
+      value: https://github.com/dscervantes/tekton-insights.git
     - name: revision
       value: main
     - name: pathInRepo
