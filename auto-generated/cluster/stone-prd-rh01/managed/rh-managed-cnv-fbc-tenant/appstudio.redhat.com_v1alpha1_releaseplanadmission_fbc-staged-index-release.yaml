@@ -11,6 +11,8 @@ spec:
   - cnv-fbc-v4-14
   data:
     fbc:
+      allowedPackages:
+      - kubevirt-hyperconverged
       binaryImage: registry.redhat.io/openshift4/ose-operator-registry:v4.12
       buildTimeoutSeconds: 1500
       fbcPublishingCredentials: staged-index-fbc-publishing-credentials
@@ -18,6 +20,9 @@ spec:
       requestUpdateTimeout: 1500
       stagedIndex: true
       targetIndex: ""
+    releaseNotes:
+      product_name: Red Hat OpenShift Virtualization
+      product_version: fbc
   origin: cnv-fbc-tenant
   pipeline:
     pipelineRef:
