@@ -10,5 +10,8 @@ resources:
   - storage_broker_integration_test.yaml
   - storage_broker_tekton_test.yaml
   - storage_broker_release_plan.yaml 
+  - ingress_sc_integration_test.yaml
+  - ingress_sc_tekton_test.yaml
+  - ingress_sc_release_plan.yaml 
   - ../../../../lib/consoledot-test-pipeline
 namespace: hcc-pipeline-tenant
