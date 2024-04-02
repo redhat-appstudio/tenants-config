@@ -34,4 +34,4 @@ spec:
     serviceAccountName: release-service-account
     timeouts:
       pipeline: "1h0m0s"
-  policy: rh-fbc-stage-index-policy
+  policy: rh-fbc-stage-index-policy-cnv
