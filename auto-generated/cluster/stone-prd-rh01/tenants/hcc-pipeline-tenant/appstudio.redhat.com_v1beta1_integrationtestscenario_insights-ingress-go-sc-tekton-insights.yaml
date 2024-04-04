@@ -13,6 +13,8 @@ spec:
   params:
   - name: APP_NAME
     value: ingress
+  - name: BONFIRE_COMPONENT_NAME
+    value: ingress
   - name: COMPONENT_NAME
     value: ingress-sc
   - name: IQE_PLUGINS
