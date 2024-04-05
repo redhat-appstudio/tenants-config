@@ -22,3 +22,15 @@ metadata:
 spec:
   application: ec-v02
   target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  namespace: rhtap-contract-tenant
+  name: ec-v04-registry-redhat-io
+spec:
+  application: ec-v04
+  target: rhtap-releng-tenant
