@@ -1,0 +1,17 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+  name: workspace-manager
+  namespace: rhtap-o11y-tenant
+spec:
+  application: workspace-manager
+  componentName: workspace-manager
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: main
+      url: https://github.com/konflux-ci/workspace-manager.git

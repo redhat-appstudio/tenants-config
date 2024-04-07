@@ -1,0 +1,24 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: workspace-manager
+spec:
+  displayName: workspace-manager
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: workspace-manager
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+spec:
+  application: workspace-manager
+  componentName: workspace-manager
+  source:
+    git:
+      revision: main
+      url: https://github.com/konflux-ci/workspace-manager.git
+      dockerfileUrl: Dockerfile
+      context: ./
