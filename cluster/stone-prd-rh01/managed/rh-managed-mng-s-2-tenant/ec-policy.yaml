@@ -19,7 +19,7 @@ spec:
         - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
       name: Default
       policy:
-      - oci::quay.io/enterprise-contract/ec-release-policy:git-d471eb4@sha256:3a0a498da1eed0c64d12d75ad5ab8fa0af480d542f0bf99afa7a7cac631d3956
+      - oci::quay.io/enterprise-contract/ec-release-policy:git-8852970@sha256:24e577c6d8fb2d8bc103c69d2625243edce205a8b4c135a80ba600a4739c74eb
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: EnterpriseContractPolicy
@@ -50,4 +50,4 @@ spec:
         - github.com/release-engineering/rhtap-ec-policy//data
         - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
       policy:
-        - oci::quay.io/enterprise-contract/ec-release-policy:git-d471eb4@sha256:3a0a498da1eed0c64d12d75ad5ab8fa0af480d542f0bf99afa7a7cac631d3956
+        - oci::quay.io/enterprise-contract/ec-release-policy:git-8852970@sha256:24e577c6d8fb2d8bc103c69d2625243edce205a8b4c135a80ba600a4739c74eb
