@@ -46,3 +46,16 @@ spec:
   application: project-controller
   displayName: project-controller release-to-quay
   target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: workspace-manager-release-to-quay-rhtap-ser
+  namespace: rhtap-o11y-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: workspace-manager
+  displayName: workspace-manager release-to-quay
+  target: rhtap-releng-tenant
