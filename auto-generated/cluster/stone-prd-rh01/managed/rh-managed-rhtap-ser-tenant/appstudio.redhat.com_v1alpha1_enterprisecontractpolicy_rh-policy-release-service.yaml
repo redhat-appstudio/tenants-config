@@ -20,3 +20,8 @@ spec:
     name: Release Policies
     policy:
     - oci::quay.io/enterprise-contract/ec-release-policy:git-8852970@sha256:24e577c6d8fb2d8bc103c69d2625243edce205a8b4c135a80ba600a4739c74eb
+    ruleData:
+      restrict_cve_security_levels:
+      - critical
+      warn_cve_security_levels:
+      - high
