@@ -1,11 +1,11 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
-  name: insights-storage-broker-release-as-ms
+  name: storage-broker-release-as-ms
   namespace: hcc-pipeline-tenant
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
-  application: insights-storage-broker
+  application: storage-broker
   target: rhtap-releng-tenant

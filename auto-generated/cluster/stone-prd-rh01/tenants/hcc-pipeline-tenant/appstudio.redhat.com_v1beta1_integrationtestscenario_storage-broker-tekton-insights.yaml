@@ -3,10 +3,10 @@ kind: IntegrationTestScenario
 metadata:
   labels:
     test.appstudio.openshift.io/optional: "true"
-  name: insights-storage-broker-tekton-insights
+  name: storage-broker-tekton-insights
   namespace: hcc-pipeline-tenant
 spec:
-  application: insights-storage-broker
+  application: storage-broker
   contexts:
   - description: Application testing
     name: application

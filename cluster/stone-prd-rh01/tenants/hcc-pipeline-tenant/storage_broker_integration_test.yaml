@@ -1,10 +1,10 @@
 apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
-  name: insights-storage-broker-enterprise-contract
+  name: storage-broker-enterprise-contract
   namespace: hcc-pipeline-tenant
 spec:
-  application: insights-storage-broker
+  application: storage-broker
   contexts:
     - description: Application testing
       name: application
