@@ -23,10 +23,9 @@ spec:
       # Name of app-sre "application" folder this component lives in.
       value: rhsm
 
-    - name: COMPONENTS
-      # Space-separated list of components to load.
-      # echo "rhsm $(find -name clowdapp.yaml -exec dirname {} \; | cut -d'/' -f2 | xargs)"
-      value: rhsm swatch-tally swatch-system-conduit swatch-api swatch-producer-aws swatch-subscription-sync swatch-producer-red-hat-marketplace swatch-metrics swatch-contracts swatch-producer-azure
+    # - name: COMPONENTS
+    #   # Space-separated list of components to load.
+    #   value: # Bonfire default is all components
 
     - name: COMPONENTS_W_RESOURCES
       # List of components to keep.
