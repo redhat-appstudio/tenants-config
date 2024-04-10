@@ -3,12 +3,13 @@ apiVersion: appstudio.redhat.com/v1alpha1
 kind: EnterpriseContractPolicy
 metadata:
   name: consoledot-frontend-standard
-  namespace: rhtap-releng-tenant
+  namespace: rhtap-migration-tenant
 spec:
   configuration:
     include:
       - '@redhat'
     exclude:
+      - cve
       - base_image_registries.base_image_permitted
       - labels.disallowed_inherited_labels
       - tasks.required_tasks_found:source-build

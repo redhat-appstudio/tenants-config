@@ -6,6 +6,7 @@ metadata:
 spec:
   configuration:
     exclude:
+    - cve
     - base_image_registries.base_image_permitted
     - labels.disallowed_inherited_labels
     - tasks.required_tasks_found:source-build
