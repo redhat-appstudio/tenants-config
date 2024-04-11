@@ -7,7 +7,6 @@ resources:
 - remote-secrets
 - rb-ecp.yaml
 - ec-policy-o11y.yaml
-- ec-policy-release-service.yaml
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
