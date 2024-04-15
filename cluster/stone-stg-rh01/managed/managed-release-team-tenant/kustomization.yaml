@@ -1,9 +1,0 @@
-resources:
-- release-service-account-rb.yaml
-- persistent-volume-claim.yaml
-- release-pipeline-sa.yaml
-- remote-secrets
-
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-namespace: managed-release-team-tenant
