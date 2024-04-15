@@ -1,0 +1,5 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: release-e2e-sa
+  namespace: managed-release-team-tenant

@@ -2,6 +2,7 @@ resources:
 - release-service-account-rb.yaml
 - persistent-volume-claim.yaml
 - release-pipeline-sa.yaml
+- release-e2e-sa.yaml
 - remote-secrets
 
 apiVersion: kustomize.config.k8s.io/v1beta1

@@ -11,3 +11,6 @@ subjects:
 - kind: ServiceAccount
   name: rh-push-to-registry-redhat-io-sa
   namespace: managed-release-team-tenant
+- kind: ServiceAccount
+  name: release-e2e-sa
+  namespace: managed-release-team-tenant
