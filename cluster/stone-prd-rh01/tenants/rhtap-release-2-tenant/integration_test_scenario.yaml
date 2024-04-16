@@ -18,7 +18,7 @@ spec:
       - name: revision
         value: main
       - name: pathInRepo
-        value: pipelines/enterprise-contract-redhat-no-hermetic.yaml
+        value: pipelines/enterprise-contract.yaml
     resolver: git
 ---
 apiVersion: appstudio.redhat.com/v1beta1
@@ -41,5 +41,5 @@ spec:
       - name: revision
         value: main
       - name: pathInRepo
-        value: pipelines/enterprise-contract-redhat-no-hermetic.yaml
+        value: pipelines/enterprise-contract.yaml
     resolver: git

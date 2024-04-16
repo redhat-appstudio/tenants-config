@@ -8,6 +8,9 @@ spec:
   contexts:
     - description: Application testing
       name: application
+  params:
+    - name: POLICY_CONFIGURATION
+      value: enterprise-contract-service/redhat-no-hermetic
   resolverRef:
     params:
       - name: url
@@ -15,7 +18,7 @@ spec:
       - name: revision
         value: main
       - name: pathInRepo
-        value: pipelines/enterprise-contract-redhat-no-hermetic.yaml
+        value: pipelines/enterprise-contract.yaml
     resolver: git
 ---
 apiVersion: appstudio.redhat.com/v1beta1
@@ -28,6 +31,9 @@ spec:
   contexts:
     - description: Application testing
       name: application
+  params:
+    - name: POLICY_CONFIGURATION
+      value: enterprise-contract-service/redhat-no-hermetic
   resolverRef:
     params:
       - name: url
@@ -35,7 +41,7 @@ spec:
       - name: revision
         value: main
       - name: pathInRepo
-        value: pipelines/enterprise-contract-redhat-no-hermetic.yaml
+        value: pipelines/enterprise-contract.yaml
     resolver: git
 ---
 apiVersion: appstudio.redhat.com/v1beta1
@@ -48,6 +54,9 @@ spec:
   contexts:
     - description: Application testing
       name: application
+  params:
+    - name: POLICY_CONFIGURATION
+      value: enterprise-contract-service/redhat-no-hermetic
   resolverRef:
     params:
       - name: url
@@ -55,7 +64,7 @@ spec:
       - name: revision
         value: main
       - name: pathInRepo
-        value: pipelines/enterprise-contract-redhat-no-hermetic.yaml
+        value: pipelines/enterprise-contract.yaml
     resolver: git
 ---
 apiVersion: appstudio.redhat.com/v1beta1
@@ -68,6 +77,9 @@ spec:
   contexts:
     - description: Application testing
       name: application
+  params:
+    - name: POLICY_CONFIGURATION
+      value: enterprise-contract-service/redhat
   resolverRef:
     params:
       - name: url
@@ -75,5 +87,5 @@ spec:
       - name: revision
         value: main
       - name: pathInRepo
-        value: pipelines/enterprise-contract-redhat.yaml
+        value: pipelines/enterprise-contract.yaml
     resolver: git
