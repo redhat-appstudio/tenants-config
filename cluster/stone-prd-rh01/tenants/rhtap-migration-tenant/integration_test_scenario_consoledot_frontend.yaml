@@ -4,7 +4,7 @@ metadata:
   name: rhtap-consoledot-frontend-build-enterprise-contract
   namespace: rhtap-migration-tenant
 spec:
-  application: application-service
+  application: rhtap-consoledot-frontend-build
   contexts:
     - description: Application testing
       name: application
