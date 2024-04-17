@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - integration_test_scenario.yaml
+  - integration_test_tekton.yaml
+  - ../../../../lib/consoledot-test-pipeline
+namespace: awood1-tenant
