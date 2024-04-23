@@ -26,7 +26,7 @@ spec:
     pipelineRef:
       params:
       - name: url
-        value: https://github.com/redhat-appstudio/release-service-catalog.git
+        value: https://github.com/konflux-ci/release-service-catalog.git
       - name: revision
         value: production
       - name: pathInRepo
