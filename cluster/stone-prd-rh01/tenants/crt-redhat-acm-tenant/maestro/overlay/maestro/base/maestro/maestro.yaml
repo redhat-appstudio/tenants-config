@@ -1,0 +1,12 @@
+- op: replace
+  path: /metadata/name
+  value: maestro
+- op: replace
+  path: /spec/componentName
+  value: maestro
+- op: replace
+  path: /spec/source/git/url
+  value: https://github.com/stolostron/maestro
+- op: replace
+  path: /spec/source/git/dockerfileUrl
+  value: "Containerfile.rhtap"
