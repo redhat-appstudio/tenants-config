@@ -1,0 +1,11 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: frontend-operator-release-as-ms
+  namespace: hcc-devprod-tenant
+spec:
+  application: frontend-operator
+  target: rhtap-releng-tenant
