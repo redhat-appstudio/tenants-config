@@ -1,0 +1,9 @@
+- op: replace
+  path: /metadata/name
+  value: maestro
+- op: replace
+  path: /spec/description
+  value: "maestro"
+- op: replace
+  path: /spec/displayName
+  value: "maestro"

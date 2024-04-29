@@ -1,0 +1,12 @@
+- op: replace
+  path: /metadata/name
+  value: maestro-addon
+- op: replace
+  path: /spec/componentName
+  value: maestro-addon
+- op: replace
+  path: /spec/source/git/url
+  value: https://github.com/stolostron/maestro-addon
+- op: replace
+  path: /spec/source/git/dockerfileUrl
+  value: "Dockerfile"

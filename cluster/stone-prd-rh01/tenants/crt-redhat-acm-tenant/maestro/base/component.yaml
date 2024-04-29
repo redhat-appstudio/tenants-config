@@ -1,0 +1,18 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    image.redhat.com/generate: "true"
+    appstudio.openshift.io/pac-provision: request
+    build.appstudio.openshift.io/request: configure-pac
+  name: example-component
+spec:
+  componentName: example-component
+  application: appName
+  targetPort: 8080
+  source:
+      git:
+        url: gitUrl
+        context: ./
+        dockerfileUrl: ContainerFileLocation
+        revision: defaultBranch
