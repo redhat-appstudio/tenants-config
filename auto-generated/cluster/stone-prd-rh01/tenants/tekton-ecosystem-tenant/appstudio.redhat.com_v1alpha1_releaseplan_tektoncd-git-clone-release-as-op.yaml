@@ -1,0 +1,11 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: tektoncd-git-clone-release-as-op
+  namespace: tekton-ecosystem-tenant
+spec:
+  application: tektoncd-git-clone
+  target: tekton-ecosystem-tenant

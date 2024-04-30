@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - apps.yaml
   - integration_test_scenario_ecosystem.yaml
+  - git-init-release_plan.yaml
 namespace: tekton-ecosystem-tenant
