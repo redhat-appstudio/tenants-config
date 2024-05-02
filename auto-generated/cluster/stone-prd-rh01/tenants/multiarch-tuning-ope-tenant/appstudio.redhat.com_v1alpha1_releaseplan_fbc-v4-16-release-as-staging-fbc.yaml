@@ -3,10 +3,10 @@ kind: ReleasePlan
 metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "false"
-    release.appstudio.openshift.io/releasePlanAdmission: multiarch-tuning-operator
+    release.appstudio.openshift.io/releasePlanAdmission: multiarch-tuning-operator-fbc-staging-index
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: multiarch-tuning-operator-release-as-operator
+  name: fbc-v4-16-release-as-staging-fbc
   namespace: multiarch-tuning-ope-tenant
 spec:
-  application: multiarch-tuning-operator
+  application: fbc-v4-16
   target: rhtap-releng-tenant
