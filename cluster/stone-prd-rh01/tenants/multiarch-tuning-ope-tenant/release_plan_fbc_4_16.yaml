@@ -4,7 +4,7 @@ metadata:
   name: fbc-v4-16-release-as-fbc
   namespace: multiarch-tuning-ope-tenant
   labels:
-    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/auto-release: 'false'
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: fbc-v4-16
