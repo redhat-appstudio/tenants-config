@@ -2,7 +2,7 @@ apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
   labels:
-    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/auto-release: "false"
     release.appstudio.openshift.io/standing-attribution: "true"
   name: multiarch-tuning-operator-release-as-operator
   namespace: multiarch-tuning-ope-tenant
