@@ -10,7 +10,7 @@ spec:
       name: application
   params:
     - name: POLICY_CONFIGURATION
-      value: enterprise-contract-service/redhat-no-hermetic
+      value: rhtap-releng-tenant/registry-multiarch-tuning-ope
   resolverRef:
     params:
       - name: url
