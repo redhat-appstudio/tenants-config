@@ -6,6 +6,7 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: 'false'
     release.appstudio.openshift.io/standing-attribution: 'true'
+    release.appstudio.openshift.io/releasePlanAdmission: multiarch-tuning-operator
 spec:
   application: multiarch-tuning-operator
   target: rhtap-releng-tenant

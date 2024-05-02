@@ -1,12 +1,12 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
-  name: fbc-v4-16-release-as-fbc
+  name: fbc-v4-16-release-as-staging-fbc
   namespace: multiarch-tuning-ope-tenant
   labels:
     release.appstudio.openshift.io/auto-release: 'false'
     release.appstudio.openshift.io/standing-attribution: 'true'
-    release.appstudio.openshift.io/releasePlanAdmission: multiarch-tuning-operator-fbc-prod-index
+    release.appstudio.openshift.io/releasePlanAdmission: multiarch-tuning-operator-fbc-staging-index
 spec:
   application: fbc-v4-16
   target: rhtap-releng-tenant
