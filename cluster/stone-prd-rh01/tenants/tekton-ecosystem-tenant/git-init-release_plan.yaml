@@ -9,4 +9,4 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: tektoncd-git-clone
-  target: tekton-ecosystem-tenant
+  target: rhtap-releng-tenant
