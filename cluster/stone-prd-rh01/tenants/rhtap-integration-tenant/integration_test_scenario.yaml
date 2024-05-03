@@ -34,7 +34,7 @@ spec:
       name: application
   params:
     - name: POLICY_CONFIGURATION
-      value: rhtap-releng-tenant/registry-standard
+      value: rhtap-releng-tenant/app-interface-standard
   resolverRef:
     params:
       - name: url
