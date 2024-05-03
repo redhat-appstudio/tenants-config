@@ -1,3 +1,4 @@
+---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
@@ -8,4 +9,16 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: integration-service
+  target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: oras-container
+  namespace: rhtap-integration-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: oras-container
   target: rhtap-releng-tenant
