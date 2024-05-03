@@ -1,3 +1,4 @@
+---
 apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
@@ -11,6 +12,29 @@ spec:
   params:
     - name: POLICY_CONFIGURATION
       value: enterprise-contract-service/redhat-no-hermetic
+  resolverRef:
+    params:
+      - name: url
+        value: 'https://github.com/redhat-appstudio/build-definitions'
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: pipelines/enterprise-contract.yaml
+    resolver: git
+---
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: oras-container-enterprise-contract
+  namespace: rhtap-integration-tenant
+spec:
+  application: oras-container
+  contexts:
+    - description: Application testing
+      name: application
+  params:
+    - name: POLICY_CONFIGURATION
+      value: rhtap-releng-tenant/registry-standard
   resolverRef:
     params:
       - name: url
