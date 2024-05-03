@@ -7,6 +7,7 @@ resources:
   - remote_secret-pyxis-prod-secret.yaml
   - remote_secret-pyxis-staging-secret.yaml
   - remote_secret-quay-token-hacbs-release-tests.yaml
+  - remote_secret-quay-token-konflux-ci.yaml
   - remote_secret-quay-token-konflux-service-release.yaml
   - remote_secret-quay-token-redhat-services-prod.yaml
   - remote_secret-quay-token-redhat-services-staging.yaml
