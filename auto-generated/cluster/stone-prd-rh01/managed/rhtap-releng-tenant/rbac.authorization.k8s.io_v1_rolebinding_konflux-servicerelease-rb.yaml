@@ -11,3 +11,6 @@ subjects:
 - kind: ServiceAccount
   name: konflux-servicerelease-sa
   namespace: rhtap-releng-tenant
+- kind: ServiceAccount
+  name: konflux-ci-servicerelease-sa
+  namespace: rhtap-releng-tenant

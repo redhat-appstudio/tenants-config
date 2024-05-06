@@ -1,5 +1,16 @@
+---
+# This SA is linked to remote-secrets/remote_secret-quay-token-konflux-service-release.yaml
+# .. which enables it to write to quay.io/redhat-appstudio
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: konflux-servicerelease-sa
+  namespace: rhtap-releng-tenant
+---
+# This SA is linked to remote-secrets/remote_secret-quay-token-konflux-ci.yaml
+# .. which enables it to write to quay.io/konflux-ci
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: konflux-ci-servicerelease-sa
   namespace: rhtap-releng-tenant
