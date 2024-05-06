@@ -10,6 +10,7 @@ spec:
     - step_image_registries
     - test.required_tests_passed:fbc-related-image-check
     - tasks.required_tasks_found:prefetch-dependencies
+    - source_image.exists
     include:
     - '@redhat'
   description: Includes rules for shipping Red Hat FBC fragments without tests

@@ -8,6 +8,8 @@ spec:
       - cve # The release process separates the catalog from the binaries, so CVEs are the responsibility of the OLM team
       - step_image_registries
       - tasks.required_tasks_found:prefetch-dependencies # prefetch is not required
+        # FBC fragments do not produce source containers.
+      - source_image.exists
     include:
       - '@redhat'
   description: 'Includes rules for shipping Red Hat FBC fragments'
@@ -31,6 +33,8 @@ spec:
       - step_image_registries
       - test.required_tests_passed:fbc-related-image-check # not required for staged index Releases
       - tasks.required_tasks_found:prefetch-dependencies # prefetch is not required
+      # FBC fragments do not produce source containers.
+      - source_image.exists
     include:
       - '@redhat'
   description: 'Includes rules for shipping Red Hat FBC fragments without tests'
@@ -54,6 +58,8 @@ spec:
       - step_image_registries
       - test.required_tests_passed:fbc-related-image-check # not required for staged index Releases
       - tasks.required_tasks_found:prefetch-dependencies # prefetch is not required
+      # FBC fragments do not produce source containers.
+      - source_image.exists
     include:
       - '@redhat'
   description: 'Includes rules for shipping Red Hat FBC fragments without tests'

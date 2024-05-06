@@ -9,6 +9,7 @@ spec:
     - cve
     - step_image_registries
     - tasks.required_tasks_found:prefetch-dependencies
+    - source_image.exists
     include:
     - '@redhat'
   description: Includes rules for shipping Red Hat FBC fragments
