@@ -9,7 +9,7 @@ spec:
   - description: Application testing
     name: application
   params:
-    name: POLICY_CONFIGURATION
+  - name: POLICY_CONFIGURATION
     value: rhtap-releng-tenant/app-interface-hypershift
   resolverRef:
     params:
