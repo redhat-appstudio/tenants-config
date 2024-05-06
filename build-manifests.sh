@@ -1,7 +1,10 @@
 #!/bin/bash -e
 
 main() {
+    local kustomize=${1:-kustomize}
     local dirs
+
+    # shellcheck disable=SC2207,SC2038
     dirs=($(find cluster -maxdepth 4 \( -name 'kustomization.yaml' -o -name 'kustomization.yml' \) | xargs dirname))
     local out=auto-generated
     local ret=0
@@ -12,7 +15,7 @@ main() {
         echo "Checking directory ${d}"
         o="${out}/${d}"
         mkdir -p "$o"
-        if ! kustomize build -o "$o" "$d"; then
+        if ! "$kustomize" build -o "$o" "$d"; then
             echo "failed to build $d" >&2
             ret=1
         fi
