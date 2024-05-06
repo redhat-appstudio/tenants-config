@@ -1,0 +1,21 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "true"
+  namespace: rhtap-migration-tenant
+  name: ingress-tekton-insights
+spec:
+  application: insights-ingress-go
+  contexts:
+    - description: Application testing
+      name: application
+  resolverRef:
+    params:
+      - name: url
+        value: https://github.com/ernesgonzalez33/insights-ingress-go
+      - name: revision
+        value: new-model-clowder
+      - name: pathInRepo
+        value: test_pipeline.yaml
+    resolver: git
