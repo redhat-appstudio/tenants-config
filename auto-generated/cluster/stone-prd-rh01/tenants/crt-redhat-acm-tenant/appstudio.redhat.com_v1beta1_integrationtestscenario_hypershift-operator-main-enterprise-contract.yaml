@@ -1,0 +1,22 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: hypershift-operator-main-enterprise-contract
+  namespace: crt-redhat-acm-tenant
+spec:
+  application: hypershift-operator
+  contexts:
+  - description: Application testing
+    name: application
+  params:
+    name: POLICY_CONFIGURATION
+    value: rhtap-releng-tenant/app-interface-hypershift
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/build-definitions
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/enterprise-contract.yaml
+    resolver: git
