@@ -4,13 +4,9 @@ metadata:
   name: multiarch-tuning-operator-enterprise-contract
   namespace: multiarch-tuning-ope-tenant
 spec:
-  application: multiarch-tuning-operator
   contexts:
     - description: Application testing
       name: application
-  params:
-    - name: POLICY_CONFIGURATION
-      value: rhtap-releng-tenant/registry-multiarch-tuning-ope
   resolverRef:
     params:
       - name: url

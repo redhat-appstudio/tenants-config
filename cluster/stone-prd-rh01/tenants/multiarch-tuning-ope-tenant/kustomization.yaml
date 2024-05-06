@@ -1,8 +1,21 @@
-resources:
-  - integration_test_scenario.yaml
-  - release_plan_operator.yaml
-  - release_plan_fbc_4_16.yaml
-  - release_plan_staging_fbc_4_16.yaml
-
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
+# Set the namespace for all the manifests in this kustomization
+namespace: multiarch-tuning-ope-tenant
+
+# List of resources to include in the kustomization: they are expected to be other folders with kustomization.yaml,
+# one per application. Objects shared across applications can stay in the _base/ folder.
+resources:
+  - _base
+  - fbc_4_16
+  - operator
+
+# This might be a global patch in the parent (maybe using some label selector
+# to restrict it to the proper subset, if needed)
+patches:
+  - path: _patches/integrationtestscenario.yaml
+    target:
+      group: appstudio.redhat.com
+      version: v1beta1
+      kind: IntegrationTestScenario
