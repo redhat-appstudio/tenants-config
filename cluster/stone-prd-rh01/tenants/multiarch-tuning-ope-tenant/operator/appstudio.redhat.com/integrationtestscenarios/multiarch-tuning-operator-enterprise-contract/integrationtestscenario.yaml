@@ -1,0 +1,9 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: multiarch-tuning-operator-enterprise-contract
+spec:
+  application: multiarch-tuning-operator
+  params:
+    - name: POLICY_CONFIGURATION
+      value: rhtap-releng-tenant/registry-multiarch-tuning-ope
