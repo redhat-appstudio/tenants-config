@@ -1,0 +1,17 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+  name: insights-chrome-rebrand
+  namespace: konflux-console-tenant
+spec:
+  application: insights-chrome-rebrand
+  componentName: insights-chrome-rebrand
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: main
+      url: https://github.com/konflux-ci/insights-chrome-rebrand.git
