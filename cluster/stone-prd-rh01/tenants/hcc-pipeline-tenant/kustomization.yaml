@@ -13,5 +13,11 @@ resources:
   - ingress_sc_integration_test.yaml
   - ingress_sc_tekton_test.yaml
   - ingress_sc_release_plan.yaml 
+  - export_service_integration_test.yaml
+  - export_service_release_plan.yaml
+  - export_service_tekton_test.yaml
+  - cloud_connector_integration_test.yaml
+  - cloud_connector_release_plan.yaml
+  - cloud_connector_tekton_test.yaml
   - ../../../../lib/consoledot-test-pipeline
 namespace: hcc-pipeline-tenant

@@ -3,10 +3,10 @@ kind: IntegrationTestScenario
 metadata:
   labels:
     test.appstudio.openshift.io/optional: "true" # Change to "true" if you don't need the test to be mandatory
-  name: insights-ingress-go-sc-tekton-insights
+  name: export-service-tekton-insights
   namespace: hcc-pipeline-tenant
 spec:
-  application: insights-ingress-go-sc
+  application: export-service
   contexts:
     - description: Application testing
       name: application
@@ -21,12 +21,18 @@ spec:
     resolver: git
   params:
       - name: APP_NAME
-        value: ingress
+        value: export-service
       - name: BONFIRE_COMPONENT_NAME
-        value: ingress
+        value: export-service
       - name: COMPONENT_NAME #IMPORTANT: Your component in RHTAP has to be named the same as this field.
-        value: ingress-sc
+        value: export-service
       - name: IQE_PLUGINS
-        value: ingress
-      - name: IQE_MARKER_EXPRESSION
-        value: smoke
+        value: export-service
+      - name: IQE_FILTER_EXPRESSION
+        value: ""
+      - name: IQE_CJI_TIMEOUT
+        value: 30m
+      - name: IQE_ENV
+        value: clowder_smoke
+      - name: IQE_ENV_VARS
+        value: DYNACONF_USER_PROVIDER__rbac_enabled=false

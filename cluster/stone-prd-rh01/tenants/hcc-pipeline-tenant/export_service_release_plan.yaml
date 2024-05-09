@@ -1,0 +1,11 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: export-service-release-as-ms
+  namespace: hcc-pipeline-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: export-service
+  target: rhtap-releng-tenant
