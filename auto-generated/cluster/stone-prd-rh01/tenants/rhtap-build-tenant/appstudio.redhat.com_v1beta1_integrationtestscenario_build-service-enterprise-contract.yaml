@@ -1,7 +1,7 @@
 apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
-  name: build-enterprise-contract
+  name: build-service-enterprise-contract
   namespace: rhtap-build-tenant
 spec:
   application: build-service
