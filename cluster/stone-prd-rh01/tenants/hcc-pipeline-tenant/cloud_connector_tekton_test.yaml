@@ -3,10 +3,10 @@ kind: IntegrationTestScenario
 metadata:
   labels:
     test.appstudio.openshift.io/optional: "true" # Change to "true" if you don't need the test to be mandatory
-  name: insights-ingress-go-sc-tekton-insights
+  name: cloud-connector-tekton-insights
   namespace: hcc-pipeline-tenant
 spec:
-  application: insights-ingress-go-sc
+  application: cloud-connector
   contexts:
     - description: Application testing
       name: application
@@ -21,12 +21,14 @@ spec:
     resolver: git
   params:
       - name: APP_NAME
-        value: ingress
+        value: cloud-connector
       - name: BONFIRE_COMPONENT_NAME
-        value: ingress
+        value: cloud-connector-api
       - name: COMPONENT_NAME #IMPORTANT: Your component in RHTAP has to be named the same as this field.
-        value: ingress-sc
+        value: cloud-connector-api
       - name: IQE_PLUGINS
-        value: ingress
+        value: cloud-connector
       - name: IQE_MARKER_EXPRESSION
-        value: smoke
+        value: not e2e
+      - name: IQE_CJI_TIMEOUT
+        value: 30m

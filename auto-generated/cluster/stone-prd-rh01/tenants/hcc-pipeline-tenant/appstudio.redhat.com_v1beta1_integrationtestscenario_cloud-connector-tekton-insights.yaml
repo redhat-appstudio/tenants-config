@@ -3,24 +3,26 @@ kind: IntegrationTestScenario
 metadata:
   labels:
     test.appstudio.openshift.io/optional: "true"
-  name: insights-ingress-go-sc-tekton-insights
+  name: cloud-connector-tekton-insights
   namespace: hcc-pipeline-tenant
 spec:
-  application: insights-ingress-go-sc
+  application: cloud-connector
   contexts:
   - description: Application testing
     name: application
   params:
   - name: APP_NAME
-    value: ingress
+    value: cloud-connector
   - name: BONFIRE_COMPONENT_NAME
-    value: ingress
+    value: cloud-connector-api
   - name: COMPONENT_NAME
-    value: ingress-sc
+    value: cloud-connector-api
   - name: IQE_PLUGINS
-    value: ingress
+    value: cloud-connector
   - name: IQE_MARKER_EXPRESSION
-    value: smoke
+    value: not e2e
+  - name: IQE_CJI_TIMEOUT
+    value: 30m
   resolverRef:
     params:
     - name: url
