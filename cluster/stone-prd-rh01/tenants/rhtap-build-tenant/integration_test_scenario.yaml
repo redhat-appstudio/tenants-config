@@ -4,7 +4,7 @@ metadata:
   name: build-enterprise-contract
   namespace: rhtap-build-tenant
 spec:
-  application: build
+  application: build-service
   contexts:
     - description: Application testing
       name: application
