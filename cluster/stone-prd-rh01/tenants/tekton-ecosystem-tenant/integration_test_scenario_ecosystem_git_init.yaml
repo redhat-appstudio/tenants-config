@@ -1,0 +1,22 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: ecosystem-images-enterprise-contract-git-init
+  namespace: tekton-ecosystem-tenant
+spec:
+  application: tektoncd-git-clone
+  contexts:
+    - description: Application testing
+      name: application
+  params:
+    - name: POLICY_CONFIGURATION
+      value: enterprise-contract-service/redhat-no-hermetic
+  resolverRef:
+    params:
+      - name: url
+        value: 'https://github.com/redhat-appstudio/build-definitions'
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: pipelines/enterprise-contract.yaml
+    resolver: git

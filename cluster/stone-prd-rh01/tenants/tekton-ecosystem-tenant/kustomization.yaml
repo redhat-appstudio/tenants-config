@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - apps.yaml
   - integration_test_scenario_ecosystem.yaml
+  - integration_test_scenario_ecosystem_git_init.yaml
   - git-init-release_plan.yaml
   - opc-release_plan.yaml
 namespace: tekton-ecosystem-tenant
