@@ -47,10 +47,10 @@ spec:
 apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
-  name: build-trusted-artifacts-enterprise-contract
+  name: trusted-artifacts-enterprise-contract
   namespace: rhtap-build-tenant
 spec:
-  application: build-trusted-artifacts
+  application: trusted-artifacts
   contexts:
     - description: Application testing
       name: application
