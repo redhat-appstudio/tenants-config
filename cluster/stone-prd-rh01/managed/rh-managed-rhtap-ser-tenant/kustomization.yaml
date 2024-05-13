@@ -1,5 +1,5 @@
 resources:
-- release_plan_admission-build-trusted-artifacts.yaml
+- release_plan_admission-trusted-artifacts.yaml
 - release-service-account-rb.yaml
 - ec-policy.yaml
 - persistent-volume-claim.yaml

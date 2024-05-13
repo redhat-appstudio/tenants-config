@@ -4,8 +4,8 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: build-trusted-artifacts-to-quay-rhtap-ser
+  name: trusted-artifacts-to-quay-rhtap-ser
   namespace: rhtap-build-tenant
 spec:
-  application: build-trusted-artifacts
+  application: trusted-artifacts
   target: rhtap-releng-tenant

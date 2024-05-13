@@ -7,14 +7,14 @@ metadata:
   namespace: rh-managed-rhtap-ser-tenant
 spec:
   applications:
-  - build-trusted-artifacts
+  - trusted-artifacts
   data:
     images:
       addGitShaTag: true
       defaultTag: latest
     mapping:
       components:
-      - name: build-trusted-artifacts
+      - name: trusted-artifacts
         repository: quay.io/redhat-appstudio/build-trusted-artifacts
     pyxis:
       secret: pyxis-production-secret
