@@ -25,13 +25,13 @@ spec:
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
-  name: build-trusted-artifacts-to-quay-rhtap-ser
+  name: trusted-artifacts-to-quay-rhtap-ser
   namespace: rhtap-build-tenant
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
-  application: build-trusted-artifacts
+  application: trusted-artifacts
   target: rhtap-releng-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
