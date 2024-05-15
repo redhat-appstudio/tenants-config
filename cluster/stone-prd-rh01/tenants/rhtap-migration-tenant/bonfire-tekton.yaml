@@ -1,17 +1,24 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: bonfire-tekton
+spec:
+  displayName: bonfire-tekton
+---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: Component
 metadata:
+  name: bonfire-tekton
   annotations:
     build.appstudio.openshift.io/request: configure-pac
     image.redhat.com/generate: '{"visibility": "public"}'
-  name: tekton-insights
-  namespace: rhtap-migration-tenant
 spec:
-  application: tekton-insights
-  componentName: tekton-insights
+  application: bonfire-tekton
+  componentName: bonfire-tekton
   source:
     git:
-      context: ./
-      dockerfileUrl: Dockerfile
       revision: main
       url: https://github.com/RedHatInsights/bonfire-tekton.git
+      dockerfileUrl: Dockerfile
+      context: ./

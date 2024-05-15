@@ -1,7 +1,7 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: Application
 metadata:
-  name: tekton-insights
+  name: bonfire-tekton
   namespace: rhtap-migration-tenant
 spec:
-  displayName: tekton-insights
+  displayName: bonfire-tekton
