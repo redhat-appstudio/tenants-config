@@ -19,8 +19,6 @@ spec:
     value: export-service
   - name: IQE_PLUGINS
     value: export-service
-  - name: IQE_FILTER_EXPRESSION
-    value: ""
   - name: IQE_CJI_TIMEOUT
     value: 30m
   - name: IQE_ENV
