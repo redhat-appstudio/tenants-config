@@ -19,6 +19,6 @@ spec:
   source:
     git:
       revision: main
-      url: https://github.com/gbenhaim/tekton-insights.git
+      url: https://github.com/RedHatInsights/bonfire-tekton.git
       dockerfileUrl: Dockerfile
       context: ./

@@ -13,7 +13,7 @@ spec:
   resolverRef:
     params:
     - name: url
-      value: https://github.com/gbenhaim/tekton-insights.git
+      value: https://github.com/RedHatInsights/bonfire-tekton.git
     - name: revision
       value: main
     - name: pathInRepo
