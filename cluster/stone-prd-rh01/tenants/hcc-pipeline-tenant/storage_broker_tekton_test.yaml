@@ -25,7 +25,7 @@ spec:
       - name: COMPONENT_NAME #IMPORTANT: Your component in RHTAP has to be named the same as this field.
         value: storage-broker
       - name: IQE_PLUGINS
-        value: ingress
+        value: null
       - name: IQE_MARKER_EXPRESSION
         value: smoke
       - name: IQE_CJI_TIMEOUT

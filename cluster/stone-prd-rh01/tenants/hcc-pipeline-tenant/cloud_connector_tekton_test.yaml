@@ -23,7 +23,7 @@ spec:
       - name: APP_NAME
         value: cloud-connector
       - name: BONFIRE_COMPONENT_NAME
-        value: cloud-connector
+        value: cloud-connector-api
       - name: COMPONENT_NAME #IMPORTANT: Your component in RHTAP has to be named the same as this field.
         value: cloud-connector-api
       - name: IQE_PLUGINS
