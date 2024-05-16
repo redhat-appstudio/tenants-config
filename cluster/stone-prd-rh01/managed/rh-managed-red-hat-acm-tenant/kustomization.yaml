@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - persistent_volume_claim.yaml
   - ec-policy.yaml
-  - release_plan_admission.yaml
   - release-pipeline-sa.yaml
   - release-service-account-build-rb.yaml
   - remote-secrets
