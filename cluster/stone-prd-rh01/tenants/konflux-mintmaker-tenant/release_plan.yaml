@@ -3,10 +3,10 @@ apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
   name: mintmaker-release-to-quay
-  namespace: mintmaker-tenant
+  namespace: konflux-mintmaker-tenant
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
-  application: mintmaker-service
+  application: mintmaker
   target: rhtap-releng-tenant
