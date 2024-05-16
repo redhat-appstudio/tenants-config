@@ -10,7 +10,7 @@ spec:
     name: application
   params:
   - name: POLICY_CONFIGURATION
-    value: enterprise-contract-service/redhat-no-hermetic
+    value: enterprise-contract-service/app-interface-standard
   resolverRef:
     params:
     - name: url
