@@ -10,7 +10,7 @@ spec:
     name: application
   params:
   - name: POLICY_CONFIGURATION
-    value: rhtap-releng-tenant/tmp-onboard-policyo-hermetic
+    value: rhtap-releng-tenant/tmp-onboard-policy
   resolverRef:
     params:
     - name: url
