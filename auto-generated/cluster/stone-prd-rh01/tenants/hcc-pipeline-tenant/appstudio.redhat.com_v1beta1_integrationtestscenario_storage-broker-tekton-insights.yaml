@@ -16,7 +16,7 @@ spec:
   - name: COMPONENT_NAME
     value: storage-broker
   - name: IQE_PLUGINS
-    value: null
+    value: ingress
   - name: IQE_MARKER_EXPRESSION
     value: smoke
   - name: IQE_CJI_TIMEOUT
