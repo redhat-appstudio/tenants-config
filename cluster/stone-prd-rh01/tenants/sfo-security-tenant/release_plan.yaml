@@ -7,5 +7,5 @@ metadata:
     release.appstudio.openshift.io/auto-release: 'true'
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
-  application: sfo
+  application: splunk-forwarder-operator
   target: rhtap-releng-tenant

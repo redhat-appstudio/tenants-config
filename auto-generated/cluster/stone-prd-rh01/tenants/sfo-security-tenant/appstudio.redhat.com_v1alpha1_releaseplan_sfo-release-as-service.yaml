@@ -7,5 +7,5 @@ metadata:
   name: sfo-release-as-service
   namespace: sfo-security-tenant
 spec:
-  application: sfo
+  application: splunk-forwarder-operator
   target: rhtap-releng-tenant

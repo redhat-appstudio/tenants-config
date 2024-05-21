@@ -7,7 +7,7 @@ spec:
   params: 
     - name: POLICY_CONFIGURATION
       value: enterprise-contract-service/app-interface-standard
-  application: sfo
+  application: splunk-forwarder-operator
   contexts:
     - description: Application testing
       name: application
