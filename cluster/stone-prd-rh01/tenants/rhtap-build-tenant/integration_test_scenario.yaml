@@ -89,3 +89,23 @@ spec:
       - name: pathInRepo
         value: pipelines/enterprise-contract.yaml
     resolver: git
+---
+apiVersion: appstudio.redhat.com/v1beta2
+kind: IntegrationTestScenario
+metadata:
+  name: build-task-dockerfile-e2e-test
+  namespace: rhtap-build-tenant
+spec:
+  application: build-tasks-dockerfiles
+  contexts:
+    - description: E2E testing
+      name: application
+  resolverRef:
+    params:
+      - name: url
+        value: 'https://github.com/redhat-appstudio/build-tasks-dockerfiles.git'
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: integration-tests/pipelines/e2e-tests-pipeline.yaml
+    resolver: git
