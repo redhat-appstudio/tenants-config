@@ -18,7 +18,7 @@ spec:
   - name: IQE_PLUGINS
     value: ingress
   - name: IQE_MARKER_EXPRESSION
-    value: smoke
+    value: not-finding-iqe-marker
   - name: IQE_CJI_TIMEOUT
     value: 30m
   resolverRef:
