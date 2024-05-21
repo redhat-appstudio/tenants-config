@@ -4,7 +4,7 @@ metadata:
   name: sfo-enterprise-contract
   namespace: sfo-security-tenant
 spec:
-  application: sfo
+  application: splunk-forwarder-operator
   contexts:
   - description: Application testing
     name: application
