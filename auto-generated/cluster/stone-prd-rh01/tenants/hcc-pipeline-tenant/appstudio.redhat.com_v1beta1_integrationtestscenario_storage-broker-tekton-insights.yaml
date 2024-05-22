@@ -24,9 +24,9 @@ spec:
   resolverRef:
     params:
     - name: url
-      value: https://github.com/RedHatInsights/bonfire-tekton.git
+      value: https://github.com/dscervantes/tekton-insights
     - name: revision
       value: main
     - name: pathInRepo
-      value: pipelines/basic.yaml
+      value: pipelines/basic_no_iqe.yaml
     resolver: git

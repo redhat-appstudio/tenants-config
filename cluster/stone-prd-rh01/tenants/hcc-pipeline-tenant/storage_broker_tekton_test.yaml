@@ -13,11 +13,11 @@ spec:
   resolverRef:
     params:
       - name: url
-        value: https://github.com/RedHatInsights/bonfire-tekton.git # Temporary on gbenhaim's org. Also, you can fork it and reference yours here.
+        value: https://github.com/dscervantes/tekton-insights # Temporary on gbenhaim's org. Also, you can fork it and reference yours here.
       - name: revision
         value: main
       - name: pathInRepo
-        value: pipelines/basic.yaml
+        value: pipelines/basic_no_iqe.yaml
     resolver: git
   params:
       - name: APP_NAME
