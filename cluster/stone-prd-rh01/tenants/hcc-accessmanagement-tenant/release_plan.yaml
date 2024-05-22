@@ -1,0 +1,11 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: platform-feedback-release-as-ms
+  namespace: hcc-accessmanagement-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: platform-feedback
+  target: rhtap-releng-tenant
