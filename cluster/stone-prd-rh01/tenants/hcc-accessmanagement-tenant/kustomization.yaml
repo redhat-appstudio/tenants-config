@@ -4,5 +4,4 @@ resources:
 - integration_test_scenario.yaml
 - integration_test_tekton.yaml
 - release_plan.yaml 
-
 namespace: hcc-accessmanagement-tenant
