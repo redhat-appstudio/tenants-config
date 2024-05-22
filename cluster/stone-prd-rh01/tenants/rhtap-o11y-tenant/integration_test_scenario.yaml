@@ -33,7 +33,7 @@ spec:
       name: application
   params:
     - name: POLICY_CONFIGURATION
-      value: rhtap-releng-tenant/rh-policy-o11y
+      value: rhtap-releng-tenant/ec-policy-o11y
   resolverRef:
     params:
       - name: url
