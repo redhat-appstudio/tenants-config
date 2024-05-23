@@ -6,7 +6,7 @@ metadata:
 spec:
   params: 
     - name: POLICY_CONFIGURATION
-      value: enterprise-contract-service/app-interface-standard
+      value: rhtap-releng-tenant/app-interface-standard
   application: splunk-forwarder-operator
   contexts:
     - description: Application testing
