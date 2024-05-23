@@ -13,8 +13,10 @@ spec:
   params:
   - name: APP_NAME
     value: cloud-connector
-  - name: COMPONENT_NAME
+  - name: BONFIRE_COMPONENT_NAME
     value: cloud-connector-api
+  - name: COMPONENT_NAME
+    value: cloud-connector
   - name: IQE_PLUGINS
     value: cloud-connector
   - name: IQE_MARKER_EXPRESSION
