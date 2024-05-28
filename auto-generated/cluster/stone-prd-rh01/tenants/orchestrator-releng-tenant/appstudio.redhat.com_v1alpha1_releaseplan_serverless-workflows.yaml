@@ -1,0 +1,11 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: serverless-workflows
+  namespace: orchestrator-releng-tenant
+spec:
+  application: serverless-workflows
+  target: orchestrator-releng-tenant
