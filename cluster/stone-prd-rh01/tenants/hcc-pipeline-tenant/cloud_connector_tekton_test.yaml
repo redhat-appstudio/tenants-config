@@ -1,0 +1,34 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "true" # Change to "true" if you don't need the test to be mandatory
+  name: cloud-connector-tekton-insights
+  namespace: hcc-pipeline-tenant
+spec:
+  application: cloud-connector
+  contexts:
+    - description: Application testing
+      name: application
+  resolverRef:
+    params:
+      - name: url
+        value: https://github.com/RedHatInsights/bonfire-tekton.git # Temporary on gbenhaim's org. Also, you can fork it and reference yours here.
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: pipelines/basic.yaml
+    resolver: git
+  params:
+      - name: APP_NAME
+        value: cloud-connector
+      - name: BONFIRE_COMPONENT_NAME
+        value: cloud-connector-api
+      - name: COMPONENT_NAME #IMPORTANT: Your component in RHTAP has to be named the same as this field.
+        value: cloud-connector
+      - name: IQE_PLUGINS
+        value: cloud-connector
+      - name: IQE_MARKER_EXPRESSION
+        value: not e2e
+      - name: IQE_CJI_TIMEOUT
+        value: 30m
