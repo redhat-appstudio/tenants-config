@@ -8,4 +8,5 @@ metadata:
   namespace: hcc-notifications-tenant
 spec:
   application: notifications
+  releaseGracePeriodDays: 2
   target: rhtap-releng-tenant

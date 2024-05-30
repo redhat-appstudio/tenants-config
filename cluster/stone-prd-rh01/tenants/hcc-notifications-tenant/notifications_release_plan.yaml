@@ -9,3 +9,5 @@ metadata:
 spec:
   application: notifications
   target: rhtap-releng-tenant
+  # Lowers the delay before the release CR garbage collector can delete release snapshots.
+  releaseGracePeriodDays: 2
