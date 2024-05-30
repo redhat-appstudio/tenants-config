@@ -1,0 +1,35 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: git-clone
+spec:
+  displayName: git-clone
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: git-clone
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+spec:
+  application: git-clone
+  componentName: git-clone
+  source:
+    git:
+      revision: main
+      url: https://github.com/konflux-ci/git-clone.git
+      dockerfileUrl: Dockerfile
+      context: ./
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: git-clone-release-to-quay-konflux-ser
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: git-clone
+  target: rhtap-releng-tenant
