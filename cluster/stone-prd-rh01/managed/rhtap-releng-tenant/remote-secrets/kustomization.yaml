@@ -22,4 +22,5 @@ resources:
   - remote_secret-integration-team-slack-webhook-notification.yaml
   - remote_secret-spi-team-slack-webhook-notification.yaml
   - remote_secret-send-slack-notification.yaml
+  - remote_secret-redhat-user-workloads-pull.yaml
 namespace: rhtap-releng-tenant
