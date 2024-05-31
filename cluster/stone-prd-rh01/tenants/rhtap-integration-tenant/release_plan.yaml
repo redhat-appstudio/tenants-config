@@ -34,3 +34,15 @@ metadata:
 spec:
   application: yq-container
   target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: regctl-container
+  namespace: rhtap-integration-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: regctl-container
+  target: rhtap-releng-tenant
