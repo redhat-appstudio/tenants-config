@@ -23,10 +23,6 @@ spec:
     value: not e2e
   - name: IQE_CJI_TIMEOUT
     value: 30m
-  - name: URL
-    value: https://github.com/dehort/cicd-tools
-  - name: REVISION
-    value: change_component_name_to_clowd_app_name_for_deploy_iqe_cji
   resolverRef:
     params:
     - name: url
