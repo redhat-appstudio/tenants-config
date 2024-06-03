@@ -10,36 +10,20 @@ spec:
   resolverRef:
     params:
     - name: url
-      value: https://github.com/RedHatInsights/bonfire-tekton.git # Temporary on gbenhaim's org. Also, you can fork it and reference yours here.
+      value: https://github.com/RedHatInsights/bonfire-tekton.git
     - name: revision
-      value: main # Or whatever branch you want to test
+      value: main
     - name: pathInRepo
-      value: pipelines/basic.yaml # This is the path to the pipeline
+      value: pipelines/basic.yaml
     resolver: git
   params:
     - name: APP_NAME
       value: provisioning
-    # - name: COMPONENTS
-    #   value: 
-    # - name: COMPONENTS_W_RESOURCES
-    #   value: # List of components to keep.
+    - name: COMPONENTS
+      value: rbac sources-api sources-superkey-worker notifications-backend
     - name: COMPONENT_NAME
       value: provisioning-backend
     - name: IQE_PLUGINS
-      value: provisioning
+      value: "provisioning"
     - name: IQE_MARKER_EXPRESSION
-      value: api and smoke
-    - name: IQE_FILTER_EXPRESSION
-      value: ""
-    # - name: IQE_REQUIREMENTS
-    #   value: # "something,something_else" -- iqe requirements filter. Default is "" when no filter desired
-    # - name: IQE_REQUIREMENTS_PRIORITY
-    #   value: # "something,something_else" -- iqe requirements priority filter. Default is "" when no filter desired
-    # - name: IQE_TEST_IMPORTANCE
-    #   value: # "something,something_else" -- iqe test importance filter. Default is "" when no filter desired
-    # - name: IQE_CJI_TIMEOUT
-    #   value: # Timeout value to pass to 'oc wait', should be slightly higher than expected test run time. Default is 30m
-    # - name: IQE_ENV
-    #   value: # "something" -- value to set for ENV_FOR_DYNACONF. Default is "clowder_smoke"
-    # - name: IQE_SELENIUM
-    #   value: # Whether to run IQE pod with a selenium container. Default is "false"
+      value: "api and smoke"

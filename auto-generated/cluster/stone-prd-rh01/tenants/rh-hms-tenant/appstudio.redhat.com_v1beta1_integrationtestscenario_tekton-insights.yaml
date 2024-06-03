@@ -10,14 +10,14 @@ spec:
   params:
   - name: APP_NAME
     value: provisioning
+  - name: COMPONENTS
+    value: rbac sources-api sources-superkey-worker notifications-backend
   - name: COMPONENT_NAME
     value: provisioning-backend
   - name: IQE_PLUGINS
     value: provisioning
   - name: IQE_MARKER_EXPRESSION
     value: api and smoke
-  - name: IQE_FILTER_EXPRESSION
-    value: ""
   resolverRef:
     params:
     - name: url
