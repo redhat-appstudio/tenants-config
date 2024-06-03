@@ -29,5 +29,5 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
   name: maestro
 spec:
-  application: maestro
+  application: maestro-main
   target: rhtap-releng-tenant

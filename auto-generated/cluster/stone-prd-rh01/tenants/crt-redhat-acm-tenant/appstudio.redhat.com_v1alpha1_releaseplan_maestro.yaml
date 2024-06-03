@@ -7,5 +7,5 @@ metadata:
   name: maestro
   namespace: crt-redhat-acm-tenant
 spec:
-  application: maestro
+  application: maestro-main
   target: rhtap-releng-tenant
