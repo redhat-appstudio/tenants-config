@@ -20,7 +20,7 @@ spec:
         - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
       name: Default
       policy:
-      - oci::quay.io/enterprise-contract/ec-release-policy:git-0539ec4@sha256:f407c22e76c46c5a7f669f92c87b6770c8ede5bc5036ef015566e4e95ec0053e
+      - oci::quay.io/enterprise-contract/ec-release-policy:git-5ecd517@sha256:e4947f3c658bf34ac9b66e91e8bdcf3ab52fd634d95949d958829edfee24e4e5
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: EnterpriseContractPolicy
@@ -45,7 +45,7 @@ spec:
         - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
       name: Default
       policy:
-      - oci::quay.io/enterprise-contract/ec-release-policy:git-0539ec4@sha256:f407c22e76c46c5a7f669f92c87b6770c8ede5bc5036ef015566e4e95ec0053e
+      - oci::quay.io/enterprise-contract/ec-release-policy:git-5ecd517@sha256:e4947f3c658bf34ac9b66e91e8bdcf3ab52fd634d95949d958829edfee24e4e5
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: EnterpriseContractPolicy
@@ -74,4 +74,4 @@ spec:
           - registry.redhat.io/
           - brew.registry.redhat.io/rh-osbs/openshift-ose-operator-registry-rhel9
       policy:
-        - oci::quay.io/enterprise-contract/ec-release-policy:git-0539ec4@sha256:f407c22e76c46c5a7f669f92c87b6770c8ede5bc5036ef015566e4e95ec0053e
+        - oci::quay.io/enterprise-contract/ec-release-policy:git-5ecd517@sha256:e4947f3c658bf34ac9b66e91e8bdcf3ab52fd634d95949d958829edfee24e4e5
