@@ -2,5 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ./provisioning-backend-integration.yaml
+  - ./provisioning-frontend-integration.yaml
   - ../../../../lib/consoledot-test-pipeline
 namespace: rh-hms-tenant
