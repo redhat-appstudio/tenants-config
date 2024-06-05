@@ -2,10 +2,11 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
-  name: serverless-workflows
+  name: move2kube-serverless-workflow-staging
   labels:
-    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/auto-release: 'false'
     release.appstudio.openshift.io/standing-attribution: 'true'
+    release.appstudio.openshift.io/releasePlanAdmission: move2kube-serverless-workflow-staging
 spec:
   application: serverless-workflows
   target: rhtap-releng-tenant
