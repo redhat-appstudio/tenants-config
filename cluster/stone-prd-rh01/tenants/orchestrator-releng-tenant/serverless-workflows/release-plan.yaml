@@ -8,4 +8,4 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
   application: serverless-workflows
-  target: orchestrator-releng-tenant
+  target: rhtap-releng-tenant
