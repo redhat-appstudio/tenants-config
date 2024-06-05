@@ -1,0 +1,37 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false"
+  name: content-sources-backend-bonfire-tekton
+  namespace: rh-hms-tenant
+spec:
+  application: content-sources-backend
+  params:
+  - name: APP_NAME
+    value: content-sources
+  - name: COMPONENTS_W_RESOURCES
+    value: pulp
+  - name: COMPONENT_NAME
+    value: content-sources-backend
+  - name: IQE_PLUGINS
+    value: content-sources
+  - name: IQE_MARKER_EXPRESSION
+    value: api
+  - name: IQE_FILTER_EXPRESSION
+    value: not (introspection or rbac)
+  - name: IQE_CJI_TIMEOUT
+    value: 30m
+  - name: IQE_ENV
+    value: ephemeral
+  - name: EXTRA_DEPLOY_ARGS
+    value: --set-parameter content-sources-backend/OPTIONS_REPOSITORY_IMPORT_FILTER=small
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/RedHatInsigths/bonfire-tekton.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/basic.yaml
+    resolver: git

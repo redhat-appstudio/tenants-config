@@ -1,0 +1,39 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false" # Change to "true" if you don't need the test to be mandatory
+  name: content-sources-backend-bonfire-tekton
+  namespace: rh-hms-tenant
+spec:
+  application: content-sources-backend
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/RedHatInsigths/bonfire-tekton.git
+    - name: revision
+      value: main # Or whatever branch you want to test
+    - name: pathInRepo
+      value: pipelines/basic.yaml # This is the path to the pipeline
+    resolver: git
+  params:
+    - name: APP_NAME
+      value: content-sources # Name of app-sre "application" folder this component lives in.
+#    - name: COMPONENTS
+#      value: # Space-separated list of components to load.
+    - name: COMPONENTS_W_RESOURCES
+      value: pulp # List of components to keep.
+    - name: COMPONENT_NAME
+      value: content-sources-backend # Name of your component name in Konflux
+    - name: IQE_PLUGINS
+      value: content-sources # Name of the IQE plugin for this app.
+    - name: IQE_MARKER_EXPRESSION
+      value: api # This is the value passed to pytest -m. Default is ""
+    - name: IQE_FILTER_EXPRESSION
+      value: "not (introspection or rbac)" # This is the value passed to pytest -k. Default is "" when no filter desired
+    - name: IQE_CJI_TIMEOUT
+      value: 30m # Timeout value to pass to 'oc wait', should be slightly higher than expected test run time. Default is 30m
+    - name: IQE_ENV
+      value: ephemeral # "something" -- value to set for ENV_FOR_DYNACONF. Default is "clowder_smoke"
+    - name: EXTRA_DEPLOY_ARGS
+      value: "--set-parameter content-sources-backend/OPTIONS_REPOSITORY_IMPORT_FILTER=small"
