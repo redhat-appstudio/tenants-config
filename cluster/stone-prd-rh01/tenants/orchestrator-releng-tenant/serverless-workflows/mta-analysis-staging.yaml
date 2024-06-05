@@ -1,0 +1,12 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: mta-analysis-serverless-workflow-staging
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+    release.appstudio.openshift.io/releasePlanAdmission: mta-analysis-serverless-workflow-staging
+spec:
+  application: serverless-workflows
+  target: rhtap-releng-tenant
