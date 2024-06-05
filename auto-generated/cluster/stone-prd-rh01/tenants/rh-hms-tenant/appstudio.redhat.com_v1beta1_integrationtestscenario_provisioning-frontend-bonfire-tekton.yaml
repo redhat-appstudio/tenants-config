@@ -1,0 +1,39 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false"
+  name: provisioning-frontend-bonfire-tekton
+  namespace: rh-hms-tenant
+spec:
+  application: provisioning-frontend
+  params:
+  - name: APP_NAME
+    value: provisioning
+  - name: COMPONENT_NAME
+    value: provisioning-frontend
+  - name: IQE_PLUGINS
+    value: provisioning
+  - name: IQE_MARKER_EXPRESSION
+    value: ui and smoke and frontend_pr_check
+  - name: IQE_ENV
+    value: ephemeral
+  - name: IQE_SELENIUM
+    value: "true"
+  - name: EXTRA_DEPLOY_ARGS
+    value: image-builder-crc
+  - name: DEPLOY_FRONTENDS
+    value: "true"
+  - name: DEPLOY_TIMEOUT
+    value: 900
+  - name: NODE_BUILD_VERSION
+    value: 18
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/RedHatInsigths/bonfire-tekton.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/basic.yaml
+    resolver: git
