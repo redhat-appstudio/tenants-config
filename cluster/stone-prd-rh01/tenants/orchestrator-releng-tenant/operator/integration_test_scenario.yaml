@@ -4,9 +4,9 @@ metadata:
   name: orchestrator-helm-operator-enterprise-contract
   namespace: orchestrator-releng-tenant
 spec:
-  params: 
+  params:
     - name: POLICY_CONFIGURATION
-      value: rhtap-releng-tenant/registry-standard
+      value: rhtap-releng-tenant/fbc-stage
   application: orchestrator-helm-operator
   contexts:
     - description: Application testing
