@@ -1,8 +1,0 @@
-apiVersion: appstudio.redhat.com/v1alpha1
-kind: Application
-metadata:
-  name: maestro-main-main
-  namespace: crt-redhat-acm-tenant
-spec:
-  description: maestro
-  displayName: maestro-main

@@ -1,6 +1,6 @@
 - op: replace
   path: /metadata/name
-  value: maestro-main
+  value: maestro
 - op: replace
   path: /spec/description
   value: "maestro"
