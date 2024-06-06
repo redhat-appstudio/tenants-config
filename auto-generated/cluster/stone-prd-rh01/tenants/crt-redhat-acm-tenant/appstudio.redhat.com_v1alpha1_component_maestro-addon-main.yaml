@@ -5,15 +5,15 @@ metadata:
     appstudio.openshift.io/pac-provision: request
     build.appstudio.openshift.io/request: configure-pac
     image.redhat.com/generate: "true"
-  name: maestro-main-main
+  name: maestro-addon-main
   namespace: crt-redhat-acm-tenant
 spec:
   application: maestro-main
-  componentName: maestro-main
+  componentName: maestro-addon-main
   source:
     git:
       context: ./
-      dockerfileUrl: Containerfile.rhtap
+      dockerfileUrl: Dockerfile
       revision: main
-      url: https://github.com/stolostron/maestro
+      url: https://github.com/stolostron/maestro-addon
   targetPort: 8080

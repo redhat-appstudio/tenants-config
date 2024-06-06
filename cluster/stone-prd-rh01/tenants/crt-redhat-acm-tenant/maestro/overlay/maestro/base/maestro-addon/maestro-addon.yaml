@@ -1,6 +1,6 @@
 - op: replace
   path: /metadata/name
-  value: maestro-addon-main
+  value: maestro-addon
 - op: replace
   path: /spec/componentName
   value: maestro-addon-main
