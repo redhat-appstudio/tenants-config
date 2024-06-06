@@ -5,11 +5,11 @@ metadata:
     appstudio.openshift.io/pac-provision: request
     build.appstudio.openshift.io/request: configure-pac
     image.redhat.com/generate: "true"
-  name: maestro-addon-main
+  name: maestro-addon-main-main
   namespace: crt-redhat-acm-tenant
 spec:
   application: maestro-main
-  componentName: maestro-addon
+  componentName: maestro-addon-main
   source:
     git:
       context: ./

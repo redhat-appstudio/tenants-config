@@ -1,9 +1,9 @@
 - op: replace
   path: /metadata/name
-  value: maestro
+  value: maestro-main
 - op: replace
   path: /spec/componentName
-  value: maestro
+  value: maestro-main
 - op: replace
   path: /spec/source/git/url
   value: https://github.com/stolostron/maestro
