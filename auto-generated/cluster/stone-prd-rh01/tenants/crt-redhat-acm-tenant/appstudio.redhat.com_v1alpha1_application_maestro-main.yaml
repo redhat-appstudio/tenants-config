@@ -5,4 +5,4 @@ metadata:
   namespace: crt-redhat-acm-tenant
 spec:
   description: maestro
-  displayName: maestro
+  displayName: maestro-main

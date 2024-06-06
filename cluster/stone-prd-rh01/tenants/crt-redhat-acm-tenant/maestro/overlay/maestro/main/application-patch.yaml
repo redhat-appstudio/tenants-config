@@ -6,4 +6,4 @@
   value: "maestro"
 - op: replace
   path: /spec/displayName
-  value: "maestro"
+  value: "maestro-main"

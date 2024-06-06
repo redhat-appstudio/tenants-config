@@ -9,7 +9,7 @@ metadata:
   namespace: crt-redhat-acm-tenant
 spec:
   application: maestro-main
-  componentName: maestro
+  componentName: maestro-main
   source:
     git:
       context: ./

@@ -3,7 +3,7 @@
   value: maestro-addon
 - op: replace
   path: /spec/componentName
-  value: maestro-addon
+  value: maestro-addon-main
 - op: replace
   path: /spec/source/git/url
   value: https://github.com/stolostron/maestro-addon
