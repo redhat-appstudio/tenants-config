@@ -60,6 +60,8 @@ spec:
       - tasks.required_tasks_found:prefetch-dependencies # prefetch is not required
       # FBC fragments do not produce source containers.
       - source_image.exists
+      # Stage release can ignore weekday restriction
+      - schedule.weekday_restriction
     include:
       - '@redhat'
   description: 'Includes rules for shipping Red Hat FBC fragments without tests'
