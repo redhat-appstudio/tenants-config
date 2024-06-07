@@ -34,6 +34,6 @@ spec:
     - name: DEPLOY_FRONTENDS
       value: "true"
     - name: DEPLOY_TIMEOUT
-      value: 900
+      value: '900'
     - name: NODE_BUILD_VERSION
-      value: 18
+      value: '18'
