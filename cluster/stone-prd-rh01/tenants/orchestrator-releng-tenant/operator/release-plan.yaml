@@ -2,10 +2,10 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
-  name: orchestrator-helm-operator
+  name: helm-operator
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
     release.appstudio.openshift.io/standing-attribution: 'true'
 spec:
-  application: orchestrator-helm-operator
+  application: helm-operator
   target: rhtap-releng-tenant

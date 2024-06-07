@@ -4,8 +4,8 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: orchestrator-helm-operator
+  name: helm-operator
   namespace: orchestrator-releng-tenant
 spec:
-  application: orchestrator-helm-operator
+  application: helm-operator
   target: rhtap-releng-tenant

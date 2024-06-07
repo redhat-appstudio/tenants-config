@@ -1,10 +1,10 @@
 apiVersion: appstudio.redhat.com/v1beta1
 kind: IntegrationTestScenario
 metadata:
-  name: orchestrator-helm-operator-enterprise-contract
+  name: helm-operator-enterprise-contract
   namespace: orchestrator-releng-tenant
 spec:
-  application: orchestrator-helm-operator
+  application: helm-operator
   contexts:
   - description: Application testing
     name: application
