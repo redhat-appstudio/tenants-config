@@ -13,7 +13,7 @@ spec:
   sources:
     - data:
         - github.com/release-engineering/rhtap-ec-policy//data
-        - oci::quay.io/redhat-appstudio-tekton-catalog/data-acceptable-bundles:latest
+        - oci::quay.io/konflux-ci/tekton-catalog/data-acceptable-bundles:latest
       name: Default
       policy:
       - oci::quay.io/enterprise-contract/ec-release-policy:git-5ecd517@sha256:e4947f3c658bf34ac9b66e91e8bdcf3ab52fd634d95949d958829edfee24e4e5
