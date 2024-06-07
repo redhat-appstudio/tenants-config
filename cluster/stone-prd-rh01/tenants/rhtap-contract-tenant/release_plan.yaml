@@ -6,9 +6,9 @@ metadata:
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
   namespace: rhtap-contract-tenant
-  name: ec-v01-alpha-registry-redhat-io
+  name: ec-v02-registry-redhat-io
 spec:
-  application: ec-v01-alpha
+  application: ec-v02
   target: rhtap-releng-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
@@ -18,7 +18,7 @@ metadata:
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
   namespace: rhtap-contract-tenant
-  name: ec-v02-registry-redhat-io
+  name: ec-v04-registry-redhat-io
 spec:
-  application: ec-v02
+  application: ec-v04
   target: rhtap-releng-tenant
