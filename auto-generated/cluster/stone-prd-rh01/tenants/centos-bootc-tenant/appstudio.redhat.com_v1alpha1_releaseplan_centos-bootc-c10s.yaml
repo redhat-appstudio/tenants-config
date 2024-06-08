@@ -4,8 +4,8 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: fedora-bootc
+  name: centos-bootc-c10s
   namespace: centos-bootc-tenant
 spec:
-  application: fedora-bootc
+  application: centos-bootc-c10s
   target: rh-managed-bifrost-tenant
