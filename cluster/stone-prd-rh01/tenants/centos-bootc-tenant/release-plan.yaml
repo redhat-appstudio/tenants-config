@@ -16,6 +16,17 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
     release.appstudio.openshift.io/standing-attribution: 'true'
+  name: centos-bootc-c9s
+spec:
+  application: centos-bootc-c9s
+  target: rh-managed-bifrost-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
   name: centos-bootc-c10s
 spec:
   application: centos-bootc-c10s
