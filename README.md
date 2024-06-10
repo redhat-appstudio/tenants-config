@@ -16,3 +16,7 @@ After making changes, run `build-manifests.sh` and commit the `auto-generated`
 directory (in addition to your changes).
 
 Changes from the `auto-generated` directory will get automatically deployed.
+
+## Kustomize
+
+Kustomize v5.3.0 is now included and can be downloaded using `get-kustomize.sh`
