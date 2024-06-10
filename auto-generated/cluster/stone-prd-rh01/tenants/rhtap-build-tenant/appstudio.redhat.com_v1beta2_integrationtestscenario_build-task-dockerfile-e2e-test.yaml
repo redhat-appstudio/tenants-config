@@ -11,7 +11,7 @@ spec:
   resolverRef:
     params:
     - name: url
-      value: https://github.com/redhat-appstudio/build-tasks-dockerfiles.git
+      value: https://github.com/konflux-ci/build-tasks-dockerfiles.git
     - name: revision
       value: main
     - name: pathInRepo
