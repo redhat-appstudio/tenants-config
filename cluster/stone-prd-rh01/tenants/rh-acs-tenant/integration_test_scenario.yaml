@@ -19,4 +19,4 @@ spec:
     resolver: git
   params:
   - name: POLICY_CONFIGURATION
-    value: rhtap-releng-tenant/registry-rhacs
+    value: rhtap-releng-tenant/registry-rh-acs
