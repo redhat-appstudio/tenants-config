@@ -1,0 +1,11 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: api-frontend-release-as-ms
+  namespace: rh-platform-experien-tenant
+spec:
+  application: api-frontend
+  target: rhtap-releng-tenant
