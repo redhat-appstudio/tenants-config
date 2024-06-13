@@ -20,3 +20,14 @@ metadata:
 spec:
   application: trustification
   target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: 'false'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+  name: trustification-1-1-z
+spec:
+  application: trustification-1-1-z
+  target: rhtap-releng-tenant

@@ -1,0 +1,17 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "private"}'
+  name: trustification-product-1-1-z
+  namespace: trusted-content-tenant
+spec:
+  application: trustification-1-1-z
+  componentName: trustification-product-1-1-z
+  source:
+    git:
+      devfileUrl: https://raw.githubusercontent.com/nodeshift-starters/devfile-sample/main/devfile.yaml
+      dockerfileUrl: https://raw.githubusercontent.com/trustification/trustification/release/1.1.z/container_files/Containerfile.services
+      revision: release/1.1.z
+      url: https://github.com/trustification/trustification
