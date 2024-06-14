@@ -6,7 +6,7 @@ metadata:
 spec:
   params: 
     - name: POLICY_CONFIGURATION
-      value: rhtap-releng-tenant/app-interface-standard
+      value: rhtap-releng-tenant/consoledot-frontend-standard
   application: api-frontend
   contexts:
     - description: Application testing
