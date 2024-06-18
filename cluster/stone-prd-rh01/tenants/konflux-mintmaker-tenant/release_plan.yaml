@@ -10,3 +10,15 @@ metadata:
 spec:
   application: mintmaker
   target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: mintmaker-renovate-image-release-to-quay
+  namespace: konflux-mintmaker-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: mintmaker-renovate-image
+  target: rhtap-releng-tenant
