@@ -6,7 +6,7 @@ metadata:
 spec:
   params:
     - name: POLICY_CONFIGURATION
-      value: rhtap-releng-tenant/tmp-onboard-policy
+      value: rhtap-releng-tenant/app-interface-standard
   application: osde2e
   contexts:
     - description: Application testing
