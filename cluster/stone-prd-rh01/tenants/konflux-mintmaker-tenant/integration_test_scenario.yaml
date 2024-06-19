@@ -1,0 +1,45 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: mintmaker-enterprise-contract
+  namespace: konflux-mintmaker-tenant
+spec:
+  application: mintmaker
+  contexts:
+    - description: Application testing
+      name: application
+  params:
+    - name: POLICY_CONFIGURATION
+      value: rhtap-releng-tenant/app-interface-standard
+  resolverRef:
+    params:
+      - name: url
+        value: 'https://github.com/konflux-ci/build-definitions'
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: pipelines/enterprise-contract.yaml
+    resolver: git
+---
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: mintmaker-renovate-image-enterprise-contract
+  namespace: konflux-mintmaker-tenant
+spec:
+  application: mintmaker-renovate-image
+  contexts:
+    - description: Application testing
+      name: application
+  params:
+    - name: POLICY_CONFIGURATION
+      value: rhtap-releng-tenant/app-interface-standard
+  resolverRef:
+    params:
+      - name: url
+        value: 'https://github.com/konflux-ci/build-definitions'
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: pipelines/enterprise-contract.yaml
+    resolver: git
