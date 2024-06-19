@@ -10,7 +10,7 @@ spec:
     name: application
   params:
   - name: POLICY_CONFIGURATION
-    value: rhtap-releng-tenant/app-interface-standard
+    value: rhtap-releng-tenant/app-interface-konflux-mintmaker
   resolverRef:
     params:
     - name: url
