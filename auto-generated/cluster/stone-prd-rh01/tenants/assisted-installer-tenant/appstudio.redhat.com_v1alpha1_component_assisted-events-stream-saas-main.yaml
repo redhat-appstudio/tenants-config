@@ -1,0 +1,18 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+  name: assisted-events-stream-saas-main
+  namespace: assisted-installer-tenant
+spec:
+  application: assisted-events-stream-saas-main
+  componentName: assisted-events-stream-saas-main
+  skipGitOpsResourceGeneration: true
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: master
+      url: https://github.com/openshift-assisted/assisted-events-stream.git

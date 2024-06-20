@@ -1,0 +1,7 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: prow-jobs-scraper-saas-main
+  namespace: assisted-installer-tenant
+spec:
+  displayName: prow-jobs-scraper-saas-main

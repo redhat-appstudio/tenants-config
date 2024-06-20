@@ -1,0 +1,39 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: auto-report-saas-main
+spec:
+  displayName: auto-report-saas-main
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: auto-report-saas-main
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+spec:
+  application: auto-report-saas-main
+  componentName: auto-report-saas-main
+  skipGitOpsResourceGeneration: true
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: master
+      url: https://github.com/openshift-assisted/auto-report.git
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/author: assisted-installer-team
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/releasePlanAdmission: assisted-installer-saas
+    release.appstudio.openshift.io/standing-attribution: "false"
+  name: auto-report-saas-main
+spec:
+  application: auto-report-saas-main
+  releaseGracePeriodDays: 7
+  target: rhtap-releng-tenant

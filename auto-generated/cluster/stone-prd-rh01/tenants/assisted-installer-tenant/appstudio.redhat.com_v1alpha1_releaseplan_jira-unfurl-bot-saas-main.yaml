@@ -1,0 +1,14 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/author: assisted-installer-team
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/releasePlanAdmission: assisted-installer-saas
+    release.appstudio.openshift.io/standing-attribution: "false"
+  name: jira-unfurl-bot-saas-main
+  namespace: assisted-installer-tenant
+spec:
+  application: jira-unfurl-bot-saas-main
+  releaseGracePeriodDays: 7
+  target: rhtap-releng-tenant
