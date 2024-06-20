@@ -1,0 +1,7 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: auto-report-saas-main
+  namespace: assisted-installer-tenant
+spec:
+  displayName: auto-report-saas-main

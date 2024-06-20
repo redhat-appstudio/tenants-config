@@ -1,0 +1,18 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+  name: jira-unfurl-bot-saas-main
+  namespace: assisted-installer-tenant
+spec:
+  application: jira-unfurl-bot-saas-main
+  componentName: jira-unfurl-bot-saas-main
+  skipGitOpsResourceGeneration: true
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: master
+      url: https://github.com/openshift-assisted/jira-unfurl-bot.git

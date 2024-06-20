@@ -1,0 +1,38 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: assisted-service-saas-hotfix
+spec:
+  displayName: assisted-service-saas-hotfix
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: assisted-service-hotfix
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+spec:
+  application: assisted-service-saas-hotfix
+  componentName: assisted-service-saas-hotfix
+  skipGitOpsResourceGeneration: true
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile.assisted-service
+      revision: cloud_hotfix_releases
+      url: https://github.com/openshift/assisted-service.git
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/author: assisted-installer-team
+    release.appstudio.openshift.io/auto-release: "false"
+    release.appstudio.openshift.io/releasePlanAdmission: assisted-installer-saas
+    release.appstudio.openshift.io/standing-attribution: "false"
+  name: assisted-service-saas-hotfix
+spec:
+  application: assisted-service-saas-hotfix
+  releaseGracePeriodDays: 7
+  target: rhtap-releng-tenant

@@ -1,0 +1,18 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+  name: assisted-service-saas-main
+  namespace: assisted-installer-tenant
+spec:
+  application: assisted-service-saas-main
+  componentName: assisted-service-saas-main
+  skipGitOpsResourceGeneration: true
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile.assisted-service
+      revision: master
+      url: https://github.com/openshift/assisted-service.git

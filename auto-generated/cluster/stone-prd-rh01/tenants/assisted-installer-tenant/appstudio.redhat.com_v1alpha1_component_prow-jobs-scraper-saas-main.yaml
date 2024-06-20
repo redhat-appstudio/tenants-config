@@ -1,0 +1,18 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+  name: prow-jobs-scraper-saas-main
+  namespace: assisted-installer-tenant
+spec:
+  application: prow-jobs-scraper-saas-main
+  componentName: prow-jobs-scraper-saas-main
+  skipGitOpsResourceGeneration: true
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: main
+      url: https://github.com/openshift-assisted/prow-jobs-scraper.git

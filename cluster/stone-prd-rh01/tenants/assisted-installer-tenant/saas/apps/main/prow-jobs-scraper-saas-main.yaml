@@ -1,0 +1,39 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: prow-jobs-scraper-saas-main
+spec:
+  displayName: prow-jobs-scraper-saas-main
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: prow-jobs-scraper-saas-main
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+spec:
+  application: prow-jobs-scraper-saas-main
+  componentName: prow-jobs-scraper-saas-main
+  skipGitOpsResourceGeneration: true
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: main
+      url: https://github.com/openshift-assisted/prow-jobs-scraper.git
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/author: assisted-installer-team
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/releasePlanAdmission: assisted-installer-saas
+    release.appstudio.openshift.io/standing-attribution: "false"
+  name: prow-jobs-scraper-saas-main
+spec:
+  application: prow-jobs-scraper-saas-main
+  releaseGracePeriodDays: 7
+  target: rhtap-releng-tenant
