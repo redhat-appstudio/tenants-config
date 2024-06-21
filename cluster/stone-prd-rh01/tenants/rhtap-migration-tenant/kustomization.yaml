@@ -5,6 +5,5 @@ resources:
   - bonfire-tekton.yaml
   - release-plan.yaml
   - integration_test_scenario_consoledot_frontend.yaml
-  - consoledot-frontend-standard-policy.yaml
   - insights-ingress-go-clowder-test.yaml
 namespace: rhtap-migration-tenant
