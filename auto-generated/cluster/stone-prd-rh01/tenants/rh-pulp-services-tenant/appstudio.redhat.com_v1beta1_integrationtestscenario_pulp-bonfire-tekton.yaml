@@ -1,0 +1,58 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false"
+  name: pulp-bonfire-tekton
+  namespace: rh-pulp-services-tenant
+spec:
+  application: pulp
+  params:
+  - name: APP_NAME
+    value: pulp
+  - name: COMPONENTS
+    value: null
+  - name: COMPONENTS_W_RESOURCES
+    value: pulp
+  - name: BONFIRE_COMPONENT_NAME
+    value: null
+  - name: COMPONENT_NAME
+    value: pulp
+  - name: IQE_PLUGINS
+    value: content-sources
+  - name: IQE_MARKER_EXPRESSION
+    value: api
+  - name: IQE_FILTER_EXPRESSION
+    value: not test_introspection_of_persistent_user
+  - name: IQE_REQUIREMENTS
+    value: null
+  - name: IQE_REQUIREMENTS_PRIORITY
+    value: null
+  - name: IQE_TEST_IMPORTANCE
+    value: null
+  - name: IQE_CJI_TIMEOUT
+    value: 30m
+  - name: IQE_ENV
+    value: null
+  - name: IQE_SELENIUM
+    value: null
+  - name: IQE_PARALLEL_ENABLED
+    value: null
+  - name: IQE_PARALLEL_WORKER_COUNT
+    value: null
+  - name: IQE_RP_ARGS
+    value: null
+  - name: IQE_IBUTSU_SOURCE
+    value: null
+  - name: EXTRA_DEPLOY_ARGS
+    value: --set-parameter pulp/PULP_API_MEMORY_LIMIT=4096Mi --set-parameter pulp/PULP_API_MEMORY_REQUEST=2048Mi
+      provisioning sources image-builder-crc
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/RedHatInsights/bonfire-tekton.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/basic.yaml
+    resolver: git
