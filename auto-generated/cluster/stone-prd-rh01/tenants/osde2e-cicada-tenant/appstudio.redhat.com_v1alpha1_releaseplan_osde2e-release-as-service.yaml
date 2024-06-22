@@ -1,0 +1,11 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: osde2e-release-as-service
+  namespace: osde2e-cicada-tenant
+spec:
+  application: osde2e
+  target: rhtap-releng-tenant
