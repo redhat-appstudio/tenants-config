@@ -1,16 +1,16 @@
-apiVersion: appstudio.redhat.com/v1beta1
+apiVersion: appstudio.redhat.com/v1beta2
 kind: IntegrationTestScenario
 metadata:
-  name: hypershift-operator-main-enterprise-contract
+  name: siteconfig-main-enterprise-contract
   namespace: crt-redhat-acm-tenant
 spec:
-  application: hypershift-operator
+  application: siteconfig-main
   contexts:
   - description: Application testing
     name: application
   params:
   - name: POLICY_CONFIGURATION
-    value: rhtap-releng-tenant/app-interface-hypershift
+    value: rhtap-releng-tenant/app-interface-standard
   resolverRef:
     params:
     - name: url

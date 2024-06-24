@@ -4,5 +4,7 @@ resources:
   - release-plan.yaml
   - maestro.enterprise-contract.integrationtestscenario.yaml
   - maestro/overlay/maestro/main/
+  - siteconfig.enterprise-contract.integrationtestscenario.yaml
+  - siteconfig/overlay/siteconfig/main
   - hypershift-operator-main/
 namespace: crt-redhat-acm-tenant
