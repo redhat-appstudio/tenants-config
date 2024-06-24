@@ -25,6 +25,30 @@ spec:
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
+  name: multi-platform-controller-release-to-quay-rhtap-ser
+  namespace: rhtap-build-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: multi-platform-controller
+  target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: multi-platform-controller-otp-service-release-to-quay-rhtap-ser
+  namespace: rhtap-build-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: multi-platform-controller
+  target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
   name: trusted-artifacts-to-quay-rhtap-ser
   namespace: rhtap-build-tenant
   labels:
