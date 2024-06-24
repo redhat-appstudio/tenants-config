@@ -1,0 +1,19 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    appstudio.openshift.io/pac-provision: request
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: "true"
+  name: maestro-addon-main
+  namespace: crt-redhat-acm-tenant
+spec:
+  application: maestro-main
+  componentName: maestro-addon
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: main
+      url: https://github.com/stolostron/maestro-addon
+  targetPort: 8080
