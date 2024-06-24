@@ -44,3 +44,15 @@ metadata:
 spec:
   application: rh-syft
   target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: source-container-build-release-to-quay-rhtap-ser
+  namespace: rhtap-build-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: build-tasks-dockerfiles
+  target: rhtap-releng-tenant
