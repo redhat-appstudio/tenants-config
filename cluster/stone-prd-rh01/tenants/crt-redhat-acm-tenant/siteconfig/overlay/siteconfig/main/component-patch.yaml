@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/application
+  value: siteconfig-main # Must match /metadata/name in application-patch.yaml
+- op: replace
+  path: /spec/source/git/revision
+  value: main # Replace with your target branch for all components

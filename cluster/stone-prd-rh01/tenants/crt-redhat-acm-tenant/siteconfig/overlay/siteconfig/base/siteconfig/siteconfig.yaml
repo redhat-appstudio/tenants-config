@@ -1,0 +1,12 @@
+- op: replace
+  path: /metadata/name
+  value: siteconfig
+- op: replace
+  path: /spec/componentName
+  value: siteconfig
+- op: replace
+  path: /spec/source/git/url
+  value: https://github.com/stolostron/siteconfig
+- op: replace
+  path: /spec/source/git/dockerfileUrl
+  value: "Dockerfile"
