@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - pulp-bonfire-tekton.yaml
   - ../../../../lib/consoledot-test-pipeline
-namespace: rh-pulp-services-tenant
+namespace: pulp-services-tenant
