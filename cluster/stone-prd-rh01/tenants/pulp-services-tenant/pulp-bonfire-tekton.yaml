@@ -24,7 +24,7 @@ spec:
     - name: COMPONENTS_W_RESOURCES
       value: "pulp"
     - name: BONFIRE_COMPONENT_NAME
-      value: # Name of app-sre "resourceTemplate" in deploy.yaml for this component. If it is the same as the name in Konflux, you don't need to fill this  
+      value: # Name of app-sre "resourceTemplate" in deploy.yaml for this component. If it is the same as the name in Konflux, you don't need to fill this
     - name: COMPONENT_NAME
       value: "pulp"
     - name: IQE_PLUGINS
