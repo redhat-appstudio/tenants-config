@@ -7,3 +7,4 @@ namespace: orchestrator-releng-tenant
 resources:
   - operator
   - serverless-workflows
+  - fbc-v4-14

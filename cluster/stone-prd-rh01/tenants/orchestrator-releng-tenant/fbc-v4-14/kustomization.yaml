@@ -1,0 +1,7 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+# Naming: <API_GROUP>/<KIND_PLURAL>/<METADATA_NAME>
+resources:
+  - integrationtestscenarios/enterprise-contract
+  - releaseplans/production
+  - releaseplans/staging
