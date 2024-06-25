@@ -1,0 +1,10 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: fbc-v4-14-enterprise-contract
+  namespace: orchestrator-releng-tenant
+spec:
+  application: fbc-v4-14
+  params:
+  - name: POLICY_CONFIGURATION
+    value: rhtap-releng-tenant/fbc-stage
