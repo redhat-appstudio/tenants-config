@@ -21,4 +21,4 @@ spec:
     - oci::quay.io/konflux-ci/tekton-catalog/data-acceptable-bundles:latest
     name: Default
     policy:
-    - oci::quay.io/enterprise-contract/ec-release-policy:git-3613444@sha256:7ee51ff3d5c7058c854c2c9fdc146d4307a0ba7f342a9bc836b009d6cb5ad7e6
+    - oci::quay.io/enterprise-contract/ec-release-policy:git-d71d1b6@sha256:5443d85db60be7b5687c1f6c67c8066ec3b8a7e05ff6fc3c102720c1a2ce35e6
