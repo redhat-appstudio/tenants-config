@@ -9,12 +9,13 @@ spec:
   application: pulp
   resolverRef:
     params:
+    # Temporary until merge https://github.com/RedHatInsights/bonfire-tekton/pull/35
     - name: url
-      value: https://github.com/RedHatInsights/bonfire-tekton.git
+      value: https://github.com/dscervantes/tekton-insights.git
     - name: revision
-      value: main
+      value: b65c3d788d1c8c267ac50ca3b9208323b50e6f2b
     - name: pathInRepo
-      value: pipelines/basic.yaml
+      value: pipelines/basic_no_iqe.yaml
     resolver: git
   params:
     - name: APP_NAME
@@ -27,31 +28,5 @@ spec:
       value: # Name of app-sre "resourceTemplate" in deploy.yaml for this component. If it is the same as the name in Konflux, you don't need to fill this
     - name: COMPONENT_NAME
       value: "pulp"
-    - name: IQE_PLUGINS
-      value: "content-sources"
-    - name: IQE_MARKER_EXPRESSION
-      value: "api"
-    - name: IQE_FILTER_EXPRESSION
-      value: "not test_introspection_of_persistent_user"
-    - name: IQE_REQUIREMENTS
-      value: # "something,something_else" -- iqe requirements filter. Default is "" when no filter desired
-    - name: IQE_REQUIREMENTS_PRIORITY
-      value: # "something,something_else" -- iqe requirements priority filter. Default is "" when no filter desired
-    - name: IQE_TEST_IMPORTANCE
-      value: # "something,something_else" -- iqe test importance filter. Default is "" when no filter desired
-    - name: IQE_CJI_TIMEOUT
-      value: "30m"
-    - name: IQE_ENV
-      value: # "something" -- value to set for ENV_FOR_DYNACONF. Default is "clowder_smoke"
-    - name: IQE_SELENIUM
-      value: # Whether to run IQE pod with a selenium container. Default is "false"
-    - name: IQE_PARALLEL_ENABLED
-      value: # Whether to run IQE in parallel mode. Default is "false"
-    - name: IQE_PARALLEL_WORKER_COUNT
-      value: # The number of parallel workers to use. Default is "".
-    - name: IQE_RP_ARGS
-      value: # Arguments to send to reportportal. Default is "".
-    - name: IQE_IBUTSU_SOURCE
-      value: # Ibutsu source for the current run. Default is "".
     - name: EXTRA_DEPLOY_ARGS # This wasn't in the documentation, but in the bonfire-tekton code
       value: "--set-parameter pulp/PULP_API_MEMORY_LIMIT=4096Mi --set-parameter pulp/PULP_API_MEMORY_REQUEST=2048Mi provisioning sources image-builder-crc"
