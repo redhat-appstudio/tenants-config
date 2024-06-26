@@ -4,8 +4,8 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: clio-wrklds-pipeline-prod
+  name: cli-manager-operator
   namespace: clio-wrklds-pipeline-tenant
 spec:
-  application: clio-wrklds-pipeline-prod
+  application: cli-manager-operator
   target: rhtap-releng-tenant
