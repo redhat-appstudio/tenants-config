@@ -28,5 +28,7 @@ spec:
       value: # Name of app-sre "resourceTemplate" in deploy.yaml for this component. If it is the same as the name in Konflux, you don't need to fill this
     - name: COMPONENT_NAME
       value: "pulp"
+    - name: IQE_PLUGINS
+      value: "" # Dummy value to pass the WIP PR for basic_no_iqe.yaml
     - name: EXTRA_DEPLOY_ARGS # This wasn't in the documentation, but in the bonfire-tekton code
       value: "--set-parameter pulp/PULP_API_MEMORY_LIMIT=4096Mi --set-parameter pulp/PULP_API_MEMORY_REQUEST=2048Mi provisioning sources image-builder-crc"
