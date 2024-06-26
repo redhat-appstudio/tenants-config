@@ -18,6 +18,8 @@ spec:
     value: null
   - name: COMPONENT_NAME
     value: pulp
+  - name: IQE_PLUGINS
+    value: ""
   - name: EXTRA_DEPLOY_ARGS
     value: --set-parameter pulp/PULP_API_MEMORY_LIMIT=4096Mi --set-parameter pulp/PULP_API_MEMORY_REQUEST=2048Mi
       provisioning sources image-builder-crc
