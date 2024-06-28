@@ -1,0 +1,21 @@
+apiVersion: appstudio.redhat.com/v1beta2
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false"
+  name: siteconfig-main-unit-test
+  namespace: crt-redhat-acm-tenant
+spec:
+  application: siteconfig-main
+  contexts:
+  - description: Application testing
+    name: application
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/stolostron/siteconfig
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: .tekton/siteconfig-unit-test.yaml
+    resolver: git
