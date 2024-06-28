@@ -4,9 +4,7 @@ metadata:
   name: oeo-enterprise-contract
   namespace: oeo-cicada-tenant
 spec:
-  params:
-    - name: POLICY_CONFIGURATION
-      value: rhtap-releng-tenant/app-interface-standard
+  params: []
   application: osd-example-operator
   contexts:
     - description: Application testing

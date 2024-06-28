@@ -8,9 +8,7 @@ spec:
   contexts:
   - description: Application testing
     name: application
-  params:
-  - name: POLICY_CONFIGURATION
-    value: rhtap-releng-tenant/app-interface-standard
+  params: []
   resolverRef:
     params:
     - name: url
