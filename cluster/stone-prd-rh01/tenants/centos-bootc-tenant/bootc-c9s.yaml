@@ -23,7 +23,7 @@ spec:
       context: ./
       dockerfileUrl: Containerfile
       revision: main
-      url: https://gitlab.com/redhat/rhel/bifrost/bootc-image-builder.git
+      url: https://github.com/osbuild/bootc-image-builder.git
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: Component
