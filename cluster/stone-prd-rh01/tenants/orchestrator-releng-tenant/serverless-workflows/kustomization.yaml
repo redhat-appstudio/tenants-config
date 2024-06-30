@@ -4,3 +4,4 @@ resources:
   - integration_test_scenario.yaml
   - move2kube-staging.yaml
   - mta-analysis-staging.yaml
+  - policy-check.yaml
