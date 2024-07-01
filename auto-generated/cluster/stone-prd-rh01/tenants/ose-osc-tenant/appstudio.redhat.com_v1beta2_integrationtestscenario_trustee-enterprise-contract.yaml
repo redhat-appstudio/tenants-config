@@ -1,0 +1,22 @@
+apiVersion: appstudio.redhat.com/v1beta2
+kind: IntegrationTestScenario
+metadata:
+  name: trustee-enterprise-contract
+  namespace: ose-osc-tenant
+spec:
+  application: trustee
+  contexts:
+  - description: Application testing
+    name: application
+  params:
+  - name: POLICY_CONFIGURATION
+    value: rhtap-releng-tenant/registry-standard
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/build-definitions
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/enterprise-contract.yaml
+    resolver: git
