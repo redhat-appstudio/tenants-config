@@ -1,0 +1,6 @@
+# Note: I am using my mdepaulo workspace to develop features for pulp-services-tenant
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../../lib/consoledot-test-pipeline
+namespace: mdepaulo-tenant
