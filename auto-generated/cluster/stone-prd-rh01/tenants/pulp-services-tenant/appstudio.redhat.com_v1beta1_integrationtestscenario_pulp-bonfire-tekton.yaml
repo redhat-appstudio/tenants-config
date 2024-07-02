@@ -18,17 +18,15 @@ spec:
     value: null
   - name: COMPONENT_NAME
     value: pulp
-  - name: IQE_PLUGINS
-    value: ""
   - name: EXTRA_DEPLOY_ARGS
     value: --set-parameter pulp/PULP_API_MEMORY_LIMIT=4096Mi --set-parameter pulp/PULP_API_MEMORY_REQUEST=2048Mi
       provisioning sources image-builder-crc
   resolverRef:
     params:
     - name: url
-      value: https://github.com/dscervantes/tekton-insights.git
+      value: https://github.com/pulp/pulp-service.git
     - name: revision
-      value: b65c3d788d1c8c267ac50ca3b9208323b50e6f2b
+      value: main
     - name: pathInRepo
-      value: pipelines/basic_no_iqe.yaml
+      value: .tekton/pulp-deploy-and-test.yaml
     resolver: git
