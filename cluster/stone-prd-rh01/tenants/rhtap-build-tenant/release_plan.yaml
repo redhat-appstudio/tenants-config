@@ -80,3 +80,15 @@ metadata:
 spec:
   application: build-tasks-dockerfiles
   target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: buildah-container
+  namespace: rhtap-build-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: buildah-container
+  target: rhtap-releng-tenant
