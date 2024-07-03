@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
 - infra-deployments-pr-creator.yaml
 - registry-redhat-io-pull-secret.yaml
+- snyk-secret.yaml
 namespace: rhtap-build-tenant
