@@ -1,0 +1,11 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "false"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: runtimes-inventory-operator-release-as-product
+  namespace: insights-runtimes-tenant
+spec:
+  application: runtimes-inventory-operator
+  target: rhtap-releng-tenant

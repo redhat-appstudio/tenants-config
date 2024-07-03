@@ -6,7 +6,7 @@ metadata:
 spec:
   params: 
     - name: POLICY_CONFIGURATION
-      value: rhtap-releng-tenant/tmp-onboard-policy
+      value: rhtap-releng-tenant/registry-standard
   application: runtimes-inventory-operator
   contexts:
     - description: Application testing
