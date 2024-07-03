@@ -5,20 +5,9 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: 'true'
     release.appstudio.openshift.io/standing-attribution: 'true'
-  name: centos-bootc
+  name: bootc-c9s
 spec:
-  application: centos-bootc
-  target: rh-managed-bifrost-tenant
----
-apiVersion: appstudio.redhat.com/v1alpha1
-kind: ReleasePlan
-metadata:
-  labels:
-    release.appstudio.openshift.io/auto-release: 'true'
-    release.appstudio.openshift.io/standing-attribution: 'true'
-  name: centos-bootc-c9s
-spec:
-  application: centos-bootc-c9s
+  application: bootc-c9s
   target: rh-managed-bifrost-tenant
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
@@ -30,15 +19,4 @@ metadata:
   name: centos-bootc-c10s
 spec:
   application: centos-bootc-c10s
-  target: rh-managed-bifrost-tenant
----
-apiVersion: appstudio.redhat.com/v1alpha1
-kind: ReleasePlan
-metadata:
-  labels:
-    release.appstudio.openshift.io/auto-release: 'true'
-    release.appstudio.openshift.io/standing-attribution: 'true'
-  name: bootc-image-builder
-spec:
-  application: bootc-image-builder
   target: rh-managed-bifrost-tenant
