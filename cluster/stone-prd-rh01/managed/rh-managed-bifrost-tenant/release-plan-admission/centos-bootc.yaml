@@ -41,7 +41,7 @@ metadata:
     release.appstudio.openshift.io/auto-release: 'true'
 spec:
   applications:
-    - centos-bootc-c9s
+    - bootc-c9s
   data:
     images:
       addGitShaTag: true
