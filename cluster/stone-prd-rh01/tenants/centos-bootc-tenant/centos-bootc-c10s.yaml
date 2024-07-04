@@ -1,18 +1,26 @@
 apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: centos-bootc-c10s
+  namespace: centos-bootc-tenant
+spec:
+  displayName: centos-bootc-c10s
+---
+apiVersion: appstudio.redhat.com/v1alpha1
 kind: Component
 metadata:
   annotations:
     build.appstudio.openshift.io/request: configure-pac
     image.redhat.com/generate: '{"visibility": "public"}'
-  name: centos-bootc-c9s
+  name: centos-bootc-c10s
   namespace: centos-bootc-tenant
 spec:
-  application: bootc-c9s
-  componentName: centos-bootc-c9s
+  application: centos-bootc-c10s
+  componentName: centos-bootc-c10s
   skipGitOpsResourceGeneration: true
   source:
     git:
       context: ./
       dockerfileUrl: Containerfile
-      revision: c9s
+      revision: c10s
       url: https://gitlab.com/redhat/centos-stream/containers/bootc.git
