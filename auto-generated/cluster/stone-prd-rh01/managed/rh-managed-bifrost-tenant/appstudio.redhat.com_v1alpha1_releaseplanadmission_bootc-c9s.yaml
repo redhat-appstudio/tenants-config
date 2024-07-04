@@ -3,19 +3,22 @@ kind: ReleasePlanAdmission
 metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "true"
-  name: bootc-image-builder
+  name: bootc-c9s
   namespace: rh-managed-bifrost-tenant
 spec:
   applications:
-  - bootc-image-builder
+  - bootc-c9s
   data:
     images:
       addGitShaTag: true
       floatingTags:
-      - latest
+      - stream9
+      - c9s
     mapping:
       components:
-      - name: bootc-image-builder
+      - name: centos-bootc-c9s
+        repository: quay.io/centos-bootc/centos-bootc
+      - name: bootc-image-builder-c9s
         repository: quay.io/centos-bootc/bootc-image-builder
   origin: centos-bootc-tenant
   pipeline:
