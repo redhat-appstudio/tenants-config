@@ -1,0 +1,26 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: bootc-image-builder
+  namespace: centos-bootc-tenant
+spec:
+  displayName: bootc-image-builder
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    image.redhat.com/generate: '{"visibility": "public"}'
+  name: bootc-image-builder
+  namespace: centos-bootc-tenant
+spec:
+  application: bootc-image-builder
+  componentName: bootc-image-builder
+  skipGitOpsResourceGeneration: true
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Containerfile
+      revision: main
+      url: https://github.com/osbuild/bootc-image-builder.git

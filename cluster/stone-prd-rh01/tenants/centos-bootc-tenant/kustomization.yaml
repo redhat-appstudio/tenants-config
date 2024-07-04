@@ -2,5 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - release-plan.yaml
-  - bootc-c9s.yaml
+  - centos-bootc-c9s.yaml
+  - centos-bootc-c10s.yaml
+  - bootc-image-builder.yaml
 namespace: centos-bootc-tenant

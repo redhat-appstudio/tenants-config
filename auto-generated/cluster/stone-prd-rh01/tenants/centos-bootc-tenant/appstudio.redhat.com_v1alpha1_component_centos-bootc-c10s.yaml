@@ -4,15 +4,15 @@ metadata:
   annotations:
     build.appstudio.openshift.io/request: configure-pac
     image.redhat.com/generate: '{"visibility": "public"}'
-  name: bootc-image-builder-c9s
+  name: centos-bootc-c10s
   namespace: centos-bootc-tenant
 spec:
-  application: bootc-c9s
-  componentName: bootc-image-builder-c9s
+  application: centos-bootc-c10s
+  componentName: centos-bootc-c10s
   skipGitOpsResourceGeneration: true
   source:
     git:
       context: ./
       dockerfileUrl: Containerfile
-      revision: main
-      url: https://github.com/osbuild/bootc-image-builder.git
+      revision: c10s
+      url: https://gitlab.com/redhat/centos-stream/containers/bootc.git

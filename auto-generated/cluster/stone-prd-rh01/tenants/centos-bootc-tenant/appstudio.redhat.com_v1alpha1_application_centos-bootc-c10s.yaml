@@ -1,0 +1,7 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: centos-bootc-c10s
+  namespace: centos-bootc-tenant
+spec:
+  displayName: centos-bootc-c10s
