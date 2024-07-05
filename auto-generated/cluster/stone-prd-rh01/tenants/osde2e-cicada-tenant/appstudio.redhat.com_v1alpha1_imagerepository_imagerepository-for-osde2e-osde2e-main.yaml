@@ -1,0 +1,14 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  annotations:
+    image-controller.appstudio.redhat.com/update-component-image: "true"
+  labels:
+    appstudio.redhat.com/application: osde2e
+    appstudio.redhat.com/component: osde2e-main
+  name: imagerepository-for-osde2e-osde2e-main
+  namespace: osde2e-cicada-tenant
+spec:
+  image:
+    name: osde2e/osde2e-main
+    visibility: public

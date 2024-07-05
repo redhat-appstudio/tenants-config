@@ -1,0 +1,9 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: osde2e
+spec:
+  displayName: osde2e
+  description: >
+    A comprehensive test framework used for Service Delivery to test all
+    aspects of Managed OpenShift Clusters
