@@ -24,3 +24,17 @@ spec:
       dockerfileUrl: Containerfile
       revision: c9s
       url: https://gitlab.com/redhat/centos-stream/containers/bootc.git
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  annotations:
+    image-controller.appstudio.redhat.com/update-component-image: true
+  name: centos-bootc-c9s
+  labels:
+    appstudio.redhat.com/application: centos-bootc-c9s
+    appstudio.redhat.com/component: centos-bootc-c9s
+spec:
+  image:
+    name: centos-bootc-c9s/centos-bootc-c9s
+    visibility: public

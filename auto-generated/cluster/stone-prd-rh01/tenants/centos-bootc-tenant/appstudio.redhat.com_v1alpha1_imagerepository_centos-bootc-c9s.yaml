@@ -1,0 +1,14 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  annotations:
+    image-controller.appstudio.redhat.com/update-component-image: "true"
+  labels:
+    appstudio.redhat.com/application: centos-bootc-c9s
+    appstudio.redhat.com/component: centos-bootc-c9s
+  name: centos-bootc-c9s
+  namespace: centos-bootc-tenant
+spec:
+  image:
+    name: centos-bootc-c9s/centos-bootc-c9s
+    visibility: public
