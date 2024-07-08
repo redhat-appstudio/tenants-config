@@ -1,5 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: osde2e-cicada-tenant
 resources:
+- application.yaml
+- component.yaml
+- image_repository.yaml
 - integration_test_scenario.yaml
 - release_plan.yaml

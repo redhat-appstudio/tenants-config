@@ -1,0 +1,16 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/request: configure-pac
+  name: osde2e-main
+  namespace: osde2e-cicada-tenant
+spec:
+  application: osde2e
+  componentName: osde2e-main
+  source:
+    git:
+      dockerfileUrl: Dockerfile.osde2e
+      revision: main
+      url: https://github.com/openshift/osde2e
