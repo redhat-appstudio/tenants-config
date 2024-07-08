@@ -34,5 +34,5 @@ metadata:
     appstudio.redhat.com/component: centos-bootc-c9s
 spec:
   image:
-    name: centos-bootc-c9s/centos-bootc-c9s
+    name: centos-bootc-tenant/centos-bootc-c9s/centos-bootc-c9s
     visibility: public

@@ -10,5 +10,5 @@ metadata:
   namespace: centos-bootc-tenant
 spec:
   image:
-    name: centos-bootc-c9s/centos-bootc-c9s
+    name: centos-bootc-tenant/centos-bootc-c9s/centos-bootc-c9s
     visibility: public
