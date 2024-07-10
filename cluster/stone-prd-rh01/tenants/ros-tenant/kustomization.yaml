@@ -1,0 +1,6 @@
+resources:
+- ros_backend_integration_test.yaml
+- ros_ocp_backend_integration_test.yaml
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
