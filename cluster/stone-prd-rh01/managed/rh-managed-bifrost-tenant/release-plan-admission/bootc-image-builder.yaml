@@ -16,7 +16,7 @@ spec:
           repository: "quay.io/centos-bootc/bootc-image-builder"
           tags:
             - latest
-          pushSourceContainer: true
+          pushSourceContainer: false
   origin: centos-bootc-tenant
   pipeline:
     pipelineRef:

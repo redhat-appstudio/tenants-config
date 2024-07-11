@@ -12,7 +12,7 @@ spec:
     mapping:
       components:
       - name: centos-bootc-c9s
-        pushSourceContainer: true
+        pushSourceContainer: false
         repository: quay.io/centos-bootc/centos-bootc
         tags:
         - stream9
