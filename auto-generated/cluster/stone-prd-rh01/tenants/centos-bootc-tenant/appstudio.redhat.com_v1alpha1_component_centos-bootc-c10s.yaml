@@ -3,13 +3,11 @@ kind: Component
 metadata:
   annotations:
     build.appstudio.openshift.io/request: configure-pac
-    image.redhat.com/generate: '{"visibility": "public"}'
   name: centos-bootc-c10s
   namespace: centos-bootc-tenant
 spec:
   application: centos-bootc-c10s
   componentName: centos-bootc-c10s
-  skipGitOpsResourceGeneration: true
   source:
     git:
       context: ./
