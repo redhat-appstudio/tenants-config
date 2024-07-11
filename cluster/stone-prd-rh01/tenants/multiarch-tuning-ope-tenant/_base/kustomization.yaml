@@ -1,4 +1,8 @@
 kind: Kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 # Naming: <API_GROUP>/<KIND_PLURAL>/<METADATA_NAME>
-resources: []
+resources:
+  - projectl.konflux.dev/projects/file-based-catalog
+  - projectl.konflux.dev/projectdevelopmentstreamtemplates/file-based-catalog
+  - projectl.konflux.dev/projectdevelopmentstreams/file-based-catalog-v4-16
+
