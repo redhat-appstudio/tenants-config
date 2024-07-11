@@ -9,15 +9,14 @@ spec:
   applications:
   - centos-bootc-c9s
   data:
-    images:
-      addGitShaTag: true
-      floatingTags:
-      - stream9
-      - c9s
     mapping:
       components:
       - name: centos-bootc-c9s
+        pushSourceContainer: true
         repository: quay.io/centos-bootc/centos-bootc
+        tags:
+        - stream9
+        - c9s
   origin: centos-bootc-tenant
   pipeline:
     pipelineRef:
