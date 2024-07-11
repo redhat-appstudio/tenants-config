@@ -17,7 +17,7 @@ spec:
           tags:
             - stream9
             - c9s
-          pushSourceContainer: true
+          pushSourceContainer: false
   origin: centos-bootc-tenant
   pipeline:
     pipelineRef:
@@ -50,7 +50,7 @@ spec:
           tags:
             - stream10
             - c10s
-          pushSourceContainer: true
+          pushSourceContainer: false
   origin: centos-bootc-tenant
   pipeline:
     pipelineRef:

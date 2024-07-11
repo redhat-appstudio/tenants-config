@@ -12,7 +12,7 @@ spec:
     mapping:
       components:
       - name: bootc-image-builder
-        pushSourceContainer: true
+        pushSourceContainer: false
         repository: quay.io/centos-bootc/bootc-image-builder
         tags:
         - latest
