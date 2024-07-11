@@ -10,14 +10,13 @@ spec:
   applications:
     - bootc-image-builder
   data:
-    images:
-      addGitShaTag: true
-      floatingTags:
-        - latest
     mapping:
       components:
         - name: bootc-image-builder
           repository: "quay.io/centos-bootc/bootc-image-builder"
+          tags:
+            - latest
+          pushSourceContainer: true
   origin: centos-bootc-tenant
   pipeline:
     pipelineRef:
