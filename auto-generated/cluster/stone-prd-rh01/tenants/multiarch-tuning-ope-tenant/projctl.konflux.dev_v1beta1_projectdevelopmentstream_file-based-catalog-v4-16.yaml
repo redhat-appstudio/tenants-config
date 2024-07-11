@@ -1,0 +1,14 @@
+apiVersion: projctl.konflux.dev/v1beta1
+kind: ProjectDevelopmentStream
+metadata:
+  name: file-based-catalog-v4-16
+  namespace: multiarch-tuning-ope-tenant
+spec:
+  project: file-based-catalog
+  template:
+    name: file-based-catalog
+    values:
+    - name: version
+      value: "4.17"
+    - name: versionName
+      value: v4-17

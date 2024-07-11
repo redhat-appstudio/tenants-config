@@ -1,0 +1,57 @@
+apiVersion: projctl.konflux.dev/v1beta1
+kind: ProjectDevelopmentStreamTemplate
+metadata:
+  name: file-based-catalog
+spec:
+  project: file-based-catalog
+  variables:
+    - name: version
+      description: A version number for a new OCP stream
+    - name: versionName
+      description: >
+        The name of some objects cannot include dots. It's recommended to set this versionName replacing any `.` with
+        hyphen (`-`) in the value of the parameter `version`.
+  resources:
+    - apiVersion: appstudio.redhat.com/v1alpha1
+      kind: Application
+      metadata:
+        annotations:
+          application.thumbnail: "6"
+          finalizeCount: "0"
+        finalizers:
+          - spi.appstudio.redhat.com/remote-secrets
+        name: "fbc-{{.versionName}}"
+      spec:
+        appModelRepository:
+          url: ""
+        displayName: "fbc-{{.versionName}}"
+        gitOpsRepository:
+          url: ""
+    - apiVersion: appstudio.redhat.com/v1alpha1
+      kind: Component
+      metadata:
+        annotations:
+          applicationFailCounter: "0"
+          build.appstudio.openshift.io/pipeline: '{"name":"fbc-builder","bundle":"latest"}'
+        finalizers:
+          - test.appstudio.openshift.io/component
+          - image-controller.appstudio.openshift.io/image-repository
+          - image-registry-secret-sa-link.component.appstudio.openshift.io/finalizer
+          - pac.component.appstudio.openshift.io/finalizer
+        name: fbc-v4-16
+        namespace: multiarch-tuning-ope-tenant
+      spec:
+        application: "fbc-{{.versionName}}"
+        componentName: "fbc-{{.versionName}}"
+        replicas: 0
+        resources:
+          requests:
+            cpu: 100m
+            memory: 512Mi
+        source:
+          git:
+            context: ./
+            devfileUrl: https://raw.githubusercontent.com/openshift/multiarch-tuning-operator/fbc-4.16/devfile.yaml
+            revision: "fbc-{{.version}}"
+            url: https://github.com/openshift/multiarch-tuning-operator
+        targetPort: 50051

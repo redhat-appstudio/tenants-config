@@ -1,0 +1,10 @@
+apiVersion: projctl.konflux.dev/v1beta1
+kind: Project
+metadata:
+  name: file-based-catalog
+  namespace: multiarch-tuning-ope-tenant
+spec:
+  description: |
+    Multi-version project for the file-based catalog of the Multiarch Tuning Operator
+  displayName: Multi-version project for the file-based catalog of the Multiarch Tuning
+    Operator
