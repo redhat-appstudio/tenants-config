@@ -1,0 +1,12 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "false"
+    release.appstudio.openshift.io/releasePlanAdmission: trustee-prod
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: trustee-prod-release-plan
+  namespace: ose-osc-tenant
+spec:
+  application: trustee
+  target: rhtap-releng-tenant
