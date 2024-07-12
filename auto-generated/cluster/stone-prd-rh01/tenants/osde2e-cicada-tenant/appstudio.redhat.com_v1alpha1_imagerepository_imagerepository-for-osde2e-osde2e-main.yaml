@@ -10,5 +10,5 @@ metadata:
   namespace: osde2e-cicada-tenant
 spec:
   image:
-    name: osde2e/osde2e-main
+    name: osde2e-cicada-tenant/osde2e/osde2e-main
     visibility: public
