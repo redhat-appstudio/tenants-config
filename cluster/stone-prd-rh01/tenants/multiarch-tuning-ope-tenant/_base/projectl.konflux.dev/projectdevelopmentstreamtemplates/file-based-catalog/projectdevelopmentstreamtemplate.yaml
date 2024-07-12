@@ -51,7 +51,40 @@ spec:
         source:
           git:
             context: ./
-            devfileUrl: https://raw.githubusercontent.com/openshift/multiarch-tuning-operator/fbc-4.16/devfile.yaml
+            devfileUrl: "https://raw.githubusercontent.com/openshift/multiarch-tuning-operator/fbc-{{.version}}/devfile.yaml"
             revision: "fbc-{{.version}}"
             url: https://github.com/openshift/multiarch-tuning-operator
         targetPort: 50051
+    - apiVersion: appstudio.redhat.com/v1alpha1
+      kind: ReleasePlan
+      metadata:
+        name: "fbc-{{.versionName}}-release-as-fbc"
+        namespace: multiarch-tuning-ope-tenant
+        labels:
+          release.appstudio.openshift.io/auto-release: 'false'
+          release.appstudio.openshift.io/standing-attribution: 'true'
+          release.appstudio.openshift.io/releasePlanAdmission: multiarch-tuning-operator-fbc-prod-index
+      spec:
+        application: "fbc-{{.versionName}}"
+        target: rhtap-releng-tenant
+    - apiVersion: appstudio.redhat.com/v1alpha1
+      kind: ReleasePlan
+      metadata:
+        name: "fbc-{{.versionName}}-release-as-staging-fbc"
+        namespace: multiarch-tuning-ope-tenant
+        labels:
+          release.appstudio.openshift.io/auto-release: 'false'
+          release.appstudio.openshift.io/standing-attribution: 'true'
+          release.appstudio.openshift.io/releasePlanAdmission: multiarch-tuning-operator-fbc-staging-index
+      spec:
+        application: "fbc-{{.versionName}}"
+        target: rhtap-releng-tenant
+    - apiVersion: appstudio.redhat.com/v1beta1
+      kind: IntegrationTestScenario
+      metadata:
+        name: "fbc-{{.versionName}}-enterprise-contract"
+      spec:
+        application: "fbc-{{.versionName}}"
+        params:
+          - name: POLICY_CONFIGURATION
+            value: rhtap-releng-tenant/fbc-stage
