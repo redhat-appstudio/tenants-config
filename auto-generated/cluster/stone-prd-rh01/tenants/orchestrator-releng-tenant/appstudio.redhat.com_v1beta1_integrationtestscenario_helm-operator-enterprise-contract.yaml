@@ -10,7 +10,7 @@ spec:
     name: application
   params:
   - name: POLICY_CONFIGURATION
-    value: rhtap-releng-tenant/fbc-stage
+    value: rhtap-releng-tenant/registry-orchestrator-releng
   resolverRef:
     params:
     - name: url
