@@ -9,5 +9,5 @@ metadata:
     appstudio.redhat.com/component: osde2e-main
 spec:
   image:
-    name: osde2e/osde2e-main
+    name: osde2e-cicada-tenant/osde2e/osde2e-main
     visibility: public
