@@ -6,7 +6,7 @@ metadata:
 spec:
   params:
     - name: POLICY_CONFIGURATION
-      value: rhtap-releng-tenant/fbc-stage
+      value: rhtap-releng-tenant/registry-orchestrator-releng
   application: helm-operator
   contexts:
     - description: Application testing
