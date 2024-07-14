@@ -1,6 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - payload-tracker-frontend_integration_test.yaml
   - payload-tracker-frontend_release_plan.yaml
   - integration_test_scenario.yaml              #Ingress
   - integration_test_tekton.yaml                #Ingress
