@@ -1,0 +1,12 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: payload-tracker-frontend-release-as-ms
+  namespace: hcc-pipeline-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: payload-tracker-frontend
+  displayName: payload-tracker-frontend release-to-quay
+  target: rhtap-releng-tenant
