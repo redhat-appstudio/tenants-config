@@ -1,0 +1,14 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  annotations:
+    image-controller.appstudio.redhat.com/update-component-image: "true"
+  labels:
+    appstudio.redhat.com/application: olm-operator
+    appstudio.redhat.com/component: gatekeeper-operator-bundle
+  name: imagerepository-for-olm-operator-gatekeeper-operator-bundle
+  namespace: konflux-samples-tenant
+spec:
+  image:
+    name: konflux-samples-tenant/olm-operator/gatekeeper-operator-bundle
+    visibility: public

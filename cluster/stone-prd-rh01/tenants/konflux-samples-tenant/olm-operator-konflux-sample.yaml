@@ -50,6 +50,26 @@ spec:
       context: ./
 ---
 apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: gatekeeper-operator-bundle
+  namespace: konflux-samples-tenant
+  annotations:
+    build.appstudio.openshift.io/request: configure-pac
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    # If building an FBC component, replace the above line with the one below
+    # build.appstudio.openshift.io/pipeline: '{"name":"fbc-builder","bundle":"latest"}'
+spec:
+  application: olm-operator
+  componentName: gatekeeper-operator-bundle
+  source:
+    git:
+      revision: main
+      url: https://github.com/konflux-ci/olm-operator-konflux-sample
+      dockerfileUrl: Containerfile.gatekeeper-operator-bundle
+      context: ./
+---
+apiVersion: appstudio.redhat.com/v1alpha1
 kind: ImageRepository
 metadata:
   annotations:
@@ -77,4 +97,19 @@ metadata:
 spec:
   image:
     name: konflux-samples-tenant/olm-operator/gatekeeper-operator
+    visibility: public
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  annotations:
+    image-controller.appstudio.redhat.com/update-component-image: true
+  name: imagerepository-for-olm-operator-gatekeeper-operator-bundle
+  namespace: konflux-samples-tenant
+  labels:
+    appstudio.redhat.com/application: olm-operator
+    appstudio.redhat.com/component: gatekeeper-operator-bundle
+spec:
+  image:
+    name: konflux-samples-tenant/olm-operator/gatekeeper-operator-bundle
     visibility: public
