@@ -1,5 +1,5 @@
 resources:
-- integration_test_scenario.yaml
+- api-frontend_integration_test.yaml
 - api-frontend_release_plan.yaml
 
 apiVersion: kustomize.config.k8s.io/v1beta1
