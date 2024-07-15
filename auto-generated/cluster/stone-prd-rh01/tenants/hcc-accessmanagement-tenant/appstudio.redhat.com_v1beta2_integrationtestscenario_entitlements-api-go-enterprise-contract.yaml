@@ -1,0 +1,22 @@
+apiVersion: appstudio.redhat.com/v1beta2
+kind: IntegrationTestScenario
+metadata:
+  name: entitlements-api-go-enterprise-contract
+  namespace: hcc-accessmanagement-tenant
+spec:
+  application: entitlements-api-go
+  contexts:
+  - description: Application testing
+    name: application
+  params:
+  - name: POLICY_CONFIGURATION
+    value: rhtap-releng-tenant/tmp-onboard-policy
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/build-definitions
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/enterprise-contract.yaml
+    resolver: git
