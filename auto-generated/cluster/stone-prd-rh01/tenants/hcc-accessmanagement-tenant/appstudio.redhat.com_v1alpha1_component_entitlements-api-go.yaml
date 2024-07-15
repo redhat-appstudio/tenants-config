@@ -1,0 +1,17 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/request: configure-pac
+  name: entitlements-api-go
+  namespace: hcc-accessmanagement-tenant
+spec:
+  application: entitlements-api-go
+  componentName: entitlements-api-go
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: main
+      url: https://github.com/RedHatInsights/entitlements-api-go/tree/main
