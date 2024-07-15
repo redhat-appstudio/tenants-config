@@ -1,0 +1,14 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  annotations:
+    image-controller.appstudio.redhat.com/update-component-image: "true"
+  labels:
+    appstudio.redhat.com/application: insights-behavioral-spec
+    appstudio.redhat.com/component: insights-behavioral-spec
+  name: imagerepository-for-insights-behavioral-spec-insights-behavioral-spec
+  namespace: ocp-obsint-processing-tenant
+spec:
+  image:
+    name: ocp-obsint-processing-tenant/insights-behavioral-spec/insights-behavioral-spec
+    visibility: public
