@@ -1,0 +1,9 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    hello: world
+  name: uhc-auth-proxy
+  namespace: hcc-accessmanagement-tenant
+spec:
+  displayName: uhc-auth-proxy
