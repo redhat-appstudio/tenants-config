@@ -11,6 +11,7 @@ resources:
 
 #uhc-auth-proxy 
 - uhc-auth-proxy.yaml 
-- uhc_auth_proxy_integration_test.yaml
+- uhc-auth-proxy-integration-test.yaml
+- uhc-auth-proxy-bonfire-tekton.yaml
 
 namespace: hcc-accessmanagement-tenant

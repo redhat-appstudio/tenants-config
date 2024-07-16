@@ -1,0 +1,29 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "true"
+  name: uhc-auth-proxy-bonfire-tekton
+  namespace: hcc-accessmanagement-tenant
+spec:
+  application: uhc-auth-proxy
+  params:
+  - name: APP_NAME
+    value: uhc-auth-proxy
+  - name: COMPONENT_NAME
+    value: uhc-auth-proxy
+  - name: IQE_PLUGINS
+    value: uhcproxy
+  - name: IQE_MARKER_EXPRESSION
+    value: uhcproxy_smoke
+  - name: IQE_FILTER_EXPRESSION
+    value: ""
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/RedHatInsights/bonfire-tekton.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/basic.yaml
+    resolver: git
