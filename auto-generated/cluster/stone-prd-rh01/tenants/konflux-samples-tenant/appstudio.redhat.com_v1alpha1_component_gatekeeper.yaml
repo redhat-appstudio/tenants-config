@@ -1,0 +1,17 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/request: configure-pac
+  name: gatekeeper
+  namespace: konflux-samples-tenant
+spec:
+  application: olm-operator
+  componentName: gatekeeper
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Containerfile.gatekeeper
+      revision: main
+      url: https://github.com/konflux-ci/olm-operator-konflux-sample
