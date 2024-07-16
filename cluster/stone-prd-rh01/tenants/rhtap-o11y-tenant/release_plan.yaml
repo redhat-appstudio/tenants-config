@@ -1,18 +1,6 @@
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
-  name: release-to-quay-rhtap-ser
-  namespace: rhtap-o11y-tenant
-  labels:
-    release.appstudio.openshift.io/auto-release: 'true'
-    release.appstudio.openshift.io/standing-attribution: 'true'
-spec:
-  application: segment-bridge
-  target: rhtap-releng-tenant
----
-apiVersion: appstudio.redhat.com/v1alpha1
-kind: ReleasePlan
-metadata:
   name: o11y-release-to-quay-rhtap-ser
   namespace: rhtap-o11y-tenant
   labels:
