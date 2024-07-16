@@ -9,5 +9,9 @@ resources:
 - entitlements-api-go.yaml
 - entitlements_api_go_integration_test.yaml
 
+#uhc-auth-proxy 
+- uhc-auth-proxy.yaml 
+- uhc-auth-proxy-integration-test.yaml
+- uhc-auth-proxy-bonfire-tekton.yaml
 
 namespace: hcc-accessmanagement-tenant
