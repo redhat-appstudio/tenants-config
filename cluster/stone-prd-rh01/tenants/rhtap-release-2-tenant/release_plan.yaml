@@ -21,3 +21,15 @@ metadata:
 spec:
   application: internal-services
   target: rhtap-releng-tenant
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: release-service-monitor-release-to-quay-rhtap-ser
+  namespace: rhtap-release-2-tenant
+  labels:
+    release.appstudio.openshift.io/auto-release: 'true'
+    release.appstudio.openshift.io/standing-attribution: 'true'
+spec:
+  application: release-service-monitor
+  target: rhtap-releng-tenant
