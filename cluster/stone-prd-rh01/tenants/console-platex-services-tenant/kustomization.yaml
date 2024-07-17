@@ -1,5 +1,9 @@
+---
 resources:
 - integration_test_scenario.yaml
-
+- quickstarts-integration.yaml
+- quickstarts-bonfire-tekton.yaml
+- ../../../../lib/consoledot-test-pipeline
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: console-platex-services-tenant

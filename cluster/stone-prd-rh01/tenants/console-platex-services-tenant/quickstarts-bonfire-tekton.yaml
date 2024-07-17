@@ -1,0 +1,27 @@
+---
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false" # Change to "true" if you don't need the test to be mandatory
+  name: quickstarts-bonfire-tekton
+  namespace: console-platex-services-tenant
+spec:
+  application: quickstarts
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/RedHatInsights/bonfire-tekton.git
+    - name: revision
+      value: main # Or whatever branch you want to test
+    - name: pathInRepo
+      value: pipelines/basic.yaml # This is the path to the pipeline
+    resolver: git
+  params:
+  - name: APP_NAME
+    value: quickstarts
+  - name: COMPONENTS
+    value: quickstarts
+  - name: COMPONENT_NAME
+    value: quickstarts
+
