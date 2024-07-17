@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - trustee-enterprise-contract.yaml
   - trustee-stage-release-plan.yaml
+  - trustee-prod-release-plan.yaml
