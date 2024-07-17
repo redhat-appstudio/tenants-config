@@ -8,6 +8,8 @@ metadata:
   namespace: konflux-samples-tenant
 spec:
   application: olm-operator
+  build-nudges-ref:
+  - gatekeeper-operator-bundle
   componentName: gatekeeper
   source:
     git:

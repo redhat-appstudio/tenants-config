@@ -22,6 +22,8 @@ metadata:
 spec:
   application: olm-operator
   componentName: gatekeeper
+  build-nudges-ref:
+    - gatekeeper-operator-bundle
   source:
     git:
       revision: main
@@ -42,6 +44,8 @@ metadata:
 spec:
   application: olm-operator
   componentName: gatekeeper-operator
+  build-nudges-ref:
+    - gatekeeper-operator-bundle
   source:
     git:
       revision: main
