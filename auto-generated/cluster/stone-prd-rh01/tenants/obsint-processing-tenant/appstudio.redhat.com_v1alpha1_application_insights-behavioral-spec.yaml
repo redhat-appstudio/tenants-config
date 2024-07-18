@@ -4,6 +4,6 @@ metadata:
   annotations:
     hello: world
   name: insights-behavioral-spec
-  namespace: ocp-obsint-processing-tenant
+  namespace: obsint-processing-tenant
 spec:
   displayName: insights-behavioral-spec

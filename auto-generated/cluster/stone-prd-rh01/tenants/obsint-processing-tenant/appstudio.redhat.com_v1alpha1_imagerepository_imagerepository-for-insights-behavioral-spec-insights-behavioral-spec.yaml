@@ -7,8 +7,8 @@ metadata:
     appstudio.redhat.com/application: insights-behavioral-spec
     appstudio.redhat.com/component: insights-behavioral-spec
   name: imagerepository-for-insights-behavioral-spec-insights-behavioral-spec
-  namespace: ocp-obsint-processing-tenant
+  namespace: obsint-processing-tenant
 spec:
   image:
-    name: ocp-obsint-processing-tenant/insights-behavioral-spec/insights-behavioral-spec
+    name: obsint-processing-tenant/insights-behavioral-spec/insights-behavioral-spec
     visibility: public
