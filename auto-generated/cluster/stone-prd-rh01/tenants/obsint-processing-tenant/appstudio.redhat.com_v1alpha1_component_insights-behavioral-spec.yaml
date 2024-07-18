@@ -5,7 +5,7 @@ metadata:
     build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
     build.appstudio.openshift.io/request: configure-pac
   name: insights-behavioral-spec
-  namespace: ocp-obsint-processing-tenant
+  namespace: obsint-processing-tenant
 spec:
   application: insights-behavioral-spec
   componentName: insights-behavioral-spec

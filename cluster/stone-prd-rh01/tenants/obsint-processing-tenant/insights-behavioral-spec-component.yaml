@@ -3,7 +3,7 @@ apiVersion: appstudio.redhat.com/v1alpha1
 kind: Application
 metadata:
   name: insights-behavioral-spec
-  namespace: ocp-obsint-processing-tenant
+  namespace: obsint-processing-tenant
   annotations:
     # This stub annotation is needed until KFLUXBUGS-1300 is resolved.
     hello: world
@@ -14,7 +14,7 @@ apiVersion: appstudio.redhat.com/v1alpha1
 kind: Component
 metadata:
   name: insights-behavioral-spec
-  namespace: ocp-obsint-processing-tenant
+  namespace: obsint-processing-tenant
   annotations:
     build.appstudio.openshift.io/request: configure-pac
     build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
@@ -34,12 +34,12 @@ metadata:
   annotations:
     image-controller.appstudio.redhat.com/update-component-image: true
   name: imagerepository-for-insights-behavioral-spec-insights-behavioral-spec
-  namespace: ocp-obsint-processing-tenant
+  namespace: obsint-processing-tenant
   labels:
     appstudio.redhat.com/application: insights-behavioral-spec
     appstudio.redhat.com/component: insights-behavioral-spec
 spec:
   image:
-    name: ocp-obsint-processing-tenant/insights-behavioral-spec/insights-behavioral-spec
+    name: obsint-processing-tenant/insights-behavioral-spec/insights-behavioral-spec
     visibility: public
 
