@@ -1,0 +1,9 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    hello: world
+  name: io-gathering-service
+  namespace: obsint-processing-tenant
+spec:
+  displayName: io-gathering-service

@@ -1,0 +1,14 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  annotations:
+    image-controller.appstudio.redhat.com/update-component-image: "true"
+  labels:
+    appstudio.redhat.com/application: io-gathering-service
+    appstudio.redhat.com/component: io-gathering-service
+  name: imagerepository-for-io-gathering-service-io-gathering-service
+  namespace: obsint-processing-tenant
+spec:
+  image:
+    name: obsint-processing-tenant/io-gathering-service/io-gathering-service
+    visibility: public
