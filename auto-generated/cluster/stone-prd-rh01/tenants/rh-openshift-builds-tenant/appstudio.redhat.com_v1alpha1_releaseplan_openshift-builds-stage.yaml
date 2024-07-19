@@ -1,0 +1,12 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "false"
+    release.appstudio.openshift.io/releasePlanAdmission: openshift-builds-stage
+    release.appstudio.openshift.io/standing-attribution: "true"
+  name: openshift-builds-stage
+  namespace: rh-openshift-builds-tenant
+spec:
+  application: openshift-builds-1-1
+  target: rhtap-releng-tenant

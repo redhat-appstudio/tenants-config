@@ -1,0 +1,9 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: rh-openshift-builds-tenant
+resources:
+  - integrationtestscenario.yaml
+  - release_plan-prod.yaml
+  - release_plan-stage.yaml
+
