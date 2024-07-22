@@ -1,0 +1,30 @@
+apiVersion: appstudio.redhat.com/v1beta2
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "true" # Change to "true" if you don't need the test to be mandatory
+  name: insights-puptoo-tekton-testing
+  namespace: insights-core-tenant
+spec:
+  application: insights-puptoo-app
+  contexts:
+    - description: Application testing
+      name: application
+  resolverRef:
+    params:
+      - name: url
+        value: https://github.com/RedHatInsights/bonfire-tekton.git # Temporary on gbenhaim's org. Also, you can fork it and reference yours here.
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: pipelines/basic.yaml
+    resolver: git
+  params:
+      - name: APP_NAME
+        value: ingress
+      - name: COMPONENT_NAME
+        value: insights-puptoo
+      - name: IQE_PLUGINS
+        value: puptoo
+      - name: IQE_MARKER_EXPRESSION
+        value: smoke
