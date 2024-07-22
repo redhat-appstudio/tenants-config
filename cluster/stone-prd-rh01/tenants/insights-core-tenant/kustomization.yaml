@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - insights-puptoo-app-bonfire-tekton.yaml
   - ../../../../lib/consoledot-test-pipeline
-namespace: insights-rules-tenant
+namespace: insights-core-tenant
