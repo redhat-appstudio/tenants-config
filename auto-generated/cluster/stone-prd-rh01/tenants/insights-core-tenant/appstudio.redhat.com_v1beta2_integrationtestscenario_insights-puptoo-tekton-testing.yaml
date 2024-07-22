@@ -14,7 +14,7 @@ spec:
   - name: APP_NAME
     value: ingress
   - name: COMPONENT_NAME
-    value: insights-puptoo
+    value: puptoo
   - name: IQE_PLUGINS
     value: puptoo
   - name: IQE_MARKER_EXPRESSION
