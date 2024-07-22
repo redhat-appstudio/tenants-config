@@ -50,42 +50,9 @@ spec:
             memory: 512Mi
         source:
           git:
-            context: "{{.versionName}}"
-            devfileUrl: "https://raw.githubusercontent.com/openshift/cli-manager-operator/fbc/{{.versionName}}/devfile.yaml"
+            context: "{{.version}}"
+            devfileUrl: "https://raw.githubusercontent.com/openshift/cli-manager-operator/fbc/{{.version}}/devfile.yaml"
             revision: "fbc"
             dockerfileUrl: catalog.Dockerfile
             url: https://github.com/openshift/cli-manager-operator
         targetPort: 50051
-    - apiVersion: appstudio.redhat.com/v1alpha1
-      kind: ReleasePlan
-      metadata:
-        name: "fbc-{{.versionName}}-release-as-fbc"
-        namespace: clio-wrklds-pipeline-tenant
-        labels:
-          release.appstudio.openshift.io/auto-release: 'false'
-          release.appstudio.openshift.io/standing-attribution: 'true'
-          release.appstudio.openshift.io/releasePlanAdmission: clio-wrklds-pipeline-fbc-prod-index
-      spec:
-        application: "cli-manager-operator-fbc-{{.versionName}}"
-        target: rhtap-releng-tenant
-    - apiVersion: appstudio.redhat.com/v1alpha1
-      kind: ReleasePlan
-      metadata:
-        name: "fbc-{{.versionName}}-release-as-staging-fbc"
-        namespace: clio-wrklds-pipeline-tenant
-        labels:
-          release.appstudio.openshift.io/auto-release: 'false'
-          release.appstudio.openshift.io/standing-attribution: 'true'
-          release.appstudio.openshift.io/releasePlanAdmission: clio-wrklds-pipeline-fbc-staging-index
-      spec:
-        application: "cli-manager-operator-fbc-{{.versionName}}"
-        target: rhtap-releng-tenant
-    - apiVersion: appstudio.redhat.com/v1beta1
-      kind: IntegrationTestScenario
-      metadata:
-        name: "cli-manager-operator-fbc-{{.versionName}}-ec"
-      spec:
-        application: "cli-manager-operator-fbc-{{.versionName}}"
-        params:
-          - name: POLICY_CONFIGURATION
-            value: rhtap-releng-tenant/fbc-stage

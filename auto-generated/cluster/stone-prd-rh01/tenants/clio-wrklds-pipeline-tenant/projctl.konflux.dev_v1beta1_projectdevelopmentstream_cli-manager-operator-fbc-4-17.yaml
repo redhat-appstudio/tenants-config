@@ -1,7 +1,7 @@
 apiVersion: projctl.konflux.dev/v1beta1
 kind: ProjectDevelopmentStream
 metadata:
-  name: cli-manager-operator-fbc-v4-17
+  name: cli-manager-operator-fbc-4-17
   namespace: clio-wrklds-pipeline-tenant
 spec:
   project: clio-wrklds-pipeline-tenant
@@ -9,6 +9,6 @@ spec:
     name: cli-manager-operator-fbc-dst
     values:
     - name: version
-      value: "4.17"
+      value: v4.17
     - name: versionName
-      value: v4-17
+      value: 4-17
