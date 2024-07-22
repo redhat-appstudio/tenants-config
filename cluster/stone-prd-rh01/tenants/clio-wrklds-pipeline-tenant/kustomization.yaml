@@ -1,5 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-resources:
-  - release-plan.yaml
+
+# Set the namespace for all the manifests in this kustomization
 namespace: clio-wrklds-pipeline-tenant
+
+# List of resources to include in the kustomization: they are expected to be other folders with kustomization.yaml,
+# one per application. Objects shared across applications can stay in the _base/ folder.
+resources:
+  - _base
+  - fbc_4_17
+  - operator

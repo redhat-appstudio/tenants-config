@@ -1,0 +1,10 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  name: cli-manager-operator-fbc-v4-17-ec
+  namespace: clio-wrklds-pipeline-tenant
+spec:
+  application: cli-manager-operator-fbc-v4-17
+  params:
+  - name: POLICY_CONFIGURATION
+    value: rhtap-releng-tenant/fbc-stage

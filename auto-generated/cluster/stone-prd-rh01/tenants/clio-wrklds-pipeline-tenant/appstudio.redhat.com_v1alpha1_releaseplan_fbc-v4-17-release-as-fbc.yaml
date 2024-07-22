@@ -3,10 +3,10 @@ kind: ReleasePlan
 metadata:
   labels:
     release.appstudio.openshift.io/auto-release: "false"
-    release.appstudio.openshift.io/releasePlanAdmission: clio-wrklds-pipeline-prod
+    release.appstudio.openshift.io/releasePlanAdmission: clio-wrklds-pipeline-fbc-prod-index
     release.appstudio.openshift.io/standing-attribution: "true"
-  name: cli-manager-operator
+  name: fbc-v4-17-release-as-fbc
   namespace: clio-wrklds-pipeline-tenant
 spec:
-  application: cli-manager-operator
+  application: cli-manager-operator-fbc-v4-17
   target: rhtap-releng-tenant
