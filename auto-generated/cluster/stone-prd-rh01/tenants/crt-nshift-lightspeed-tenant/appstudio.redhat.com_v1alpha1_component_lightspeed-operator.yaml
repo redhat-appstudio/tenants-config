@@ -1,0 +1,14 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: lightspeed-operator
+  namespace: crt-nshift-lightspeed-tenant
+spec:
+  application: ols
+  build-nudges-ref:
+  - bundle
+  componentName: lightspeed-operator
+  source:
+    git:
+      dockerfileUrl: Dockerfile
+      url: https://github.com/openshift/lightspeed-operator

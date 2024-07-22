@@ -1,0 +1,87 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Application
+metadata:
+  name: ols
+  namespace: crt-nshift-lightspeed-tenant
+spec:
+  displayName: ols
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: bundle
+  namespace: crt-nshift-lightspeed-tenant
+spec:
+  application: ols
+  componentName: bundle
+  source:
+    git:
+      dockerfileUrl: bundle.Dockerfile
+      revision: main
+      url: https://github.com/openshift/lightspeed-operator
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: lightspeed-console
+  namespace: crt-nshift-lightspeed-tenant
+spec:
+  application: ols
+  build-nudges-ref:
+  - bundle
+  componentName: lightspeed-console
+  source:
+    git:
+      dockerfileUrl: Dockerfile
+      url: https://github.com/openshift/lightspeed-console
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: lightspeed-operator
+  namespace: crt-nshift-lightspeed-tenant
+spec:
+  application: ols
+  build-nudges-ref:
+  - bundle
+  componentName: lightspeed-operator
+  source:
+    git:
+      dockerfileUrl: Dockerfile
+      url: https://github.com/openshift/lightspeed-operator
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: lightspeed-service
+  namespace: crt-nshift-lightspeed-tenant
+spec:
+  application: ols
+  build-nudges-ref:
+  - bundle
+  componentName: lightspeed-service
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Containerfile
+      revision: main
+      url: https://github.com/openshift/lightspeed-service
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: lightspeed-rag-content
+  namespace: crt-nshift-lightspeed-tenant
+spec:
+  application: ols
+  build-nudges-ref:
+  - lightspeed-service
+  componentName: lightspeed-rag-content
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Containerfile
+      revision: main
+      url: https://github.com/openshift/lightspeed-rag-content
+---

@@ -1,0 +1,40 @@
+---
+apiVersion: appstudio.redhat.com/v1beta2
+kind: IntegrationTestScenario
+metadata:
+  name: ols-enterprise-contract
+  namespace: crt-nshift-lightspeed-tenant
+spec:
+  application: ols
+  contexts:
+  - description: Application testing
+    name: application
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/build-definitions
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/enterprise-contract.yaml
+    resolver: git
+---
+apiVersion: appstudio.redhat.com/v1beta2
+kind: IntegrationTestScenario
+metadata:
+  name: integration-tests
+  namespace: crt-nshift-lightspeed-tenant
+spec:
+  application: ols
+  contexts:
+  - description: Application testing
+    name: application
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/openshift/lightspeed-operator
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: /konflux-integration/pipeline.yaml
+    resolver: git
