@@ -1,0 +1,62 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false" # Change to "true" if you don't need the test to be mandatory
+  name: io-gathering-service-bonfire-tekton
+  namespace: obsint-processing-tenant
+spec:
+  application: io-gathering-service
+  contexts:
+    - description: Application testing
+      name: application
+  resolverRef:
+    params:
+      - name: url
+        value: https://github.com/RedHatInsights/bonfire-tekton.git
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: pipelines/basic.yaml
+    resolver: git
+  params:
+    - name: APP_NAME
+      value: ccx-data-pipeline # Name of app-sre "application" folder this component lives in.
+    - name: REV_ENV
+      value: insights-production
+    - name: COMPONENTS
+      value: io-gathering-service # Space-separated list of components to load.
+    - name: COMPONENTS_W_RESOURCES
+      value: io-gathering-service # List of components to keep.
+    - name: BONFIRE_COMPONENT_NAME
+      value: io-gathering-service # Name of app-sre "resourceTemplate" in deploy.yaml for this component. If it is the same as the name in Konflux, you don't need to fill this
+    - name: COMPONENT_NAME
+      value: io-gathering-service # Name of your component name in Konflux
+    - name: IQE_PLUGINS
+      value: ccx # Name of the IQE plugin for this app.
+    - name: IQE_MARKER_EXPRESSION
+      value: io_gathering # This is the value passed to pytest -m. Default is ""
+    - name: IQE_FILTER_EXPRESSION
+      value: # This is the value passed to pytest -k. Default is "" when no filter desired
+    - name: IQE_REQUIREMENTS
+      value: # "something,something_else" -- iqe requirements filter. Default is "" when no filter desired
+    - name: IQE_REQUIREMENTS_PRIORITY
+      value: # "something,something_else" -- iqe requirements priority filter. Default is "" when no filter desired
+    - name: IQE_TEST_IMPORTANCE
+      value: # "something,something_else" -- iqe test importance filter. Default is "" when no filter desired
+    - name: IQE_CJI_TIMEOUT
+      value: 60m # Timeout value to pass to 'oc wait', should be slightly higher than expected test run time. Default is 30m
+    - name: IQE_ENV
+      value: # "something" -- value to set for ENV_FOR_DYNACONF. Default is "clowder_smoke"
+    - name: IQE_ENV_VARS
+      value: "DYNACONF_USER_PROVIDER__rbac_enabled=false"
+    - name: IQE_SELENIUM
+      value: # Whether to run IQE pod with a selenium container. Default is "false"
+    - name: IQE_PARALLEL_ENABLED
+      value: # Whether to run IQE in parallel mode. Default is "false"
+    - name: IQE_PARALLEL_WORKER_COUNT
+      value: # The number of parallel workers to use. Default is "".
+    - name: IQE_RP_ARGS
+      value: # Arguments to send to reportportal. Default is "".
+    - name: IQE_IBUTSU_SOURCE
+      value: # Ibutsu source for the current run. Default is "".    - name: APP_NAME

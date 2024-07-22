@@ -2,6 +2,8 @@
 resources:
   - insights-behavioral-spec-component.yaml
   - io-gathering-service-component.yaml
+  - io-gathering-service-bonfire-tekton.yaml
+  - ../../../../lib/consoledot-test-pipeline
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
