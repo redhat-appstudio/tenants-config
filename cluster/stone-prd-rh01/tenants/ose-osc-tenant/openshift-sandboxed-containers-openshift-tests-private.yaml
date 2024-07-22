@@ -1,0 +1,22 @@
+apiVersion: appstudio.redhat.com/v1beta2
+kind: IntegrationTestScenario
+metadata:
+  name: openshift-tests-private
+  namespace: ose-osc-tenant
+spec:
+  params:
+  application: openshift-sandboxed-containers
+  contexts:
+    - description: Run integration tests from openshift-test-private
+      name: application
+  resolverRef:
+    params:
+      - name: url
+        value: "https://github.com/cpmeadors/openshift-tests-private"
+      - name: revision
+        value: konflux-integration
+      - name: pathInRepo
+        value: test/extended/kata/konflux.yaml
+      - name: token
+        value: cpmeadors-openshift-tests-private
+    resolver: git
