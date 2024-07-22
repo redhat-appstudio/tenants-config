@@ -1,0 +1,91 @@
+apiVersion: projctl.konflux.dev/v1beta1
+kind: ProjectDevelopmentStreamTemplate
+metadata:
+  name: cli-manager-operator-fbc-dst
+  namespace: clio-wrklds-pipeline-tenant
+spec:
+  project: clio-wrklds-pipeline-tenant
+  resources:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    metadata:
+      annotations:
+        application.thumbnail: "6"
+        finalizeCount: "0"
+      finalizers:
+      - spi.appstudio.redhat.com/remote-secrets
+      name: cli-manager-operator-fbc-{{.versionName}}
+    spec:
+      appModelRepository:
+        url: ""
+      displayName: cli-manager-operator-fbc-{{.versionName}}
+      gitOpsRepository:
+        url: ""
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    metadata:
+      annotations:
+        applicationFailCounter: "0"
+        build.appstudio.openshift.io/pipeline: '{"name":"fbc-builder","bundle":"latest"}'
+      finalizers:
+      - test.appstudio.openshift.io/component
+      - image-controller.appstudio.openshift.io/image-repository
+      - image-registry-secret-sa-link.component.appstudio.openshift.io/finalizer
+      - pac.component.appstudio.openshift.io/finalizer
+      name: cli-manager-operator-fbc-{{.versionName}}
+      namespace: clio-wrklds-pipeline-tenant
+    spec:
+      application: cli-manager-operator-fbc-{{.versionName}}
+      componentName: cli-manager-operator-fbc-{{.versionName}}
+      replicas: 0
+      resources:
+        requests:
+          cpu: 100m
+          memory: 512Mi
+      source:
+        git:
+          context: '{{.versionName}}'
+          devfileUrl: https://raw.githubusercontent.com/openshift/cli-manager-operator/fbc/{{.versionName}}/devfile.yaml
+          dockerfileUrl: catalog.Dockerfile
+          revision: fbc
+          url: https://github.com/openshift/cli-manager-operator
+      targetPort: 50051
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: ReleasePlan
+    metadata:
+      labels:
+        release.appstudio.openshift.io/auto-release: "false"
+        release.appstudio.openshift.io/releasePlanAdmission: clio-wrklds-pipeline-fbc-prod-index
+        release.appstudio.openshift.io/standing-attribution: "true"
+      name: fbc-{{.versionName}}-release-as-fbc
+      namespace: clio-wrklds-pipeline-tenant
+    spec:
+      application: cli-manager-operator-fbc-{{.versionName}}
+      target: rhtap-releng-tenant
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: ReleasePlan
+    metadata:
+      labels:
+        release.appstudio.openshift.io/auto-release: "false"
+        release.appstudio.openshift.io/releasePlanAdmission: clio-wrklds-pipeline-fbc-staging-index
+        release.appstudio.openshift.io/standing-attribution: "true"
+      name: fbc-{{.versionName}}-release-as-staging-fbc
+      namespace: clio-wrklds-pipeline-tenant
+    spec:
+      application: cli-manager-operator-fbc-{{.versionName}}
+      target: rhtap-releng-tenant
+  - apiVersion: appstudio.redhat.com/v1beta1
+    kind: IntegrationTestScenario
+    metadata:
+      name: cli-manager-operator-fbc-{{.versionName}}-ec
+    spec:
+      application: cli-manager-operator-fbc-{{.versionName}}
+      params:
+      - name: POLICY_CONFIGURATION
+        value: rhtap-releng-tenant/fbc-stage
+  variables:
+  - description: A version number for a new OCP stream
+    name: version
+  - description: |
+      The name of some objects cannot include dots. It's recommended to set this versionName replacing any `.` with hyphen (`-`) in the value of the parameter `version`.
+    name: versionName

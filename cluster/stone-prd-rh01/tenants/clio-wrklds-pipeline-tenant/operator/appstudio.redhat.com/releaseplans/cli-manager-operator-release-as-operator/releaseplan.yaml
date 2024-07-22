@@ -5,6 +5,7 @@ metadata:
   labels:
     release.appstudio.openshift.io/auto-release: 'false'
     release.appstudio.openshift.io/standing-attribution: 'true'
+    release.appstudio.openshift.io/releasePlanAdmission: clio-wrklds-pipeline-prod
   name: cli-manager-operator
   namespace: clio-wrklds-pipeline-tenant
 spec:
