@@ -6,10 +6,7 @@ metadata:
 spec:
   params:
     - name: POLICY_CONFIGURATION
-      # It should be possible to use registry-standard when this one is resolved:
-      # https://issues.redhat.com/browse/STONEBLD-2618.
-      # value: rhtap-releng-tenant/registry-standard
-      value: rhtap-releng-tenant/tmp-onboard-policy
+      value: rhtap-releng-tenant/registry-ose-osc
   application: trustee
   contexts:
     - description: Application testing
