@@ -3,7 +3,7 @@ kind: ProjectDevelopmentStream
 metadata:
   name: cli-manager-operator-fbc-4-17
 spec:
-  project: clio-wrklds-pipeline-tenant
+  project: file-based-catalog
   template:
     name: cli-manager-operator-fbc-dst
     values:

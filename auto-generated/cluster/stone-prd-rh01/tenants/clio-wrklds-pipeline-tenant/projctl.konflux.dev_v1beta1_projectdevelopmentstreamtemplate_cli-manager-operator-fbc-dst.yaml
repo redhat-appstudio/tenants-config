@@ -4,7 +4,7 @@ metadata:
   name: cli-manager-operator-fbc-dst
   namespace: clio-wrklds-pipeline-tenant
 spec:
-  project: clio-wrklds-pipeline-tenant
+  project: file-based-catalog
   resources:
   - apiVersion: appstudio.redhat.com/v1alpha1
     kind: Application
