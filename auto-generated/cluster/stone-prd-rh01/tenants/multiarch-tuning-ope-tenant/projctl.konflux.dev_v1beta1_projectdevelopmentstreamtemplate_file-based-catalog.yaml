@@ -82,6 +82,15 @@ spec:
       params:
       - name: POLICY_CONFIGURATION
         value: rhtap-releng-tenant/fbc-stage
+      resolverRef:
+        params:
+        - name: url
+          value: https://github.com/konflux-ci/build-definitions
+        - name: revision
+          value: main
+        - name: pathInRepo
+          value: pipelines/enterprise-contract.yaml
+        resolver: git
   variables:
   - description: A version number for a new OCP stream
     name: version
