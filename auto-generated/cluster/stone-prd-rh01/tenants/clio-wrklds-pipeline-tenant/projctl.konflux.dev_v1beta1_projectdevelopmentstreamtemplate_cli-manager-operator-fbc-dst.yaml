@@ -50,6 +50,15 @@ spec:
           revision: fbc
           url: https://github.com/openshift/cli-manager-operator
       targetPort: 50051
+  - apiVersion: appstudio.redhat.com/v1beta2
+    kind: IntegrationTestScenario
+    metadata:
+      name: cli-manager-operator-fbc-{{.versionName}}-ec
+    spec:
+      application: cli-manager-operator-fbc-{{.versionName}}
+      params:
+      - name: POLICY_CONFIGURATION
+        value: rhtap-releng-tenant/fbc-stage
   variables:
   - description: A version number for a new OCP stream
     name: version
