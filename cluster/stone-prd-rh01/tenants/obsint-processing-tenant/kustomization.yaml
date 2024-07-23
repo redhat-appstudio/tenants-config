@@ -3,6 +3,8 @@ resources:
   - insights-behavioral-spec-component.yaml
   - insights-results-aggregator-cleaner-component.yaml
   - io-gathering-service-component.yaml
+  - io-gathering-service-bonfire-tekton.yaml
+  - ../../../../lib/consoledot-test-pipeline
+namespace: obsint-processing-tenant
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
