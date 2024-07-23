@@ -2,6 +2,5 @@ kind: Kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 # Naming: <API_GROUP>/<KIND_PLURAL>/<METADATA_NAME>
 resources:
-  - appstudio.redhat.com/integrationtestscenarios/fbc-v4-17-enterprise-contract
   - appstudio.redhat.com/releaseplans/fbc-v4-17-release-as-fbc
   - appstudio.redhat.com/releaseplans/fbc-v4-17-release-as-staging-fbc
