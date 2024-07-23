@@ -1,0 +1,22 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  labels:
+    release.appstudio.openshift.io/auto-release: "true"
+    release.appstudio.openshift.io/standing-attribution: "true"
+  namespace: obsint-processing-tenant
+  name: insights-behavioral-spec
+spec:
+  application: insights-behavioral-spec
+  target: obsint-processing-tenant
+  data:
+    mapping:
+      components:
+        - name: insights-behavioral-spec
+          repository: quay.io/cloudservices/insights-behavioral-spec
+      defaults:
+        tags:
+          - "latest"
+          - "{{ git_short_sha }}"
+
