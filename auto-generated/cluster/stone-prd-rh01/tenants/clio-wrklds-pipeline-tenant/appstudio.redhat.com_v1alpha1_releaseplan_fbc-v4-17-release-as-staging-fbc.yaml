@@ -8,5 +8,5 @@ metadata:
   name: fbc-v4-17-release-as-staging-fbc
   namespace: clio-wrklds-pipeline-tenant
 spec:
-  application: cli-manager-operator-fbc-v4-17
+  application: cli-manager-operator-fbc-4-17
   target: rhtap-releng-tenant

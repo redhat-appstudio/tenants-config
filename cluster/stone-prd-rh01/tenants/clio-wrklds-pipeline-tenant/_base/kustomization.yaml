@@ -4,4 +4,3 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 resources:
   - projectl.konflux.dev/projectdevelopmentstreamtemplates/file-based-catalog
   - projectl.konflux.dev/projectdevelopmentstreams/file-based-catalog-v4-17
-

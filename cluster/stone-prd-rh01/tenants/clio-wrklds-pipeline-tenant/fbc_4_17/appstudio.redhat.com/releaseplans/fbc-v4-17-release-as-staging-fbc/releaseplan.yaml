@@ -8,5 +8,5 @@ metadata:
     release.appstudio.openshift.io/standing-attribution: 'true'
     release.appstudio.openshift.io/releasePlanAdmission: clio-wrklds-pipeline-fbc-staging-index
 spec:
-  application: cli-manager-operator-fbc-v4-17
+  application: cli-manager-operator-fbc-4-17
   target: rhtap-releng-tenant
