@@ -3,7 +3,7 @@ kind: ProjectDevelopmentStreamTemplate
 metadata:
   name: cli-manager-operator-fbc-dst
 spec:
-  project: clio-wrklds-pipeline-tenant
+  project: file-based-catalog
   variables:
     - name: version
       description: A version number for a new OCP stream

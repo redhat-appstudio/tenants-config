@@ -1,0 +1,9 @@
+apiVersion: projctl.konflux.dev/v1beta1
+kind: Project
+metadata:
+  name: file-based-catalog
+  namespace: clio-wrklds-pipeline-tenant
+spec:
+  description: |
+    Multi-version project for the file-based catalog of the CLI Manager
+  displayName: Multi-version project for the file-based catalog of the CLI Manager
