@@ -1,0 +1,32 @@
+apiVersion: appstudio.redhat.com/v1beta2
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "true"
+  name: insights-yuptoo-tekton-testing
+  namespace: insights-core-tenant
+spec:
+  application: insights-yuptoo-app
+  contexts:
+  - description: Application testing
+    name: application
+  params:
+  - name: APP_NAME
+    value: yuptoo
+  - name: BONFIRE_COMPONENT_NAME
+    value: yuptoo
+  - name: COMPONENT_NAME
+    value: yuptoo
+  - name: IQE_PLUGINS
+    value: foreman-rh-cloud
+  - name: IQE_MARKER_EXPRESSION
+    value: yupana_smoke
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/RedHatInsights/bonfire-tekton.git
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/basic.yaml
+    resolver: git
