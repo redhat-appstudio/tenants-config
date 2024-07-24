@@ -1,0 +1,27 @@
+apiVersion: appstudio.redhat.com/v1beta1
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false" # Change to "true" if you don't need the test to be mandatory
+  name: pdf-generator-bonfire-tekton
+  namespace: console-platex-services-tenant
+spec:
+  application: pdf-generator
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/RedHatInsights/bonfire-tekton.git
+    - name: revision
+      value: main # Or whatever branch you want to test
+    - name: pathInRepo
+      value: pipelines/basic.yaml # This is the path to the pipeline
+    resolver: git
+  params:
+    - name: APP_NAME
+      value: crc-pdf-generator # name of app-sre "application" folder this component lives in
+    - name: COMPONENTS
+      value: crc-pdf-generator
+    - name: BONFIRE_COMPONENT_NAME
+      value: crc-pdf-generator # Name of app-sre "resourceTemplate" in deploy.yaml for this component. If it is the same as the name in Konflux, you don't need to fill this  
+    - name: COMPONENT_NAME
+      value: pdf-generator # Name of your component name in Konflux
