@@ -1,6 +1,7 @@
 resources:
 - api-frontend_integration_test.yaml
 - api-frontend_release_plan.yaml
+- subscriptions-dashboard-ui_integration_test.yaml
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
