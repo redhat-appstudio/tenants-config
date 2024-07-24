@@ -2,6 +2,8 @@ apiVersion: appstudio.redhat.com/v1alpha1
 kind: ReleasePlan
 metadata:
   labels:
+    app.kubernetes.io/instance: crt-nshift-lightspeed-tenant-stone-prd-rh01
+    release.appstudio.openshift.io/author: system_serviceaccount_remote-argocd_remote-argocd
     release.appstudio.openshift.io/auto-release: "true"
     release.appstudio.openshift.io/standing-attribution: "true"
   name: ols-releaseplan

@@ -1,0 +1,16 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: lightspeed-rag-content
+  namespace: crt-nshift-lightspeed-tenant
+spec:
+  application: ols
+  build-nudges-ref:
+  - lightspeed-service
+  componentName: lightspeed-rag-content
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Containerfile
+      revision: main
+      url: https://github.com/openshift/lightspeed-rag-content

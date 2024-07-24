@@ -1,0 +1,16 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  name: lightspeed-service
+  namespace: crt-nshift-lightspeed-tenant
+spec:
+  application: ols
+  build-nudges-ref:
+  - bundle
+  componentName: lightspeed-service
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Containerfile
+      revision: main
+      url: https://github.com/openshift/lightspeed-service
